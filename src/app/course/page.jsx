@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Lottie from "lottie-react";
 import animationData from "../../../public/empty.json";
-import { getCoursesApi } from "@/axios/api";
+import { getCoursesApi } from "../../axios/api";
 import Image from "next/image";
 
 const SkeletonCard = () => (

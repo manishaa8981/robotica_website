@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getCourseBySlugApi } from "@/axios/api";
+import { getCourseBySlugApi } from "../../../axios/api";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 

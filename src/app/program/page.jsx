@@ -116,7 +116,7 @@
 
 "use client";
 
-import { getProgramsApi } from "@/axios/api";
+import { getProgramsApi } from "../../axios/api";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-import { getAdmissionsApi } from "@/axios/api";
+import { getAdmissionsApi } from "../../axios/api";
 // import { ErrorHandler } from "@/components/error/ErrorHandler";
 
 const fadeUp = {

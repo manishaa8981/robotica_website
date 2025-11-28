@@ -6,7 +6,7 @@ import Link from "next/link";
 import moment from "moment";
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { getAllNewsApi } from "@/axios/api";
+import { getAllNewsApi } from "../axios/api";
 import Image from "next/image";
 
 const SkeletonRecentNews = () => (

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { getAllObjectivesApi } from "@/axios/api";
+import { getAllObjectivesApi } from "../../axios/api";
 import { motion } from "framer-motion";
 
 const SkeletonObjectives = () => (

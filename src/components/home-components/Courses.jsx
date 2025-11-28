@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useEffect, useState, useRef } from "react";
-import { getCoursesApi, getCourseBySlugApi } from "@/axios/api";
-import HorizontalDivider from "@/components/HorizontalDivider";
+import { getCoursesApi, getCourseBySlugApi } from "../../axios/api";
+import HorizontalDivider from "../../components/HorizontalDivider";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";

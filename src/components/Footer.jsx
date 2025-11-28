@@ -1,6 +1,6 @@
 "use client";
 
-import { getInstitutionProfileApi } from "@/axios/api";
+import { getInstitutionProfileApi } from "../axios/api";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

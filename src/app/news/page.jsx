@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { getAllNewsApi, getRecentNewsApi } from "@/axios/api";
-import OurArticleComponent from "@/components/OurArticleComponent";
+import { getAllNewsApi, getRecentNewsApi } from "../../axios/api";
+import OurArticleComponent from "../../components/OurArticleComponent";
 import SkeletonNewsGrid from "./SkeletonNews";
-import Pagination from "@/components/Pagination";
+import Pagination from "../../components/Pagination";
 import Lottie from "lottie-react";
 import animationData from "../../../public/empty.json";
 import Image from "next/image";

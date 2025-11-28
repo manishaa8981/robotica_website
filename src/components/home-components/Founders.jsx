@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { getAllTeamMembersApi } from "@/axios/api";
+import { getAllTeamMembersApi } from "../../axios/api";
 import {
   FaFacebookF,
   FaInstagram,

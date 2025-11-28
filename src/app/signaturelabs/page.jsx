@@ -1,6 +1,6 @@
 "use client";
 
-import { getSignatureLabsApi } from "@/axios/api";
+import { getSignatureLabsApi } from "../../axios/api";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";

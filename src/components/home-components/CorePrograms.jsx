@@ -1,122 +1,6 @@
-// "use client";
-
-// import React, { useEffect, useState } from "react";
-// import { getWhyChooseUsApi } from "../../axios/api";
-// import { motion } from "framer-motion";
-
-// export default function CorePrograms() {
-//   const [section, setSection] = useState(null);
-//   const [loading, setLoading] = useState(true);
-
-//   useEffect(() => {
-//     const fetchData = async () => {
-//       try {
-//         const res = await getWhyChooseUsApi();
-//         setSection(res.data?.result || null);
-//       } catch (error) {
-//         console.error(error);
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-//     fetchData();
-//   }, []);
-
-//   const SkeletonLoad = () => (
-//     <div className="flex gap-5 lg:gap-24 lg:flex-row flex-col w-full">
-//       {/* Left side skeleton title */}
-//       <aside className="lg:sticky h-fit lg:top-32 space-y-3">
-//         <div className="h-10 sm:h-12 md:h-14 bg-gray-200 rounded w-3/4 animate-pulse" />
-//       </aside>
-
-//       {/* Right side skeleton cards */}
-//       <div className="space-y-3 md:space-y-5 w-full">
-//         {Array.from({ length: 3 }).map((_, idx) => (
-//           <div
-//             key={idx}
-//             className="flex gap-6 md:gap-8 p-5 rounded-lg border border-gray-200 shadow-md bg-gray-100 animate-pulse h-28 md:h-32"
-//           >
-//             <div className="flex-1 space-y-2">
-//               <div className="h-6 md:h-8 bg-gray-200 rounded w-1/2" />
-//               <div className="h-4 bg-gray-200 rounded w-full" />
-//               <div className="h-4 bg-gray-200 rounded w-full" />
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-
-//   if (loading) return <SkeletonLoad />;
-
-//   if (!section) return null;
-
-//   const cardVariants = {
-//     hidden: { opacity: 0, y: 50 },
-//     visible: {
-//       opacity: 1,
-//       y: 0,
-//       transition: {
-//         duration: 0.6,
-//         ease: "easeOut",
-//       },
-//     },
-//   };
-
-//   return (
-//     <div className="flex gap-5 lg:gap-24 lg:flex-row flex-col max-w-7xl mx-auto">
-//       {/* Left side (Title section) */}
-//       <motion.aside
-//         initial={{ opacity: 0, y: 20 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         viewport={{ once: true, amount: 0.5 }}
-//         transition={{ duration: 0.6, ease: "easeOut" }}
-//         className="lg:sticky h-fit lg:top-32"
-//       >
-//         <div className="space-y-2 md:space-y-3 lg:space-y-5 text-left">
-//           <h1 className="font-bold text-[28px] sm:text-[32px] md:text-[40px] text-[#204081] leading-tight">
-//             {section.mainTitle}
-//           </h1>
-//         </div>
-//       </motion.aside>
-
-//       {/* Right side (Cards) */}
-//       <div className="space-y-3 md:space-y-5">
-//         {section.items.map((item, idx) => (
-//           <motion.div
-//             key={idx}
-//             variants={cardVariants}
-//             initial="hidden"
-//             whileInView="visible"
-//             viewport={{ once: true, amount: 0.3 }}
-//             className="flex gap-6 md:gap-8 p-5 rounded-lg border border-gray-300 shadow-md bg-white items-center"
-//           >
-//             {/* Image (if needed) */}
-//             {/* <Image
-//               src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${item.image}`}
-//               alt={item.title}
-//               width={40}
-//               height={40}
-//               className="object-contain mb-2"
-//             /> */}
-//             <div>
-//               <h1 className="font-bold text-xl md:text-2xl mb-2">
-//                 {item.title}
-//               </h1>
-//               <p className="text-[#151515] text-[15px] text-justify">
-//                 {item.description}
-//               </p>
-//             </div>
-//           </motion.div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
-
 "use client";
 
-import { getProgramsApi } from "@/axios/api";
+import { getProgramsApi } from "../../axios/api";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -290,3 +174,119 @@ export default function CorePrograms() {
     </section>
   );
 }
+
+// "use client";
+
+// import React, { useEffect, useState } from "react";
+// import { getWhyChooseUsApi } from "../../axios/api";
+// import { motion } from "framer-motion";
+
+// export default function CorePrograms() {
+//   const [section, setSection] = useState(null);
+//   const [loading, setLoading] = useState(true);
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       try {
+//         const res = await getWhyChooseUsApi();
+//         setSection(res.data?.result || null);
+//       } catch (error) {
+//         console.error(error);
+//       } finally {
+//         setLoading(false);
+//       }
+//     };
+//     fetchData();
+//   }, []);
+
+//   const SkeletonLoad = () => (
+//     <div className="flex gap-5 lg:gap-24 lg:flex-row flex-col w-full">
+//       {/* Left side skeleton title */}
+//       <aside className="lg:sticky h-fit lg:top-32 space-y-3">
+//         <div className="h-10 sm:h-12 md:h-14 bg-gray-200 rounded w-3/4 animate-pulse" />
+//       </aside>
+
+//       {/* Right side skeleton cards */}
+//       <div className="space-y-3 md:space-y-5 w-full">
+//         {Array.from({ length: 3 }).map((_, idx) => (
+//           <div
+//             key={idx}
+//             className="flex gap-6 md:gap-8 p-5 rounded-lg border border-gray-200 shadow-md bg-gray-100 animate-pulse h-28 md:h-32"
+//           >
+//             <div className="flex-1 space-y-2">
+//               <div className="h-6 md:h-8 bg-gray-200 rounded w-1/2" />
+//               <div className="h-4 bg-gray-200 rounded w-full" />
+//               <div className="h-4 bg-gray-200 rounded w-full" />
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+
+//   if (loading) return <SkeletonLoad />;
+
+//   if (!section) return null;
+
+//   const cardVariants = {
+//     hidden: { opacity: 0, y: 50 },
+//     visible: {
+//       opacity: 1,
+//       y: 0,
+//       transition: {
+//         duration: 0.6,
+//         ease: "easeOut",
+//       },
+//     },
+//   };
+
+//   return (
+//     <div className="flex gap-5 lg:gap-24 lg:flex-row flex-col max-w-7xl mx-auto">
+//       {/* Left side (Title section) */}
+//       <motion.aside
+//         initial={{ opacity: 0, y: 20 }}
+//         whileInView={{ opacity: 1, y: 0 }}
+//         viewport={{ once: true, amount: 0.5 }}
+//         transition={{ duration: 0.6, ease: "easeOut" }}
+//         className="lg:sticky h-fit lg:top-32"
+//       >
+//         <div className="space-y-2 md:space-y-3 lg:space-y-5 text-left">
+//           <h1 className="font-bold text-[28px] sm:text-[32px] md:text-[40px] text-[#204081] leading-tight">
+//             {section.mainTitle}
+//           </h1>
+//         </div>
+//       </motion.aside>
+
+//       {/* Right side (Cards) */}
+//       <div className="space-y-3 md:space-y-5">
+//         {section.items.map((item, idx) => (
+//           <motion.div
+//             key={idx}
+//             variants={cardVariants}
+//             initial="hidden"
+//             whileInView="visible"
+//             viewport={{ once: true, amount: 0.3 }}
+//             className="flex gap-6 md:gap-8 p-5 rounded-lg border border-gray-300 shadow-md bg-white items-center"
+//           >
+//             {/* Image (if needed) */}
+//             {/* <Image
+//               src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${item.image}`}
+//               alt={item.title}
+//               width={40}
+//               height={40}
+//               className="object-contain mb-2"
+//             /> */}
+//             <div>
+//               <h1 className="font-bold text-xl md:text-2xl mb-2">
+//                 {item.title}
+//               </h1>
+//               <p className="text-[#151515] text-[15px] text-justify">
+//                 {item.description}
+//               </p>
+//             </div>
+//           </motion.div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// }

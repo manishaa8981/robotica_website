@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { getAllRoadMapsApi } from "@/axios/api";
+import { getAllRoadMapsApi } from "../../axios/api";
 import { motion } from "framer-motion";
 
 export default function RoadMap() {

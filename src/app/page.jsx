@@ -1,15 +1,15 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 
-import { getRecentNewsApi } from "@/axios/api";
-import CorePrograms from "@/components/home-components/CorePrograms";
-import PopularCourse from "@/components/home-components/Courses";
-import { HeroBanner } from "@/components/home-components/Hero";
-import MottoPage from "@/components/home-components/MissionVision";
-import Objectives from "@/components/home-components/Objectives";
-import WhyChooseUs from "@/components/home-components/WhyChooseUs";
+import CorePrograms from "../components/home-components/CorePrograms";
+import { HeroBanner } from "../components/home-components/Hero";
+import MottoPage from "../components/home-components/MissionVision";
+import Objectives from "../components/home-components/Objectives";
+import WhyChooseUs from "../components/home-components/WhyChooseUs";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
+import { getRecentNewsApi } from "../axios/api";
+import PopularCourse from "../components/home-components/Courses";
 
 function HomeContent() {
   const [recentNews, setRecentNews] = useState([]);

@@ -1,7 +1,7 @@
 // app/layout.jsx
-import { Footer } from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import ScrollToTop from "@/components/ScrollToTop";
+import { Footer } from "../components/Footer";
+import Navbar from "../components/Navbar";
+import ScrollToTop from "../components/ScrollToTop";
 import { Merriweather, Open_Sans } from "next/font/google";
 import "./globals.css";
 

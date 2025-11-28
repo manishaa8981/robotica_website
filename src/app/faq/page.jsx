@@ -1,6 +1,6 @@
 "use client";
 
-import { getFaqsApi } from "@/axios/api"; // This hits GET "/" from your FAQ routes
+import { getFaqsApi } from "../../axios/api"; // This hits GET "/" from your FAQ routes
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";

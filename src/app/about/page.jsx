@@ -1,13 +1,13 @@
 "use client";
 import { Suspense, useEffect } from "react";
 
-import CorePrograms from "@/components/home-components/CorePrograms";
-import Founders from "@/components/home-components/Founders";
-import Impacts from "@/components/home-components/Impacts";
-import RoadMap from "@/components/home-components/RoadMap";
+import CorePrograms from "../../components/home-components/CorePrograms";
+import Founders from "../../components/home-components/Founders";
+import Impacts from "../../components/home-components/Impacts";
+import RoadMap from "../../components/home-components/RoadMap";
 import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
-import WhyChooseUs from "@/components/home-components/WhyChooseUs";
+import WhyChooseUs from "../../components/home-components/WhyChooseUs";
 
 function AboutUs() {
   const searchParams = useSearchParams();

@@ -1,6 +1,6 @@
 "use client";
 
-import { getBannerApi } from "@/axios/api";
+import { getBannerApi } from "../../axios/api";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
