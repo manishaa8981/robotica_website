@@ -1,0 +1,61 @@
+import React from "react";
+
+const FloatingTextarea = ({ label, name, value, onChange, required }) => (
+  <div className="relative">
+    <textarea
+      id={name}
+      name={name}
+      value={value}
+      onChange={onChange}
+      required={required}
+      rows={5}
+      placeholder=" "
+      className="peer w-full resize-none rounded-lg bg-white border border-gray-300 px-4 pt-5 pb-2 text-gray-900 placeholder-transparent focus:outline-none focus:ring-2 focus:ring-green focus:border-green"
+    />
+    <label
+      htmlFor={name}
+      className="absolute left-4 top-2 text-gray-500 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:top-1 peer-focus:text-green peer-focus:text-sm cursor-text select-none"
+    >
+      {label}
+    </label>
+  </div>
+);
+
+export default FloatingTextarea;
+// import React from "react";
+
+// const FloatingTextarea = ({ label, name, value, onChange, required }) => (
+//   <div className="relative">
+//     <textarea
+//       id={name}
+//       name={name}
+//       value={value}
+//       onChange={onChange}
+//       required={required}
+//       rows={5}
+//       placeholder=" "
+//       className="
+//         peer w-full resize-none rounded-xl bg-[#020617] border border-[#1F2937]
+//         px-4 pt-5 pb-2 text-sm md:text-base text-slate-100
+//         placeholder-transparent
+//         focus:outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-400
+//         transition
+//       "
+//     />
+//     <label
+//       htmlFor={name}
+//       className="
+//         absolute left-4 top-2 text-slate-400 text-xs md:text-sm
+//         transition-all
+//         peer-placeholder-shown:top-4 peer-placeholder-shown:text-sm peer-placeholder-shown:text-slate-500
+//         peer-focus:top-1 peer-focus:text-emerald-300 peer-focus:text-xs
+//         cursor-text select-none
+//       "
+//     >
+//       {label}
+//     </label>
+//   </div>
+// );
+
+// export default FloatingTextarea;
+

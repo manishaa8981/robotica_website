@@ -1,0 +1,81 @@
+@import "tailwindcss";
+/* @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300..700;1,300..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap'); */
+/* @import "tw-animate-css"; */
+/* @custom-variant dark (&:is(.dark *)); */
+
+@theme {
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 976px;
+  --breakpoint-xl: 1440px;
+  /* --color-primary: #282D8D; */
+  /* --background-light: #F9FAFB;
+  --background-dark: #161962; */
+  --color-navy: #101840;
+  --color-beige: #eef2e6;
+    /* --color-beige: #e7deaf; */
+  --color-green: #007e6e;
+
+  /* --color-green: #1a6863; */
+}
+
+body {
+  font-family: var(--font-open-sans), sans-serif;
+  color: #151515;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-merriweather), serif;
+  /* color: #186f3e; */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.icon-primary {
+  padding: 8px;
+  border: 1px solid 001750;
+  border-radius: 3px;
+  color: white;
+  transition: all;
+  transition: 200ms;
+  background-color: #186f3e;
+}
+
+.icon-primary:hover {
+  border: 1px solid 001750;
+  border-radius: 3px;
+  color: white;
+  background-color: #0ab855;
+  cursor: pointer;
+}
+
+.icon-primary-red {
+  padding: 8px;
+  border: 1px solid 001750;
+  border-radius: 3px;
+  color: white;
+  transition: all;
+  transition: 200ms;
+  background-color: #d20000;
+}
+
+.icon-primary-red:hover {
+  border: 1px solid 001750;
+  border-radius: 3px;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
