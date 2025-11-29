@@ -1,9 +1,9 @@
 "use client";
 
-import { getBannerApi } from "../../axios/api";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { getBannerApi } from "../../axios/api";
 
 const SkeletonBanner = () => (
   <div className="w-full h-[60vh] md:h-[70vh] lg:h-[80vh] bg-gray-200 animate-pulse rounded-lg mb-16" />
@@ -41,9 +41,9 @@ export const HeroBanner = () => {
   return (
     <section className="relative w-full h-fit py-10 md:py-24 lg:py-10 bg-beige flex items-center justify-center overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl" />
-        <div className="absolute right-[-6rem] top-40 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl" />
-        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 h-72 w-[28rem] rounded-full bg-emerald-500/20 blur-3xl" />
+        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-green/20 blur-3xl" />
+        <div className="absolute right-[-6rem] top-40 h-72 w-72 rounded-full bg-green/20 blur-3xl" />
+        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 h-72 w-[28rem] rounded-full bg-green/20 blur-3xl" />
       </div>
       {banners.map((banner) => (
         <div
@@ -91,13 +91,13 @@ export const HeroBanner = () => {
               </a> */}
               <a
                 href="/contact"
-                className="bg-green hover:bg-green text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-green hover:bg-green text-white px-8 py-3 shadow-sm rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
               >
                 Apply Now
               </a>
               <a
                 href="/labs"
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-full transition"
+                className="bg-[#d7c097] hover:bg-[#d7c097]-600 shadow-sm font-semibold px-6 py-3 rounded-full transition text-black"
               >
                 Book a Lab Tour
               </a>

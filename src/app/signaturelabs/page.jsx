@@ -1,9 +1,9 @@
 "use client";
 
-import { getSignatureLabsApi } from "../../axios/api";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { getSignatureLabsApi } from "../../axios/api";
 
 const containerVariants = {
   hidden: {},
@@ -114,7 +114,7 @@ export default function SignatureLabs() {
     >
       {/* Glow blobs background (keep if you want) */}
       <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl" />
+        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-d7c097/20 blur-3xl" />
         <div className="absolute right-[-6rem] top-40 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl" />
         <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 h-72 w-[28rem] rounded-full bg-indigo-500/15 blur-3xl" />
       </div>
@@ -128,7 +128,7 @@ export default function SignatureLabs() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-12 md:mb-16"
         >
-          {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/70 border border-emerald-500/40 text-[11px] uppercase tracking-[0.2em] text-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
+          {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/70 border border-d7c097/40 text-[11px] uppercase tracking-[0.2em] text-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
             Signature Labs
           </div> */}
           <h2 className="mt-4 text-[30px] sm:text-[36px] md:text-[44px] font-extrabold text-slate-50 leading-tight">

@@ -1,5 +1,3 @@
-import React from "react";
-
 const FloatingTextarea = ({ label, name, value, onChange, required }) => (
   <div className="relative">
     <textarea
@@ -38,7 +36,7 @@ export default FloatingTextarea;
 //         peer w-full resize-none rounded-xl bg-[#020617] border border-[#1F2937]
 //         px-4 pt-5 pb-2 text-sm md:text-base text-slate-100
 //         placeholder-transparent
-//         focus:outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-400
+//         focus:outline-none focus:ring-2 focus:ring-d7c097/60 focus:border-d7c097
 //         transition
 //       "
 //     />
@@ -58,4 +56,3 @@ export default FloatingTextarea;
 // );
 
 // export default FloatingTextarea;
-

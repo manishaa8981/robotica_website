@@ -116,9 +116,9 @@
 
 "use client";
 
-import { getProgramsApi } from "../../axios/api";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { getProgramsApi } from "../../axios/api";
 
 export default function CorePrograms() {
   const [program, setProgram] = useState(null);
@@ -186,7 +186,7 @@ export default function CorePrograms() {
     <section className="relative w-full py-10 bg-green overflow-hidden">
       {/* Glow blobs background */}
       <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl" />
+        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-d7c097/20 blur-3xl" />
         <div className="absolute right-[-6rem] top-40 h-72 w-72 rounded-full bg-sky-500/20 blur-3xl" />
         <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 h-72 w-[28rem] rounded-full bg-indigo-500/15 blur-3xl" />
       </div>

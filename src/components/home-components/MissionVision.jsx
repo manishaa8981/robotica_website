@@ -215,11 +215,11 @@ export default function MottoPage() {
             {/* Vision Card */}
             <motion.div
               variants={scaleIn}
-              className="group bg-white rounded-3xl p-8 shadow-lg shadow-green-100/50 hover:shadow-xl hover:shadow-green-200/50 transition-all duration-300 border border-gray-100 hover:border-teal-100"
+              className="group bg-white rounded-3xl p-8 shadow-lg  hover:shadow-sm transition-all duration-300 border border-gray-200 hover:border-teal-100"
             >
               <div className="flex items-start gap-6">
                 <div className="shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-green flex items-center justify-center shadow-lg shadow-green-100/50 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 rounded-full bg-green flex items-center justify-center shadow-sm shadow-green-100/50 group-hover:scale-110 transition-transform duration-300">
                     <LuEye className="w-8 h-8 text-white" />
                   </div>
                 </div>
@@ -235,11 +235,11 @@ export default function MottoPage() {
             {/* Mission Card */}
             <motion.div
               variants={scaleIn}
-              className="group bg-white rounded-3xl p-8 shadow-lg shadow-blue-100/50 hover:shadow-xl hover:shadow-blue-200/50 transition-all duration-300 border border-gray-100 hover:border-blue-100"
+              className="group bg-white rounded-3xl p-8 shadow-lg  hover:shadow-sm transition-all duration-300 border border-gray-200 hover:border-teal-100"
             >
               <div className="flex items-start gap-6">
                 <div className="shrink-0">
-                  <div className="w-16 h-16 rounded-2xl bg-[#162056] flex items-center justify-center shadow-lg shadow-blue-200/50 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-16 h-16 rounded-full bg-green flex items-center justify-center shadow-lg shadow-green-200/50 group-hover:scale-110 transition-transform duration-100">
                     <LuTarget className="w-8 h-8 text-white" />
                   </div>
                 </div>

@@ -308,8 +308,8 @@ const ContactUs = () => {
         "
       >
         <div className="pointer-events-none absolute inset-0 opacity-60">
-          <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-emerald-500/20 blur-3xl" />
-          <div className="absolute right-[-6rem] top-40 h-72 w-72 rounded-full bg-emerald-500/20 blur-3xl" />
+          <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-d7c097/20 blur-3xl" />
+          <div className="absolute right-[-6rem] top-40 h-72 w-72 rounded-full bg-d7c097/20 blur-3xl" />
         </div>
         {/* Left Info Panel */}
         <div className="flex flex-col justify-between gap-8">
@@ -347,7 +347,7 @@ const ContactUs = () => {
               <>
                 {isLoading && (
                   <div className="flex flex-col items-center justify-center h-full gap-3">
-                    <div className="w-9 h-9 border-4 border-emerald-400/80 border-t-transparent rounded-full animate-spin" />
+                    <div className="w-9 h-9 border-4 border-d7c097/80 border-t-transparent rounded-full animate-spin" />
                     <span className="text-slate-300 text-xs sm:text-sm">
                       Loading map...
                     </span>
@@ -381,7 +381,7 @@ const ContactUs = () => {
           </div>
 
           {successMessage && (
-            <div className="mb-4 p-3 rounded-xl bg-emerald-500/10 border border-[#96D5FF] text-emerald-200 text-sm">
+            <div className="mb-4 p-3 rounded-xl bg-d7c097/10 border border-[#96D5FF] text-emerald-200 text-sm">
               {successMessage}
             </div>
           )}
@@ -440,7 +440,7 @@ const ContactUs = () => {
               type="submit"
               disabled={isBeingSubmitted}
               className="
-                mt-2 w-full py-3.5 md:py-4 rounded-4xl bg-[#00E285] text-black  font-semibold
+                mt-2 w-full py-3.5 md:py-4 rounded-4xl bg-[#d7c097] text-black  font-semibold
                 hover:from-[#96D5FF] hover:via-[#96D5FF] hover:to-sky-300
                 disabled:opacity-60 disabled:cursor-not-allowed
                 transition

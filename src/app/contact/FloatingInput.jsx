@@ -1,5 +1,3 @@
-import React from "react";
-
 const FloatingInput = ({
   label,
   name,
@@ -81,7 +79,7 @@ export default FloatingInput;
 //           peer w-full rounded-xl border bg-[#020617] border-[#1F2937]
 //           px-4 pt-5 pb-2 text-sm md:text-base text-slate-100
 //           placeholder-transparent
-//           focus:outline-none focus:ring-2 focus:ring-emerald-400/60 focus:border-emerald-400
+//           focus:outline-none focus:ring-2 focus:ring-d7c097/60 focus:border-d7c097
 //           transition
 //         "
 //       />
@@ -102,4 +100,3 @@ export default FloatingInput;
 // };
 
 // export default FloatingInput;
-
