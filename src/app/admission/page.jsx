@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
 import { getAdmissionsApi } from "../../axios/api";
 // import { ErrorHandler } from "@/components/error/ErrorHandler";
 
@@ -189,9 +189,9 @@ export default function AdmissionsPage() {
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center px-4 py-2 rounded-full bg-d7c097 hover:bg-d7c097 text-12px font-semibold text-[#020617] transition-colors"
+                  className="inline-flex items-center justify-center  gap-4 px-4 py-2 rounded-full bg-[#d7c097] hover:bg-d7c097 text-12px font-semibold text-[#020617] transition-colors"
                 >
-                  Talk to our admissions team
+                  Talk to our admissions team <MoveRight strokeWidth={1} />
                 </Link>
               </div>
             </motion.div>

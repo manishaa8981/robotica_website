@@ -113,7 +113,11 @@ export default function Navbar() {
           <NavLink href="/" label="Home" pathname={pathname} />
 
           {/* ABOUT US DROPDOWN */}
-          <Dropdown label="About Us" setOpenDropdown={setOpenDropdown} openDropdown={openDropdown}>
+          <Dropdown
+            label="About Us"
+            setOpenDropdown={setOpenDropdown}
+            openDropdown={openDropdown}
+          >
             <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">
               About Us
             </Link>
@@ -126,7 +130,11 @@ export default function Navbar() {
           </Dropdown>
 
           {/* PROGRAMS DROPDOWN */}
-          <Dropdown label="Programs">
+          <Dropdown
+            label="Programs"
+            setOpenDropdown={setOpenDropdown}
+            openDropdown={openDropdown}
+          >
             <Link href="/program" className="block px-4 py-2 hover:bg-gray-100">
               Programs
             </Link>

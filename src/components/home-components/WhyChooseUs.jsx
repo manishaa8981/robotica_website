@@ -127,7 +127,7 @@ export default function WhyChooseUs() {
                         {item.outcomes}
                       </p>
                       {item.seats && (
-                        <p className="mt-3 inline-flex items-center px-5 py-2 rounded-full bg-[#0df585] text-black text-sm font-semibold hover:bg-[#00E676] transition">
+                        <p className="mt-3 inline-flex items-center px-5 py-2 rounded-full bg-[#d7c097] text-black text-sm font-semibold hover:bg-[#d7c097]/80 transition">
                           <span className="font-semibold text-gray-700">
                             Seats:&nbsp;
                           </span>
@@ -148,7 +148,7 @@ export default function WhyChooseUs() {
                       {item.title}
                     </h3>
                     {item.description && (
-                      <p className="text-sm text-white/80 leading-relaxed mb-4">
+                      <p className="text-sm text-beige leading-relaxed mb-4">
                         {item.description}
                       </p>
                     )}
@@ -163,7 +163,7 @@ export default function WhyChooseUs() {
                   </div>
 
                   <div className="mt-6">
-                    <button className="inline-flex items-center px-5 gap-4 py-2 rounded-full bg-[#d7c097] text-black text-sm font-semibold hover:bg-green/30 transition">
+                    <button className="inline-flex items-center px-5 gap-4 py-2 rounded-full bg-[#d7c097] text-black text-sm font-semibold hover:bg-[#d7c097]/80 transition">
                       Explore this model <MoveRight strokeWidth={1} />
                     </button>
                   </div>
