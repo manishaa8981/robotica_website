@@ -8,12 +8,13 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 // Simple NavLink
-const NavLink = ({ href, label, pathname }) => {
+const NavLink = ({ href, label, pathname, onClick }) => {
   const isActive = pathname === href;
+
   return (
     <Link
       href={href}
-      onClick={() => setIsOpen(false)}
+      onClick={onClick}
       className="relative px-4 py-2 font-semibold text-sm lg:text-base"
     >
       <span
@@ -73,7 +74,15 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-200/40">
+    <nav
+      className="
+        fixed top-0 left-0 right-0 z-50
+        bg-white              /* solid on mobile */
+        md:bg-white/80        /* semi-transparent on md+ */
+        md:backdrop-blur-md
+        shadow-sm
+      "
+    >
       <div className="max-w-7xl mx-auto relative md:px-1 lg:px-2">
         {/* TOP BAR */}
         <div className="flex items-center justify-between h-20 relative z-20">
@@ -109,7 +118,7 @@ export default function Navbar() {
         </div>
 
         {/* DESKTOP NAV */}
-        <div className="hidden md:flex absolute items-center justify-center left-1/2 transform -translate-x-1/2 top-1 rounded-full px-2 py-1 lg:py-4 z-50 lg:gap-10 whitespace-nowrap">
+        <div className="hidden md:flex absolute items-center justify-center left-1/2 transform -translate-x-1/2 top-1  px-2 py-1 lg:py-4 z-50 lg:gap-10 whitespace-nowrap   ">
           <NavLink href="/" label="Home" pathname={pathname} />
 
           {/* ABOUT US DROPDOWN */}
@@ -146,9 +155,17 @@ export default function Navbar() {
             </Link>
           </Dropdown>
 
-          <NavLink href="/signaturelabs" label="Labs and Facilities" />
-          <NavLink href="/admission" label="Admission" />
-          <NavLink href="/gallery" label="Capstone Gallery" />
+          <NavLink
+            href="/signaturelabs"
+            label="Labs and Facilities"
+            pathname={pathname}
+          />
+          <NavLink href="/admission" label="Admission" pathname={pathname} />
+          <NavLink
+            href="/gallery"
+            label="Capstone Gallery"
+            pathname={pathname}
+          />
         </div>
       </div>
 
@@ -157,7 +174,7 @@ export default function Navbar() {
         {isOpen && (
           <>
             <motion.div
-              className="fixed inset-0 bg-black/40 z-40"
+              className="fixed inset-0 bg-black/40 z-40 md:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -165,7 +182,7 @@ export default function Navbar() {
             />
 
             <motion.div
-              className="fixed top-0 left-0 h-full w-2/3 bg-white shadow-md z-50 flex flex-col"
+              className="fixed top-0 left-0 h-full w-2/3 bg-white shadow-md z-50 flex flex-col md:hidden"
               variants={sidebarVariants}
               initial="hidden"
               animate="visible"
@@ -179,24 +196,79 @@ export default function Navbar() {
                 </button>
               </div>
 
-              {/* MOBILE MENU — Simple, no hover dropdown */}
+              {/* MOBILE MENU */}
               <div className="flex flex-col space-y-6 p-6 font-semibold text-sm">
-                <NavLink href="/" label="Home" />
+                <NavLink
+                  href="/"
+                  label="Home"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
 
                 {/* ABOUT US */}
-                <NavLink href="/about" label="About Us" />
-                <NavLink href="/faq" label="FAQ" />
-                <NavLink href="/contact" label="Contact Us" />
+                <NavLink
+                  href="/about"
+                  label="About Us"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
+                  href="/faq"
+                  label="FAQ"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
+                  href="/contact"
+                  label="Contact Us"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
 
                 {/* PROGRAMS */}
-                <NavLink href="/program" label="Programs" />
-                <NavLink href="/courses" label="Courses" />
-                <NavLink href="/tracks" label="Tracks" />
+                <NavLink
+                  href="/program"
+                  label="Programs"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
+                  href="/courses"
+                  label="Courses"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
+                  href="/tracks"
+                  label="Tracks"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
 
-                <NavLink href="/signaturelabs" label="Labs and Facilities" />
-                <NavLink href="/admission" label="Admission" />
-                <NavLink href="/gallery" label="Capstone Gallery" />
-                <NavLink href="/contact" label="Apply Now" />
+                <NavLink
+                  href="/signaturelabs"
+                  label="Labs and Facilities"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
+                  href="/admission"
+                  label="Admission"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
+                  href="/gallery"
+                  label="Capstone Gallery"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
+                  href="/contact"
+                  label="Apply Now"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
               </div>
             </motion.div>
           </>
