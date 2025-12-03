@@ -1,15 +1,14 @@
 "use client";
 import { Suspense, useEffect, useState } from "react";
 
+import Image from "next/image";
+import { useRouter, useSearchParams } from "next/navigation";
+import { getRecentNewsApi } from "../axios/api";
 import CorePrograms from "../components/home-components/CorePrograms";
 import { HeroBanner } from "../components/home-components/Hero";
 import MottoPage from "../components/home-components/MissionVision";
 import Objectives from "../components/home-components/Objectives";
 import WhyChooseUs from "../components/home-components/WhyChooseUs";
-import Image from "next/image";
-import { useRouter, useSearchParams } from "next/navigation";
-import { getRecentNewsApi } from "../axios/api";
-import PopularCourse from "../components/home-components/Courses";
 
 function HomeContent() {
   const [recentNews, setRecentNews] = useState([]);
@@ -58,13 +57,13 @@ function HomeContent() {
   }, []);
 
   return (
-    <section className="mb-10 md:mb-20 items-center flex flex-col gap-11 md:gap-20 h-max p-4 md:p-4 lg:p-4 xl:p-0">
+    <section className="mb-10 md:mb-20 items-center flex flex-col gap-8 md:gap-8 h-max p-4 md:p-4 lg:p-4 xl:p-0">
       <HeroBanner />
       <MottoPage />
       <Objectives />
       <CorePrograms />
       <WhyChooseUs />
-      <PopularCourse />
+      {/* <PopularCourse /> */}
       {/* {!loading && recentNews.length > 0 && (
         <div className="max-w-7xl mx-auto">
           <OurArticleComponent news={recentNews} />
