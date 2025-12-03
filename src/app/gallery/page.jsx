@@ -154,7 +154,7 @@ export default function GalleryView() {
   }, [selectedIndex, filteredGallery.length]);
 
   return (
-    <main className=" bg-beige mx-auto">
+    <main className=" bg-white mx-auto">
       <div className="pb-20 px-4 md:px-[6vw] xl:px-[8vw]">
         {loading ? (
           <SkeletonGallery />
@@ -172,8 +172,8 @@ export default function GalleryView() {
           </div>
         ) : (
           <div className="flex flex-col">
-            <div className="text-center mb-8">
-              <h1 className="text-5xl mt-10  sm:text-[32px] md:text-[40px] lg:text-5xl font-extrabold">
+            <div className="text-center mb-8 mt-10">
+              <h1 className="text-center text-[30px] sm:text-[36px] md:text-[44px] font-extrabold">
                 Capstone Gallery
               </h1>
             </div>

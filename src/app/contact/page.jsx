@@ -440,10 +440,9 @@ const ContactUs = () => {
               type="submit"
               disabled={isBeingSubmitted}
               className="
-                mt-2 w-full py-3.5 md:py-4 rounded-4xl bg-[#d7c097] text-black  font-semibold
-                hover:from-[#96D5FF] hover:via-[#96D5FF] hover:to-sky-300
-                disabled:opacity-60 disabled:cursor-not-allowed
-                transition
+                mt-2 w-full py-3.5 md:py-4 rounded-4xl bg-beige border-2 border-green text-green  font-semibold
+                hover:bg-beige/80 hover:text-black
+               
               "
             >
               {isBeingSubmitted ? "Sending..." : "Send Message"}
