@@ -55,12 +55,20 @@ export default function AdmissionsPage() {
   }
 
   return (
-    <main className="w-full bg-beige text-navy">
+    <main className="w-full bg-white text-navy">
+      <h1 className="text-5xl my-10 text-center text-[30px] sm:text-[36px] md:text-[44px] font-extrabold leading-tight mb-4 ">
+        {data.mainTitle}
+      </h1>
+      <div className="flex justify-center gap-2 mt-6 mb-10">
+        <span className="w-2 h-2 rounded-full bg-green" />
+        <span className="w-8 h-2 rounded-full bg-green" />
+        <span className="w-2 h-2 rounded-full bg-green" />
+      </div>
       {/* Hero */}
       <section
-        className="relative h-60  md:pt-10 md:pb-10"
+        className="relative h-60 backdrop-blur-md bg-[rgba(245,241,230,0.15)] md:pt-10 md:pb-10"
         style={{
-          backgroundColor: "rgba(245, 241, 230, 0.6)",
+          // backgroundColor: "rgba(245, 241, 230, 0.6)",
           backgroundImage: `url('/bg-texture-lab.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
@@ -74,13 +82,9 @@ export default function AdmissionsPage() {
             animate="visible"
             className="max-w-3xl mx-auto"
           >
-            <h1 className="text-5xl text-center sm:text-[40px] md:text-[48px] lg:text-5xl font-extrabold leading-tight mb-4 text-amber-100">
-              {data.mainTitle}
-            </h1>
-
             {data.load && (
-              <p className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-green-600 text-xs sm:text-sm text-navy mb-4 mx-auto">
-                <span className="inline-block h-2 w-2 rounded-full bg-green-600" />
+              <p className="inline-flex items-center text-justify gap-2 px-4 py-5 rounded-full bg-white d7c097 border-green text-s sm:text-sm text-green mt-7  mx-auto ">
+                <span className="inline-block h-2 w-2 rounded-full bg-green" />
                 {Array.isArray(data.load) ? data.load.join(" • ") : data.load}
               </p>
             )}
@@ -107,22 +111,22 @@ export default function AdmissionsPage() {
             {/* Prerequisites */}
             <motion.div
               variants={fadeUp}
-              className="rounded-2xl border border-green-600 bg-green/100 p-6 md:p-7 flex flex-col"
+              className="rounded-2xl  bg-beige p-6 md:p-7 flex flex-col"
             >
-              <p className="font-bold uppercase tracking-[0.18em] text-[#00E285] mb-2">
+              <p className="font-bold uppercase tracking-[0.18em] text-green mb-2">
                 Prerequisites
               </p>
-              <h2 className="font-semibold text-lg text-beige mb-3">
+              <h2 className="font-bold text-lg text-black mb-3">
                 Who this programme is for
               </h2>
-              <p className="text-xs text-amber-100 mb-4">
+              <p className="text-[14px] text-gray-900 mb-4">
                 Check if your background, skills, and interests match what we
                 expect from incoming learners.
               </p>
-              <ul className="space-y-2.5 text-sm text-beige">
+              <ul className="space-y-2.5 text-sm text-black">
                 {(data.prerequisites || []).map((p, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="mt-[7px] inline-block h-6px w-6px rounded-full bg-[#00E285]" />
+                    <span className="mt-[7px] inline-block h-6px w-6px rounded-full bg-green" />
                     <span>{p}</span>
                   </li>
                 ))}
@@ -132,22 +136,22 @@ export default function AdmissionsPage() {
             {/* Grading & Assessment */}
             <motion.div
               variants={fadeUp}
-              className="rounded-2xl border border-green-600 bg-green/100 p-6 md:p-7 flex flex-col"
+              className="rounded-2xl bg-beige p-6 md:p-7 flex flex-col"
             >
-              <p className="font-bold uppercase tracking-[0.18em] text-[#00E285] mb-2">
+              <p className="font-bold uppercase tracking-[0.18em] text-green mb-2">
                 Grading & Assessment
               </p>
-              <h2 className="font-semibold text-beige text-lg mb-3">
+              <h2 className="font-bold text-black text-lg mb-3">
                 How you&apos;ll be evaluated
               </h2>
-              <p className="text-xs text-amber-100 mb-4">
+              <p className="text-[14px] text-gray-900 mb-4">
                 You&apos;ll be evaluated through a blend of projects, practical
                 work, and checks for understanding.
               </p>
-              <ul className="space-y-2.5 text-sm text-[#E5E7EB]">
+              <ul className="space-y-2.5 text-sm text-black">
                 {(data.grading || []).map((g, i) => (
                   <li key={i} className="flex gap-2">
-                    <span className="mt-[7px] inline-block h-6px w-6px rounded-full bg-[#00E285]" />
+                    <span className="mt-[7px] inline-block h-6px w-6px rounded-full bg-green" />
                     <span>{g}</span>
                   </li>
                 ))}
@@ -157,16 +161,16 @@ export default function AdmissionsPage() {
             {/* Badges & credentials */}
             <motion.div
               variants={fadeUp}
-              className="rounded-2xl border border-green-600 bg-green/100 p-6 md:p-7 flex flex-col justify-between"
+              className="rounded-2xl  bg-beige p-6 md:p-7 flex flex-col justify-between"
             >
               <div>
-                <p className="font-bold uppercase tracking-[0.18em] text-[#00E285] mb-2">
+                <p className="font-bold uppercase tracking-[0.18em] text-green mb-2">
                   Badges & Credentials
                 </p>
-                <h2 className="font-semibold text-beige text-lg mb-3">
+                <h2 className="font-bold text-black text-lg mb-3">
                   What you leave with
                 </h2>
-                <p className="text-xs text-amber-100 mb-4">
+                <p className="text-[14px] text-gray-950 mb-4">
                   Showcase your skills with credentials that highlight your
                   hands-on experience and readiness for industry.
                 </p>
@@ -174,7 +178,7 @@ export default function AdmissionsPage() {
                   {(data.badges || []).map((b, i) => (
                     <span
                       key={i}
-                      className="text-11px px-3 py-1 rounded-full text-beige bg-white/10 border border-white/15"
+                      className="text-[12px] px-5 py-3 rounded-full text-beige bg-green border border-white/15"
                     >
                       {b}
                     </span>
@@ -183,13 +187,13 @@ export default function AdmissionsPage() {
               </div>
 
               {/* Tiny CTA block at bottom */}
-              <div className="mt-6 pt-4 border-t border-[#00E285] text-xs text-gray-200">
+              <div className="mt-6 pt-4 border-t border-green text-xs text-black">
                 <p className="mb-2">
                   Ready to take the next step towards this programme?
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center  gap-4 px-4 py-2 rounded-full bg-[#d7c097] hover:bg-d7c097 text-12px font-semibold text-[#020617] transition-colors"
+                  className="inline-flex items-center justify-center  gap-4 px-4 py-2 rounded-full bg-white border-green border-2 hover:bg-d7c097 text-12px font-semibold text-green transition-colors"
                 >
                   Talk to our admissions team <MoveRight strokeWidth={1} />
                 </Link>
@@ -199,23 +203,23 @@ export default function AdmissionsPage() {
         </div>
       </section>
       {/* Fees & Scholarships */}
-      <section className="pb-10 bg-white">
+      {/* <section className="pb-10 bg-white">
         <div className="max-w-6xl mx-auto px-4 lg:px-0">
-          <div className="rounded-2xl border border-green-600 bg-green/100 p-6 md:p-8">
-            <h2 className="text-2xl font-extrabold text-beige mb-6">
+          <div className="rounded-2xl  bg-beige p-6 md:p-8">
+            <h2 className="text-2xl font-extrabold text-black mb-6">
               Fees & Scholarships
             </h2>
 
-            <ul className="space-y-3 text-sm text-beige">
+            <ul className="space-y-3 text-sm text-black">
               <li className="flex gap-2">
-                <span className="mt-7px h-6px w-6px rounded-full bg-[#00E285]" />
+                <span className="mt-7px h-6px w-6px rounded-full bg-black" />
                 <span>
                   <strong>Annual Tuition:</strong> USD $4,000
                 </span>
               </li>
 
               <li className="flex gap-2">
-                <span className="mt-7px h-6px w-6px rounded-full bg-[#00E285]" />
+                <span className="mt-7px h-6px w-6px rounded-full bg-black" />
                 <span>
                   <strong>South Asian Scholarship:</strong> 50% tuition for the
                   first 20 students (max 5 scholarships per country)
@@ -246,7 +250,7 @@ export default function AdmissionsPage() {
             </ul>
           </div>
         </div>
-      </section>
+      </section> */}
     </main>
   );
 }
