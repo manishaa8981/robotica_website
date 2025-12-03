@@ -41,7 +41,7 @@ function AboutUs() {
   return (
     <section className="items-center bg-white flex flex-col h-max p-4 md:p-4 lg:p-4 xl:p-0">
       {data ? (
-        <main className="mx-auto max-w-6xl px-4 lg:px-6 pt-16 w-full">
+        <main className="mx-auto max-w-6xl px-4 lg:px-6 pt-10 pb-10 w-full">
           {/* --- TITLE AT TOP --- */}
           <div className="text-center mb-12">
             <h1 className="text-[30px] sm:text-[36px] md:text-[44px] font-extrabold leading-tight text-black">
