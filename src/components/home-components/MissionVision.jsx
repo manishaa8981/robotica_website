@@ -126,7 +126,7 @@ export default function MottoPage() {
             </span>
           </motion.div> */}
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+          <h1 className="text-center text-[30px] sm:text-[36px] md:text-[44px] font-extrabold text-gray-900 mb-4">
             {heading}
           </h1>
 
@@ -215,7 +215,7 @@ export default function MottoPage() {
             {/* Vision Card */}
             <motion.div
               variants={scaleIn}
-              className="group bg-white rounded-3xl p-8 shadow-lg  hover:shadow-sm transition-all duration-300 border border-gray-200 hover:border-teal-100"
+              className="group bg-beige rounded-3xl p-8 shadow-lg shadow-beige-50  hover:shadow-sm transition-all duration-300"
             >
               <div className="flex items-start gap-6">
                 <div className="shrink-0">
@@ -224,10 +224,10 @@ export default function MottoPage() {
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-bold text-black mb-3">
                     Our Vision
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">{visionText}</p>
+                  <p className="text-balck leading-relaxed">{visionText}</p>
                 </div>
               </div>
             </motion.div>
@@ -235,19 +235,19 @@ export default function MottoPage() {
             {/* Mission Card */}
             <motion.div
               variants={scaleIn}
-              className="group bg-white rounded-3xl p-8 shadow-lg  hover:shadow-sm transition-all duration-300 border border-gray-200 hover:border-teal-100"
+              className="group bg-beige rounded-3xl p-8 shadow-lg shadow-beige-50  hover:shadow-sm transition-all duration-300"
             >
               <div className="flex items-start gap-6">
                 <div className="shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-green flex items-center justify-center shadow-lg shadow-green-200/50 group-hover:scale-110 transition-transform duration-100">
+                  <div className="w-16 h-16 rounded-full bg-green flex items-center justify-center shadow-sm shadow-green-100/50 group-hover:scale-110 transition-transform duration-300">
                     <LuTarget className="w-8 h-8 text-white" />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-2xl font-bold text-black mb-3">
                     Our Mission
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">{missionText}</p>
+                  <p className="text-balck leading-relaxed">{missionText}</p>
                 </div>
               </div>
             </motion.div>
