@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, GraduationCap, MoveRight, Timer } from "lucide-react";
+import { Award, GraduationCap, Timer } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getWhyChooseUsApi } from "../../axios/api";
@@ -51,7 +51,7 @@ export default function WhyChooseUs() {
   const heroImage = section.heroImage || section.items?.[0]?.image || null;
 
   return (
-    <section className="w-full py-12">
+    <section className="w-full">
       <div className="mx-auto max-w-7xl w-full px-4 lg:px-0">
         {/* Title */}
         <motion.div
@@ -61,7 +61,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full flex flex-col items-center mb-10"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold text-center text-[#111827]">
+          <h1 className="text-center text-[30px] sm:text-[36px] md:text-[44px] font-extrabold text-black">
             {section.mainTitle}
           </h1>
           <div className="flex justify-center gap-2 mt-6">
@@ -81,19 +81,20 @@ export default function WhyChooseUs() {
         >
           {section.items?.map((item, idx) => (
             <motion.div key={idx} variants={scaleIn} className="rounded-3xl">
-              <div className="grid gap-6 md:grid-cols-3 items-stretch">
-                {/* LEFT SIDE – three light cards */}
-                <div className="md:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {/* WRAPPER FOR THIS ITEM */}
+              <div className="space-y-6">
+                {/* TOP ROW – three light cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   {/* Duration */}
                   {item.duration && (
-                    <div className="bg-[#F5F7FB] border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-                      <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-1">
+                    <div className="bg-beige rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                      <p className="text-xs uppercase tracking-[0.18em] text-green mb-1">
                         <Timer className="size-15" />
                       </p>
-                      <h3 className="text-lg font-semibold text-[#111827] mb-2">
+                      <h3 className="text-lg font-bold text-black mb-2">
                         Programme Duration
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-[15px] text-black leading-relaxed">
                         {item.duration}
                       </p>
                     </div>
@@ -101,34 +102,34 @@ export default function WhyChooseUs() {
 
                   {/* Internships */}
                   {item.internship && (
-                    <div className="bg-[#F5F7FB] border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-                      <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-1">
+                    <div className="bg-beige rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                      <p className="text-xs uppercase tracking-[0.18em] text-green mb-1">
                         <GraduationCap className="size-15" />
                       </p>
-                      <h3 className="text-lg font-semibold text-[#111827] mb-2">
+                      <h3 className="text-lg font-bold text-black mb-2">
                         Industry Exposure
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-[15px] text-justify text-black leading-relaxed">
                         {item.internship}
                       </p>
                     </div>
                   )}
 
-                  {/* Outcomes (full-width like the 100+ courses card) */}
+                  {/* Outcomes */}
                   {item.outcomes && (
-                    <div className="col-span-1 sm:col-span-2 bg-[#F5F7FB] border border-gray-200 rounded-2xl p-6 shadow-sm hover:shadow-md transition">
-                      <p className="text-xs uppercase tracking-[0.18em] text-gray-500 mb-1">
+                    <div className="bg-beige rounded-2xl p-6 shadow-sm hover:shadow-md transition">
+                      <p className="text-xs uppercase tracking-[0.18em] text-green mb-1">
                         <Award className="size-15" />
                       </p>
-                      <h3 className="text-lg font-semibold text-[#111827] mb-2">
+                      <h3 className="text-lg font-bold text-black mb-2">
                         What You&apos;ll Graduate With
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-[15px] text-justify text-black leading-relaxed">
                         {item.outcomes}
                       </p>
                       {item.seats && (
-                        <p className="mt-3 inline-flex items-center px-5 py-2 rounded-full bg-[#d7c097] text-black text-sm font-semibold hover:bg-[#d7c097]/80 transition">
-                          <span className="font-semibold text-gray-700">
+                        <p className="mt-3 inline-flex items-center px-5 py-2 rounded-full bg-green text-white text-sm font-semibold hover:bg-green/80 transition">
+                          <span className="font-bold text-white">
                             Seats:&nbsp;
                           </span>
                           {item.seats}
@@ -138,22 +139,19 @@ export default function WhyChooseUs() {
                   )}
                 </div>
 
-                {/* RIGHT SIDE – dark highlight card */}
-                <div className="bg-[#73af6f] text-white rounded-2xl p-7 md:p-8 flex flex-col justify-between">
+                {/* SECOND ROW – dark highlight card, full width */}
+                <div className="bg-green text-white rounded-2xl p-7 md:p-8 flex flex-col justify-between">
                   <div>
-                    {/* <p className="text-xs uppercase tracking-[0.2em] text-blue-200 mb-3">
-                      Track Overview
-                    </p> */}
-                    <h3 className="text-2xl font-semibold leading-snug mb-3">
+                    <h3 className="text-2xl font-bold leading-snug mb-3">
                       {item.title}
                     </h3>
                     {item.description && (
-                      <p className="text-sm text-beige leading-relaxed mb-4">
+                      <p className="text-[15px] text-justify text-beige leading-relaxed mb-4">
                         {item.description}
                       </p>
                     )}
                     {item.seats && !item.outcomes && (
-                      <p className="text-xs text-blue-100">
+                      <p className="text-xs text-justify text-blue-100">
                         <span className="font-semibold text-white">
                           Seats:&nbsp;
                         </span>
@@ -162,11 +160,11 @@ export default function WhyChooseUs() {
                     )}
                   </div>
 
-                  <div className="mt-6">
-                    <button className="inline-flex items-center px-5 gap-4 py-2 rounded-full bg-[#d7c097] text-black text-sm font-semibold hover:bg-[#d7c097]/80 transition">
+                  {/* <div className="mt-6">
+                    <button className="inline-flex items-center px-5 gap-4 py-2 rounded-full border-green bg-white text-black text-sm font-semibold hover:bg-[#d7c097]/80 transition">
                       Explore this model <MoveRight strokeWidth={1} />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </motion.div>
@@ -185,9 +183,9 @@ export default function WhyChooseUs() {
             <Image
               src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${heroImage}`}
               alt="Operating model hero"
-              width={1600}
-              height={600}
-              className="w-full h-80 md:h-[420px] lg:h-[800px] object-cover"
+              width={2000}
+              height={400}
+              className="w-full h-80 md:h-[400px] lg:h-[600px] object-cover"
             />
           </motion.div>
         )}
