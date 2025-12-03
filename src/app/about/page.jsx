@@ -42,9 +42,23 @@ function AboutUs() {
     <section className="items-center bg-white flex flex-col h-max p-4 md:p-4 lg:p-4 xl:p-0">
       {data ? (
         <main className="mx-auto max-w-6xl px-4 lg:px-6 pt-16 w-full">
-          {/* === Top About Section (2 images left, text right) === */}
+          {/* --- TITLE AT TOP --- */}
+          <div className="text-center mb-12">
+            <h1 className="text-[30px] sm:text-[36px] md:text-[44px] font-extrabold leading-tight text-black">
+              {data.title}
+            </h1>
+
+            {/* green decorative lines */}
+            <div className="flex items-center justify-center gap-2 mt-4">
+              <span className="w-2 h-2 rounded-full bg-green" />
+              <span className="w-8 h-2 rounded-full bg-green" />
+              <span className="w-2 h-2 rounded-full bg-green" />
+            </div>
+          </div>
+
+          {/* --- LEFT / RIGHT FLEX SECTION --- */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* LEFT: two vertical cards */}
+            {/* LEFT IMAGES */}
             <div className="flex gap-6 justify-center lg:justify-start">
               {/* First image */}
               <div className="relative w-40 sm:w-56 h-64 sm:h-80 rounded-3xl overflow-hidden shadow-lg">
@@ -52,7 +66,7 @@ function AboutUs() {
                   src={
                     data?.image?.[0]
                       ? `${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${data.image[0]}`
-                      : "/about-1.png" // fallback if no image[0]
+                      : "/about-1.png"
                   }
                   alt="About Robotica image 1"
                   fill
@@ -60,13 +74,13 @@ function AboutUs() {
                 />
               </div>
 
-              {/* Second image (slightly lower) */}
+              {/* Second image */}
               <div className="relative w-40 sm:w-56 h-64 sm:h-80 rounded-3xl overflow-hidden shadow-lg mt-8">
                 <Image
                   src={
                     data?.image?.[1]
                       ? `${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${data.image[1]}`
-                      : "/about-2.png" // fallback if no image[1]
+                      : "/about-2.png"
                   }
                   alt="About Robotica image 2"
                   fill
@@ -75,18 +89,8 @@ function AboutUs() {
               </div>
             </div>
 
-            {/* RIGHT: title + description */}
+            {/* RIGHT Description */}
             <div className="text-left">
-              <h1 className="text-[30px] sm:text-[36px] md:text-[44px] font-extrabold leading-tight mb-4 text-black">
-                {data.title}
-              </h1>
-
-              <div className="flex gap-2 mt-4 mb-8">
-                <span className="w-2 h-2 rounded-full bg-green" />
-                <span className="w-8 h-2 rounded-full bg-green" />
-                <span className="w-2 h-2 rounded-full bg-green" />
-              </div>
-
               <div
                 className="max-w-none text-black text-justify leading-relaxed"
                 dangerouslySetInnerHTML={{ __html: data.description }}
@@ -94,7 +98,7 @@ function AboutUs() {
             </div>
           </div>
 
-          {/* === Optional Gallery for any remaining images (from index 2 onwards) === */}
+          {/* --- OPTIONAL GALLERY FOR MORE IMAGES --- */}
           {data?.image?.length > 2 && (
             <section className="mt-16">
               <h2 className="text-2xl font-semibold text-black mb-4">
