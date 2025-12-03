@@ -14,9 +14,9 @@
   --color-navy: #101840;
   --color-beige: #eef2e6;
     /* --color-beige: #e7deaf; */
-  --color-green: #007e6e;
+  /* --color-green: #007e6e; */
 
-  /* --color-green: #1a6863; */
+  --color-green: #1a6863;
 }
 
 body {
@@ -78,4 +78,17 @@ h6 {
   color: white;
   background-color: red;
   cursor: pointer;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+/* Hide scrollbar entirely */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
