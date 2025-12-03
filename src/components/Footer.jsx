@@ -1,6 +1,5 @@
 "use client";
 
-import { getInstitutionProfileApi } from "../axios/api";
 import { Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +10,7 @@ import {
   FaLinkedinIn,
   FaWhatsapp,
 } from "react-icons/fa";
+import { getInstitutionProfileApi } from "../axios/api";
 
 export const Footer = () => {
   const [data, setData] = useState(null);
@@ -28,12 +28,12 @@ export const Footer = () => {
     <footer className="bg-linear-to-b from-[#0e413d] to-green text-white pt-12 overflow-hidden">
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid gap-10 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {/* Logo */}
-        <div className=" rounded-xl items-center h-fit  shadow-[0_10px_10px_beige/40] bg-beige/20 backdrop-blur-sm w-fit">
+        <div className=" rounded-xl items-center h-fit  shadow-[0_10px_10px_beige/40] bg-white backdrop-blur-sm w-fit">
           <Image
             src="/brandlogo.png"
             alt="logo"
-            width={150}
-            height={80}
+            width={120}
+            height={60}
             className="mb-4 rounded-lg "
           />
 

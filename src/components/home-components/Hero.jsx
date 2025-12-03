@@ -97,7 +97,7 @@ export const HeroBanner = () => {
               </a>
               <a
                 href="/labs"
-                className="bg-[#d7c097] hover:bg-[#d7c097]-600 shadow-sm font-semibold px-6 py-3 rounded-full transition text-black"
+                className="bg-white border-green border-2 hover:bg-[#d7c097]-600 shadow-sm font-semibold px-6 py-3 rounded-full transition text-green"
               >
                 Book a Lab Tour
               </a>
