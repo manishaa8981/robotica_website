@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { getAllTeamMembersApi } from "../../axios/api";
+import { useEffect, useState } from "react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -11,7 +11,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FaEnvelope, FaThreads } from "react-icons/fa6";
-import { motion } from "framer-motion";
+import { getAllTeamMembersApi } from "../../axios/api";
 
 export default function Founders() {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -82,7 +82,7 @@ export default function Founders() {
           <motion.div
             key={member._id}
             variants={cardVariants}
-            className="flex flex-col sm:flex-row items-center bg-white rounded-2xl p-6 shadow-md border border-gray-200 w-full md:w-[48%] min-h-[220px]"
+            className="flex flex-col sm:flex-row items-center bg-beige rounded-2xl p-6 shadow-md  w-full md:w-[48%] min-h-[220px]"
           >
             {/* Image */}
             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl shadow-md overflow-hidden">
@@ -102,7 +102,7 @@ export default function Founders() {
             <div className="flex-1 text-center sm:text-left">
               <h3 className="font-bold text-xl md:text-2xl">{member.name}</h3>
 
-              <p className="text-[15px] capitalize mb-3 text-[#151515]">
+              <p className="text-[15px] capitalize mb-3 text-black">
                 {member.role}
               </p>
 

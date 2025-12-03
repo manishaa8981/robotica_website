@@ -1,5 +1,5 @@
 // clientApi.js
-'use client'
+"use client";
 import axios from "axios";
 
 const baseURL = process.env.NEXT_PUBLIC_APP_API_URL;
@@ -60,7 +60,7 @@ export const getMottoContentApi = () => Api.get("/api/motto/get");
 export const getMessageApi = () => Api.get("/api/message/get");
 
 //About Us API
-export const getAboutUsApi = () => Api.get("/api/aboutus");
+export const getAboutUsApi = () => Api.get("/api/aboutus/get");
 
 // Contact Us API
 export const sendContactFormApi = (data) => Api.post("/api/contact/send", data);

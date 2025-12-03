@@ -91,13 +91,13 @@ export const HeroBanner = () => {
               </a> */}
               <a
                 href="/contact"
-                className="bg-green hover:bg-green text-white px-8 py-3 shadow-sm rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-xl"
+                className="bg-green hover:bg-green/80 text-white px-8 py-3 shadow-sm rounded-full font-semibold transition-all duration-300 hover:shadow-xl"
               >
                 Apply Now
               </a>
               <a
                 href="/labs"
-                className="bg-white border-green border-2 hover:bg-[#d7c097]-600 shadow-sm font-semibold px-6 py-3 rounded-full transition text-green"
+                className="bg-white border-green border-2 hover:bg-white/80 shadow-sm font-semibold px-6 py-3 rounded-full transition text-green"
               >
                 Book a Lab Tour
               </a>
