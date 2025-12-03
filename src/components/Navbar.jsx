@@ -31,12 +31,13 @@ const NavLink = ({ href, label, pathname, onClick }) => {
 };
 
 // Desktop Dropdown Component (lg+)
+// Desktop Dropdown Component (lg+)
 const Dropdown = ({ label, children, setOpenDropdown, openDropdown }) => {
   const isOpenDrop = openDropdown === label;
 
   return (
     <div
-      className="relative group"
+      className="relative"
       onMouseEnter={() => setOpenDropdown(label)}
       onMouseLeave={() => setOpenDropdown(null)}
     >
@@ -51,7 +52,7 @@ const Dropdown = ({ label, children, setOpenDropdown, openDropdown }) => {
       </button>
 
       {isOpenDrop && (
-        <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-md border w-30 whitespace-nowrap z-50 py-2">
+        <div className="absolute left-0 top-full bg-white shadow-lg rounded-md border whitespace-nowrap z-50 py-2">
           {children}
         </div>
       )}
