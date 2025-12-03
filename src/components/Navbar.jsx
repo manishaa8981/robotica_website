@@ -51,7 +51,7 @@ const Dropdown = ({ label, children, setOpenDropdown, openDropdown }) => {
       </button>
 
       {isOpenDrop && (
-        <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-md border w-40 whitespace-nowrap z-50 py-2">
+        <div className="absolute left-0 mt-2 bg-white shadow-lg rounded-md border w-30 whitespace-nowrap z-50 py-2">
           {children}
         </div>
       )}
@@ -74,8 +74,8 @@ export default function Navbar() {
     <nav
       className="
         fixed top-0 left-0 right-0 z-50
-        bg-white              /* solid on mobile & tablet */
-        lg:bg-white/80        /* semi-transparent on lg+ */
+        bg-white              
+        lg:bg-white/80        
         lg:backdrop-blur-md
         shadow-sm
       "
@@ -185,12 +185,7 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
             >
               <div className="flex items-center justify-between p-4 border-b">
-                <Image
-                  src="/brandlogo.png"
-                  alt="Logo"
-                  width={90}
-                  height={20}
-                />
+                <Image src="/brandlogo.png" alt="Logo" width={90} height={20} />
                 <button onClick={() => setIsOpen(false)}>
                   <X size={24} />
                 </button>

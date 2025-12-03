@@ -57,12 +57,12 @@ export default function TracksSpotlightSection() {
                 TRACK SPOTLIGHT
               </p> */}
 
-              <h2 className=" text-[30px] sm:text-[36px] md:text-[44px]  leading-tight font-extrabold mb-4 text-black ">
+              <h2 className=" text-[30px] sm:text-[36px] md:text-[44px] leading-tight font-extrabold mb-4 text-black ">
                 Advanced Robotics
                 <br />
                 Specialization Tracks
               </h2>
-
+             
               <p className="text-sm sm:text-[15px] text-black text-justify max-w-md mb-6">
                 Choose from focused, industry-aligned tracks that take you deep
                 into the systems that power real-world robots – from factory
@@ -85,7 +85,7 @@ export default function TracksSpotlightSection() {
 
             {/* CTA button */}
             <div className="mt-8 px-40">
-              <button className="inline-flex items-center px-5 gap-4 d7c097 border-green py-2 rounded-full bg-white text-green text-sm font-semibold hover:bg-green/200 transition">
+              <button className="inline-flex items-center px-5 gap-4 border-2 border-green py-2 rounded-full bg-white text-green text-sm font-semibold hover:bg-green/200 transition">
                 Explore this model <MoveRight strokeWidth={1} />
               </button>
             </div>

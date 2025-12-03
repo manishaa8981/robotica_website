@@ -74,7 +74,7 @@ export const HeroBanner = () => {
             <motion.p
               variants={textVariant}
               custom={2}
-              className="text-navy text-lg md:text-xl lg:text-xl mb-8"
+              className="text-navy text-lg md:text-xl lg:text-xl text-justify mb-8"
             >
               {banner.description}
             </motion.p>
@@ -96,7 +96,7 @@ export const HeroBanner = () => {
                 Apply Now
               </a>
               <a
-                href="/labs"
+                href="/signaturelabs"
                 className="bg-white border-green border-2 hover:bg-white/80 shadow-sm font-semibold px-6 py-3 rounded-full transition text-green"
               >
                 Book a Lab Tour

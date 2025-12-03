@@ -65,36 +65,32 @@ export default function AdmissionsPage() {
         <span className="w-2 h-2 rounded-full bg-green" />
       </div>
       {/* Hero */}
-      <section
-        className="relative h-60 backdrop-blur-md bg-[rgba(245,241,230,0.15)] md:pt-10 md:pb-10"
-        style={{
-          // backgroundColor: "rgba(245, 241, 230, 0.6)",
-          backgroundImage: `url('/bg-texture-lab.jpg')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
-      >
-        <div className="w-full mx-auto text-center">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="visible"
-            className="max-w-3xl mx-auto"
-          >
-            {data.load && (
-              <p className="inline-flex items-center text-justify gap-2 px-4 py-5 rounded-full bg-white d7c097 border-green text-s sm:text-sm text-green mt-7  mx-auto ">
-                <span className="inline-block h-2 w-2 rounded-full bg-green" />
-                {Array.isArray(data.load) ? data.load.join(" • ") : data.load}
-              </p>
-            )}
+      <section className="relative overflow-hidden">
+        {/* Background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/bg-texture-lab.jpg')",
+          }}
+        />
 
-            {/* <p className="text-m md:text-base text-center text-gray-600 max-w-xl mx-auto">
-              Understand who this programme is for, how you&apos;ll be assessed,
-              and what credentials you&apos;ll walk away with when you complete
-              it.
-            </p> */}
-          </motion.div>
+        {/* Blur + tint overlay with centered content */}
+        <div className="relative h-60 md:pt-10 md:pb-10 backdrop-blur-md bg-[rgba(247,245,238,0.3)]">
+          <div className="w-full h-full flex items-center justify-center">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="max-w-3xl mx-auto text-center"
+            >
+              {data.load && (
+                <p className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white border border-green text-sm text-green">
+                  <span className="inline-block h-2 w-2 rounded-full bg-green" />
+                  {Array.isArray(data.load) ? data.load.join(" • ") : data.load}
+                </p>
+              )}
+            </motion.div>
+          </div>
         </div>
       </section>
 
