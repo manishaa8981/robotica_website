@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-
+import brandlogo from "../../public/brandlogo.png";
 // Simple NavLink
 const NavLink = ({ href, label, pathname, onClick }) => {
   const isActive = pathname === href;
@@ -87,7 +87,7 @@ export default function Navbar() {
           {/* LOGO */}
           <div className="flex items-center">
             <Image
-              src="/brandlogo.png"
+              src={brandlogo}
               alt="Robotica Institute of Technology"
               width={200}
               height={200}
@@ -186,7 +186,7 @@ export default function Navbar() {
               transition={{ duration: 0.3 }}
             >
               <div className="flex items-center justify-between p-4 border-b">
-                <Image src="/brandlogo.png" alt="Logo" width={90} height={20} />
+                <Image src={brandlogo} alt="Logo" width={90} height={20} />
                 <button onClick={() => setIsOpen(false)}>
                   <X size={24} />
                 </button>

@@ -69,9 +69,9 @@ function AboutUs() {
                       : "/about-1.png"
                   }
                   alt="About Robotica image 1"
-                  
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
+
               </div>
 
               {/* Second image */}
@@ -83,7 +83,7 @@ function AboutUs() {
                       : "/about-2.png"
                   }
                   alt="About Robotica image 2"
-                  className="object-cover"
+                  className="w-full h-full object-cover"
                 />
               </div>
             </div>
@@ -113,7 +113,7 @@ function AboutUs() {
                     <img
                       src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${img}`}
                       alt={`About Image ${index + 3}`}
-                      
+
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>
