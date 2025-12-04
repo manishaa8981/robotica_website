@@ -62,28 +62,27 @@ function AboutUs() {
             <div className="flex gap-6 justify-center lg:justify-start">
               {/* First image */}
               <div className="relative w-40 sm:w-56 h-64 sm:h-80 rounded-3xl overflow-hidden shadow-lg">
-                <Image
+                <img
                   src={
                     data?.image?.[0]
                       ? `${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${data.image[0]}`
                       : "/about-1.png"
                   }
                   alt="About Robotica image 1"
-                  fill
+                  
                   className="object-cover"
                 />
               </div>
 
               {/* Second image */}
               <div className="relative w-40 sm:w-56 h-64 sm:h-80 rounded-3xl overflow-hidden shadow-lg mt-8">
-                <Image
+                <img
                   src={
                     data?.image?.[1]
                       ? `${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${data.image[1]}`
                       : "/about-2.png"
                   }
                   alt="About Robotica image 2"
-                  fill
                   className="object-cover"
                 />
               </div>
@@ -111,10 +110,10 @@ function AboutUs() {
                     key={index}
                     className="relative w-full h-64 rounded-xl overflow-hidden shadow-md group"
                   >
-                    <Image
+                    <img
                       src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${img}`}
                       alt={`About Image ${index + 3}`}
-                      fill
+                      
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   </div>

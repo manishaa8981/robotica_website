@@ -180,7 +180,7 @@ export default function WhyChooseUs() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="w-full rounded-3xl overflow-hidden"
           >
-            <Image
+            <img
               src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${heroImage}`}
               alt="Operating model hero"
               width={2000}

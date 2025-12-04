@@ -86,10 +86,10 @@ export default function Founders() {
           >
             {/* Image */}
             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl shadow-md overflow-hidden">
-              <Image
+              <img
                 src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${member.image}`}
                 alt={member.name}
-                fill
+                
                 className="object-cover object-top"
               />
             </div>
