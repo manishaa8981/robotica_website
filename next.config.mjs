@@ -14,8 +14,8 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "api.techpaaila.info",
-        pathname: "/**",
+        hostname: "api.internationalroboticscollege.com",
+        pathname: "/uploads/**",
       },
     ],
   },
