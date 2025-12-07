@@ -5,11 +5,10 @@ import { MoveRight } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { getAdmissionsApi } from "../../axios/api";
-// import { ErrorHandler } from "@/components/error/ErrorHandler";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 const staggerContainer = {
@@ -28,21 +27,36 @@ export default function AdmissionsPage() {
       .then((res) => {
         if (res.data?.success) setData(res.data.result);
       })
-      .catch((err) => {
-        // ignore "no data yet"
-        if (err?.response?.status !== 404) ErrorHandler(err);
-      })
+      .catch(() => {})
       .finally(() => setLoading(false));
   }, []);
 
   if (loading) {
     return (
-      <main className="min-h-[60vh] bg-[#020726] text-white flex items-center justify-center">
-        <div className="w-10 h-10 rounded-full border-2 border-white border-t-transparent animate-spin" />
-      </main>
+      <section className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+          <div className="text-center mb-16">
+            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
+            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
+          </div>
+          <div className="grid gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
+              >
+                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
+                <div className="space-y-2">
+                  <div className="h-4 w-full bg-white/10 rounded" />
+                  <div className="h-4 w-5/6 bg-white/10 rounded" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     );
   }
-
   if (!data) {
     return (
       <main className="min-h-[60vh] bg-[#020726] text-white flex items-center justify-center px-4">
@@ -55,126 +69,125 @@ export default function AdmissionsPage() {
   }
 
   return (
-    <main className="w-full bg-white text-navy">
-      <h1 className="text-5xl my-10 text-center text-[30px] sm:text-[36px] md:text-[44px] font-extrabold leading-tight mb-4 ">
+    <main className="w-full text--primary-soft mt-10 ">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-8 text-center leading-tight">
         {data.mainTitle}
       </h1>
-      <div className="flex justify-center gap-2 mt-6 mb-10">
-        <span className="w-2 h-2 rounded-full bg-green" />
-        <span className="w-8 h-2 rounded-full bg-green" />
-        <span className="w-2 h-2 rounded-full bg-green" />
-      </div>
-      {/* Hero */}
-      <section className="relative overflow-hidden">
+      <section className="relative mb-10 overflow-hidden">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/bg-texture-lab.jpg')",
-          }}
+          style={{ backgroundImage: "url('/bg-texture-lab.jpg')" }}
         />
 
-        {/* Blur + tint overlay with centered content */}
-        <div className="relative h-60 md:pt-10 md:pb-10 backdrop-blur-md bg-[rgba(247,245,238,0.3)]">
-          <div className="w-full h-full flex items-center justify-center">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              animate="visible"
-              className="max-w-3xl mx-auto text-center"
-            >
-              {data.load && (
-                <p className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full bg-white border border-green text-sm text-green">
-                  <span className="inline-block h-2 w-2 rounded-full bg-green" />
-                  {Array.isArray(data.load) ? data.load.join(" • ") : data.load}
-                </p>
-              )}
-            </motion.div>
-          </div>
+        {/* Overlay */}
+        <div className="relative h-60 md:h-64 lg:h-72 flex items-center justify-center backdrop-blur-md bg-[rgba(101,100,99,0.1)]">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            animate="visible"
+            className="max-w-3xl mx-auto text-center"
+          >
+            {data.load && (
+              <p className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-full border border-primary text-sm text-primary-dark bg-primary-soft">
+                <span className="inline-block h-2 w-2 rounded-full bg-primary-dark" />
+                {Array.isArray(data.load) ? data.load.join(" • ") : data.load}
+              </p>
+            )}
+          </motion.div>
         </div>
       </section>
 
-      {/* Main content */}
-      <section className="pb-10 pt-10 bg-white">
-        <div className="max-w-6xl mx-auto px-4 lg:px-0">
+      {/* ---------------------- CONTENT CARDS ---------------------- */}
+      <section className="pb-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0.2 }}
             className="grid gap-6 md:grid-cols-3"
           >
-            {/* Prerequisites */}
+            {/* ---------------------- CARD 1: Prerequisites ---------------------- */}
             <motion.div
               variants={fadeUp}
-              className="rounded-2xl  bg-beige p-6 md:p-7 flex flex-col"
+              className="rounded-2xl bg-primary-soft p-6 md:p-7 shadow-sm"
             >
-              <p className="font-bold uppercase tracking-[0.18em] text-green mb-2">
+              <p className="font-bold uppercase  text-primary mb-2">
                 Prerequisites
               </p>
+
               <h2 className="font-bold text-lg text-black mb-3">
                 Who this programme is for
               </h2>
-              <p className="text-[14px] text-gray-900 mb-4">
+
+              <p className="text-sm text-gray-900 mb-4">
                 Check if your background, skills, and interests match what we
                 expect from incoming learners.
               </p>
-              <ul className="space-y-2.5 text-sm text-black">
-                {(data.prerequisites || []).map((p, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="mt-[7px] inline-block h-6px w-6px rounded-full bg-green" />
-                    <span>{p}</span>
+
+              <ul className="space-y-3 text-m text-black">
+                {data.prerequisites?.map((p, i) => (
+                  <li key={i} className="flex gap-2 items-start">
+                    <span className="mt-[6px] inline-block h-2 w-2 rounded-full bg-primary" />
+                    {p}
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-            {/* Grading & Assessment */}
+            {/* ---------------------- CARD 2: Grading & Assessment ---------------------- */}
             <motion.div
               variants={fadeUp}
-              className="rounded-2xl bg-beige p-6 md:p-7 flex flex-col"
+              className="rounded-2xl bg-primary-soft p-6 md:p-7 shadow-sm"
             >
-              <p className="font-bold uppercase tracking-[0.18em] text-green mb-2">
+              <p className="font-bold uppercase text-primary  mb-2">
                 Grading & Assessment
               </p>
-              <h2 className="font-bold text-black text-lg mb-3">
-                How you&apos;ll be evaluated
+
+              <h2 className="font-bold text-lg text-black mb-3">
+                How you'll be evaluated
               </h2>
-              <p className="text-[14px] text-gray-900 mb-4">
+
+              <p className="text-sm text-gray-900 mb-4">
                 You&apos;ll be evaluated through a blend of projects, practical
                 work, and checks for understanding.
               </p>
-              <ul className="space-y-2.5 text-sm text-black">
-                {(data.grading || []).map((g, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="mt-[7px] inline-block h-6px w-6px rounded-full bg-green" />
-                    <span>{g}</span>
+
+              <ul className="space-y-3 text-m text-black">
+                {data.grading?.map((g, i) => (
+                  <li key={i} className="flex gap-2 items-start">
+                    <span className="mt-[6px] inline-block h-2 w-2 rounded-full bg-primary" />
+                    {g}
                   </li>
                 ))}
               </ul>
             </motion.div>
 
-            {/* Badges & credentials */}
+            {/* ---------------------- CARD 3: Badges & Credentials ---------------------- */}
             <motion.div
               variants={fadeUp}
-              className="rounded-2xl  bg-beige p-6 md:p-7 flex flex-col justify-between"
+              className="rounded-2xl bg-primary-soft p-6 md:p-7 flex flex-col justify-between shadow-sm"
             >
               <div>
-                <p className="font-bold uppercase tracking-[0.18em] text-green mb-2">
+                <p className="font-bold uppercase text-primary  mb-2">
                   Badges & Credentials
                 </p>
-                <h2 className="font-bold text-black text-lg mb-3">
+
+                <h2 className="font-bold text-lg text-black mb-3">
                   What you leave with
                 </h2>
-                <p className="text-[14px] text-gray-950 mb-4">
+
+                <p className="text-sm text-gray-900 mb-4">
                   Showcase your skills with credentials that highlight your
-                  hands-on experience and readiness for industry.
+                  hands-on experience.
                 </p>
+
                 <div className="flex flex-wrap gap-2 mt-2">
-                  {(data.badges || []).map((b, i) => (
+                  {data.badges?.map((b, i) => (
                     <span
                       key={i}
-                      className="text-[12px] px-5 py-3 rounded-full text-beige bg-green border border-white/15"
+                      className="text-sm px-5 py-2 rounded-full text-white bg-primary border border-white/20"
                     >
                       {b}
                     </span>
@@ -182,71 +195,24 @@ export default function AdmissionsPage() {
                 </div>
               </div>
 
-              {/* Tiny CTA block at bottom */}
-              <div className="mt-6 pt-4 border-t border-green text-xs text-black">
-                <p className="mb-2">
+              {/* CTA */}
+              <div className="mt-6 pt-4 border-t border-green text-sm text-black">
+                <p className="mb-3">
                   Ready to take the next step towards this programme?
                 </p>
+
                 <Link
                   href="/contact"
-                  className="inline-flex items-center justify-center  gap-4 px-4 py-2 rounded-full bg-white border-green border-2 hover:bg-d7c097 text-12px font-semibold text-green transition-colors"
+                  className="inline-flex items-center gap-3 px-4 py-2 rounded-full btn-primary text-black text-sm btn-primary:hover hover:text-black transition"
                 >
-                  Talk to our admissions team <MoveRight strokeWidth={1} />
+                  Talk to our admissions team{" "}
+                  <MoveRight size={16} strokeWidth={1.5} />
                 </Link>
               </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
-      {/* Fees & Scholarships */}
-      {/* <section className="pb-10 bg-white">
-        <div className="max-w-6xl mx-auto px-4 lg:px-0">
-          <div className="rounded-2xl  bg-beige p-6 md:p-8">
-            <h2 className="text-2xl font-extrabold text-black mb-6">
-              Fees & Scholarships
-            </h2>
-
-            <ul className="space-y-3 text-sm text-black">
-              <li className="flex gap-2">
-                <span className="mt-7px h-6px w-6px rounded-full bg-black" />
-                <span>
-                  <strong>Annual Tuition:</strong> USD $4,000
-                </span>
-              </li>
-
-              <li className="flex gap-2">
-                <span className="mt-7px h-6px w-6px rounded-full bg-black" />
-                <span>
-                  <strong>South Asian Scholarship:</strong> 50% tuition for the
-                  first 20 students (max 5 scholarships per country)
-                </span>
-              </li>
-
-              <li className="flex gap-2">
-                <span className="mt-7px h-6px w-6px rounded-full bg-[#00E285]" />
-                <span>
-                  <strong>Total Seats (Feb 2026):</strong> 50
-                </span>
-              </li>
-
-              <li className="flex gap-2">
-                <span className="mt-7px h-6px w-6px rounded-full bg-[#00E285]" />
-                <span>
-                  <strong>South Asia Agent Model:</strong>
-                </span>
-              </li>
-
-              <li className="ml-6 flex gap-2 text-amber-100">
-                <span className="mt-7px h-6px w-6px rounded-full bg-[#00E285]" />
-                <span>
-                  <strong>Referral Fee:</strong> 20% of tuition fee per enrolled
-                  student
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section> */}
     </main>
   );
 }

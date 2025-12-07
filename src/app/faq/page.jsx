@@ -1,9 +1,9 @@
 "use client";
 
-import { getFaqsApi } from "../../axios/api"; // This hits GET "/" from your FAQ routes
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
+import { getFaqsApi } from "../../axios/api"; // This hits GET "/" from your FAQ routes
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -41,14 +41,14 @@ export default function FaqPage() {
   }, []);
 
   return (
-    <main className="w-full bg-beige text-navy pb-20">
+    <main className="w-full text-primary-soft pb-20">
       {/* HERO */}
       <section className="text-center pt-20 pb-12">
         <motion.h1
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="text-4xl md:text-5xl font-extrabold"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight"
         >
           Frequently Asked Questions
         </motion.h1>
@@ -57,7 +57,7 @@ export default function FaqPage() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="text-gray-600 mt-3 max-w-xl mx-auto"
+          className="text-primary-soft mt-3 max-w-xl mx-auto"
         >
           Answers to the most common questions from our students and parents.
         </motion.p>
@@ -76,7 +76,7 @@ export default function FaqPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-white rounded-xl shadow border border-green-600"
+                className="bg-primary-soft rounded-xl shadow border "
               >
                 {/* Question */}
                 <button
@@ -94,9 +94,8 @@ export default function FaqPage() {
                   </div>
 
                   <ChevronDown
-                    className={`transition-transform ${
-                      open === i ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform text-primary-dark
+ ${open === i ? "rotate-180" : ""}`}
                   />
                 </button>
 

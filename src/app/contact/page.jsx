@@ -7,7 +7,6 @@ import { getInstitutionProfileApi, sendContactFormApi } from "../../axios/api";
 import ContactInfoCard from "./ContactInfoCard";
 import FloatingInput from "./FloatingInput";
 import FloatingTextarea from "./FloatingTextarea";
-import SkeletonContactUs from "./SkeletonContactUs";
 
 const ContactUs = () => {
   const [data, setData] = useState(null);
@@ -77,13 +76,37 @@ const ContactUs = () => {
     fetchData();
   }, []);
 
-  if (loading) return <SkeletonContactUs />;
-
+  if (loading) {
+    return (
+      <section className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+          <div className="text-center mb-16">
+            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
+            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
+          </div>
+          <div className="grid gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
+              >
+                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
+                <div className="space-y-2">
+                  <div className="h-4 w-full bg-white/10 rounded" />
+                  <div className="h-4 w-5/6 bg-white/10 rounded" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
-    <div className=" bg-beige  min-h-screen flex items-center justify-center px-4 pt-10 pb-20">
+    <div className="min-h-screen flex items-center justify-center px-4   pb-10">
       <section
         className="
-         bg-green rounded-2xl border border-neutral-200 shadow-md max-w-7xl w-full max-h-max overflow-hidden grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-14 p-10 sm:grid-cols-1
+        group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl max-w-7xl w-full max-h-max overflow-hidden grid grid-cols-1 lg:grid-cols-2 md:grid-cols-1 gap-14 p-10 sm:grid-cols-1
         "
       >
         {/* Left Info Panel */}
@@ -100,17 +123,17 @@ const ContactUs = () => {
 
             <div className="space-y-5 ">
               <ContactInfoCard
-                icon={<MapPin className="w-6 h-6  text-green" />}
+                icon={<MapPin className="w-6 h-6  text-primary-dark" />}
                 label="Location"
                 value={data?.location || "Not Available"}
               />
               <ContactInfoCard
-                icon={<PhoneCall className="w-6 h-6 text-green" />}
+                icon={<PhoneCall className="w-6 h-6 text-primary-dark" />}
                 label="Phone"
                 value={data?.number || "Not Available"}
               />
               <ContactInfoCard
-                icon={<Mail className="w-6 h-6 text-green" />}
+                icon={<Mail className="w-6 h-6 text-primary-dark" />}
                 label="Email"
                 value={data?.email || "Not Available"}
               />
@@ -156,12 +179,12 @@ const ContactUs = () => {
           </div>
 
           {successMessage && (
-            <div className="mb-4 p-3 rounded-xl bg-d7c097/10 border border-[#96D5FF] text-emerald-200 text-sm">
+            <div className="mb-4 p-3 rounded-xl bg-d7c097/10 border border-green text-white bg-green-600 text-sm">
               {successMessage}
             </div>
           )}
           {error && (
-            <div className="mb-4 p-3 rounded-xl bg-red-500/10 border border-red-400/40 text-red-200 text-sm">
+            <div className="mb-4 p-3 rounded-xl bg-red-400/20 border border-red-400/40 text-red-200 text-sm">
               {error}
             </div>
           )}
@@ -215,9 +238,7 @@ const ContactUs = () => {
               type="submit"
               disabled={isBeingSubmitted}
               className="
-                mt-2 w-full py-3.5 md:py-4 rounded-4xl bg-beige border-2 border-green text-green font-semibold
-                hover:bg-beige/80 hover:text-black
-              "
+                mt-2 w-full py-3.5 md:py-4 rounded-4xl btn-primary font-semibold btn-primary:hover"
             >
               {isBeingSubmitted ? "Sending..." : "Send Message"}
             </button>
