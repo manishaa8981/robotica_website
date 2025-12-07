@@ -1,5 +1,5 @@
 // app/layout.jsx
-import { Merriweather, Open_Sans } from "next/font/google";
+import { Merriweather, Montserrat, Open_Sans } from "next/font/google";
 import { Footer } from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
@@ -18,6 +18,12 @@ const openSans = Open_Sans({
   variable: "--font-open-sans",
 });
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  variable: "--font-montserrat",
+});
+
 export const metadata = {
   title: "Robotica Institute",
   description: "Robotica Institute",
@@ -31,7 +37,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${merriweather.variable} antialiased min-h-screen flex flex-col`}
+        className={`${montserrat.variable} font-sans antialiased min-h-screen flex flex-col`}
         style={{
           background:
             "radial-gradient(ellipse at center, #6b2d7a 0%, #4a1f5c 30%, #2d1537 60%, #1a0a1f 80%, #000000 100%)",
