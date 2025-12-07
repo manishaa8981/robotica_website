@@ -109,7 +109,7 @@ export default function CorePrograms() {
                   <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
                     {program.title}
                   </h2>
-                  <p className="text-xl sm:text-2xl text-primary font-semibold">
+                  <p className="text-xl sm:text-2xl text-yellow-500 font-semibold">
                     {program.duration}
                   </p>
                 </div>
