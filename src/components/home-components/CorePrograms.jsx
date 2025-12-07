@@ -106,10 +106,10 @@ export default function CorePrograms() {
                 className="space-y-6 max-w-3xl mx-auto"
               >
                 <div className="space-y-3">
-                  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white drop-shadow-lg">
+                  <h2 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
                     {program.title}
                   </h2>
-                  <p className="text-xl sm:text-2xl text-primary font-semibold">
+                  <p className="text-xl sm:text-2xl text-yellow-500  font-semibold">
                     {program.duration}
                   </p>
                 </div>

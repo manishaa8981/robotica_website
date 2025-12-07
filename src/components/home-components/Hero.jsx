@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getBannerApi } from "../../axios/api";
 
-
 const textVariant = {
   hidden: { opacity: 0, y: 20 },
   visible: (i = 1) => ({
@@ -58,7 +57,8 @@ export const HeroBanner = () => {
         </div>
       </section>
     );
-  }  if (!banners || banners.length === 0) return null;
+  }
+  if (!banners || banners.length === 0) return null;
 
   return (
     <section className=" relative w-full h-fit py-10 md:py-24 lg:py-10  flex items-center justify-center overflow-hidden">
@@ -86,7 +86,7 @@ export const HeroBanner = () => {
               className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-soft leading-tight mb-6"
             >
               Build Robots. <br />
-              Build Futures.
+              <span className="text-yellow-500"> Build Futures.</span>
             </motion.h1>
             <motion.p
               variants={textVariant}
