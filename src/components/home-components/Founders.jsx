@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
-import { getAllTeamMembersApi } from "@/axios/api";
+import { useEffect, useState } from "react";
 import {
   FaFacebookF,
   FaInstagram,
@@ -11,7 +11,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FaEnvelope, FaThreads } from "react-icons/fa6";
-import { motion } from "framer-motion";
+import { getAllTeamMembersApi } from "../../axios/api";
 
 export default function Founders() {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -65,7 +65,7 @@ export default function Founders() {
         className="px-6 mb-10 flex justify-center"
       >
         <div className="text-center">
-          <h1 className="text-[28px] sm:text-[32px] md:text-[40px] font-extrabold">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
             Founders
           </h1>
         </div>
@@ -82,7 +82,7 @@ export default function Founders() {
           <motion.div
             key={member._id}
             variants={cardVariants}
-            className="flex flex-col sm:flex-row items-center bg-white rounded-2xl p-6 shadow-md border border-gray-200 w-full md:w-[48%] min-h-[220px]"
+            className="flex flex-col sm:flex-row items-center bg-primary-soft rounded-2xl p-6 shadow-md border border-gray-200 w-full md:w-[48%] min-h-[220px]"
           >
             {/* Image */}
             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl shadow-md overflow-hidden">
@@ -95,8 +95,8 @@ export default function Founders() {
             </div>
 
             {/* Divider — responsive */}
-            <div className="sm:block hidden w-1 h-28 bg-[#186f3e]/50 mx-5 rounded-full"></div>
-            <div className="sm:hidden block w-1/2 h-1 bg-[#186f3e]/50 my-4 rounded-full"></div>
+            <div className="sm:block hidden w-1 h-28 bg-primary mx-5 rounded-full"></div>
+            <div className="sm:hidden block w-1/2 h-1 bg-primary my-4 rounded-full"></div>
 
             {/* Info */}
             <div className="flex-1 text-center sm:text-left">
@@ -106,10 +106,10 @@ export default function Founders() {
                 {member.role}
               </p>
 
-              <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-[#186f3e] text-lg">
+              <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-primary text-lg">
                 {member.facebook && (
                   <a
-                    className="hover:scale-110 transition"
+                    className="hover:scale-110  transition"
                     href={member.facebook}
                     target="_blank"
                   >

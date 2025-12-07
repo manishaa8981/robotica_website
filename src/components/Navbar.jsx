@@ -1,3 +1,5 @@
+"use client";
+
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Image from "next/image";
@@ -104,7 +106,7 @@ export default function Navbar() {
 
         {/* CENTER PILL NAV – Desktop */}
         <div className="hidden lg:flex flex-1 justify-center">
-          <div className="bg-white/8 backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-1 shadow-lg">
+<div className="bg-[#2b0b4a]/90 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 flex items-center gap-1 shadow-lg">
             <NavLink href="/" label="Home" pathname={pathname} />
 
             <Dropdown
