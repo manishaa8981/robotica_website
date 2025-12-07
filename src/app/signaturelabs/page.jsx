@@ -56,23 +56,23 @@ export default function SignatureLabs() {
 
   if (loading) {
     return (
-      <section className="relative w-full py-20 bg-slate-950">
-        <div className="max-w-6xl mx-auto px-4 lg:px-0">
-          <div className="h-9 w-40 bg-slate-800/60 rounded-full animate-pulse mb-4" />
-          <div className="h-10 w-72 bg-slate-800/60 rounded-lg animate-pulse mb-10" />
-          <div className="space-y-6">
-            {[0, 1, 2].map((i) => (
+      <section className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+          <div className="text-center mb-16">
+            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
+            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
+          </div>
+          <div className="grid gap-8">
+            {[1, 2, 3, 4].map((i) => (
               <div
                 key={i}
-                className="bg-slate-900/70 border border-slate-800 rounded-3xl p-6 md:p-8 flex flex-col md:flex-row gap-6 animate-pulse"
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
               >
-                <div className="flex-1 space-y-4">
-                  <div className="h-6 w-2/3 bg-slate-800 rounded" />
-                  <div className="h-4 w-full bg-slate-800 rounded" />
-                  <div className="h-4 w-5/6 bg-slate-800 rounded" />
-                  <div className="h-4 w-3/4 bg-slate-800 rounded" />
+                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
+                <div className="space-y-2">
+                  <div className="h-4 w-full bg-white/10 rounded" />
+                  <div className="h-4 w-5/6 bg-white/10 rounded" />
                 </div>
-                <div className="w-full md:w-72 h-44 bg-slate-800 rounded-2xl" />
               </div>
             ))}
           </div>
@@ -102,12 +102,6 @@ export default function SignatureLabs() {
 
   return (
     <section className="relative w-full backdrop-blur-md py-10 overflow-hidden">
-      {/* Glow blobs background (keep if you want) */}
-      <div className="pointer-events-none absolute inset-0 opacity-60">
-        <div className="absolute -left-24 top-10 h-64 w-64 rounded-full bg-green-500/10 blur-3xl" />
-        <div className="absolute right-[-6rem] top-40 h-72 w-72 rounded-full bg-green-500/10 blur-3xl" />
-        <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 h-72 w-[28rem] rounded-full bg-green-500/10 blur-3xl" />
-      </div>
       <div className="absolute inset-0 bg-gray/100 backdrop-blur-sm"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 lg:px-0">
@@ -122,15 +116,11 @@ export default function SignatureLabs() {
           {/* <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900/70 border border-d7c097/40 text-[11px] uppercase tracking-[0.2em] text-emerald-300 shadow-[0_0_20px_rgba(16,185,129,0.25)]">
             Signature Labs
           </div> */}
-          <h2 className="mt-4 text-[30px] sm:text-[36px] md:text-[44px] font-extrabold text-black leading-tight">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
             {mainTitle || "Signature Labs & Equipment"}
           </h2>
-          <div className="flex justify-center gap-2 mt-6 mb-10">
-          <span className="w-2 h-2 rounded-full bg-green" />
-          <span className="w-8 h-2 rounded-full bg-green" />
-          <span className="w-2 h-2 rounded-full bg-green" />
-        </div>
-          <p className="mt-4 max-w-2xl mx-auto text-sm md:text-base text-black">
+
+          <p className="mt-4 max-w-2xl mx-auto text-sm md:text-base text-primary-soft">
             Purpose-built robotics, AI, and automation labs where students ship
             real systems – not just simulations.
           </p>
@@ -153,7 +143,7 @@ export default function SignatureLabs() {
               <motion.article
                 key={lab._id || lab.title || index}
                 variants={cardVariants}
-                className="relative  rounded-3xl border border-beige bg-beige/70 shadow-[0_10px_10px_beige/40] overflow-hidden "
+                className="relative rounded-3xl bg-white/10 backdrop-blur-md  shadow-[0_10px_10px_beige/40] overflow-hidden "
               >
                 {/* Neon border glow */}
                 <div className="pointer-events-none absolute inset-0 rounded-3xl " />
@@ -161,30 +151,30 @@ export default function SignatureLabs() {
                 <div className="relative grid md:grid-cols-2 gap-8 md:gap-10 p-6 sm:p-8 lg:p-10">
                   {/* Text side */}
                   <div className={isEven ? "" : "md:order-2"}>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded-full bg-green/80 border border-green  text-[11px] uppercase tracking-[0.18em] text-beige">
-                      <span className="h-1.5 w-1.5 rounded-full bg-beige  " />
+                    <div className="inline-flex items-center gap-2 px-3 py-1 mb-3 rounded-full bg-primary-soft  text-sm font-semibold uppercase  text-primary tracking-wider">
+                      <span className="h-1.5 w-1.5 rounded-full bg-primary  " />
                       Lab {index + 1}
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl md:text-[26px] font-semibold text-black mb-3">
+                    <h3 className="text-xl sm:text-2xl md:text-[26px] font-semibold text-white mb-3">
                       {lab.title}
                     </h3>
 
                     {lab.description && (
-                      <p className="text-sm md:text-[15px] text-slate-200/90 mb-5 leading-relaxed">
+                      <p className="text-sm md:text-[15px] text-white mb-5 leading-relaxed">
                         {lab.description}
                       </p>
                     )}
 
                     {equipmentList.length > 0 && (
-                      <div className="bg-green/90 border border-green rounded-2xl px-4 py-4 md:px-5 md:py-5 shadow shadow-slate-950/50">
-                        <p className="text-[13px] md:text-xs font-bold tracking-[0.18em] uppercase text-beige mb-2">
+                      <div className="bg-primary-soft rounded-2xl px-4 py-4 md:px-5 md:py-5 shadow shadow-slate-950/50">
+                        <p className="text-m md:text-s font-bold  uppercase text-primary mb-2">
                           Key Equipment
                         </p>
-                        <ul className="space-y-1.5 text-[13px] md:text-sm text-white">
+                        <ul className="space-y-1.5 text-[13px] md:text-sm text-black">
                           {equipmentList.slice(0, 6).map((item, i) => (
                             <li key={i} className="flex gap-2">
-                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-beige shrink-0" />
+                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}
@@ -203,7 +193,7 @@ export default function SignatureLabs() {
                   <div className={isEven ? "" : "md:order-1"}>
                     <motion.div
                       variants={imageVariants}
-                      className="relative w-full h-56 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden bg-beige/80 border border-beige/80 shadow-[0_18px_45px_rgba(15,23,42,0.85)]"
+                      className="relative w-full h-56 sm:h-64 md:h-72 lg:h-80 rounded-2xl overflow-hidden bg-beige/80 border border-beige/80 ]"
                     >
                       {heroImage ? (
                         <Image
@@ -224,8 +214,8 @@ export default function SignatureLabs() {
                       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-slate-950/30" />
 
                       {/* lab badge */}
-                      <div className="absolute top-3 right-3 inline-flex items-center gap-2 rounded-full bg-slate-950/60 backdrop-blur-sm border border-slate-700/70 px-3 py-1 text-[11px] text-slate-100 shadow-[0_0_22px_rgba(15,23,42,0.9)]">
-                        <span className="h-1.5 w-1.5 rounded-full bg-green animate-pulse" />
+                      <div className="absolute top-3 right-3 inline-flex items-center gap-2 rounded-full bg-primary-soft backdrop-blur-sm border border-slate-700/70 px-3 py-1 text-[11px] text-black shadow-[0_0_22px_rgba(15,23,42,0.9)]">
+                        <span className="h-1.5 w-1.5 rounded-full bg-primary-dark animate-pulse" />
                         <span>
                           {lab.images?.length
                             ? `${lab.images.length} image${
@@ -254,7 +244,7 @@ export default function SignatureLabs() {
                               }
                               className={`relative h-14 w-20 rounded-xl overflow-hidden border transition-all duration-200 shrink-0 ${
                                 isActive
-                                  ? "border-green shadow-[0_0_12px_rgba(45,212,191,0.45)] scale-[1.02]"
+                                  ? "bg-primary-dark shadow-[0_0_12px_rgba(45,212,191,0.45)] scale-[1.02]"
                                   : "border-beige hover:border-[#96D5FF]/60 hover:scale-[1.02]"
                               }`}
                             >

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 const tracks = [
   {
@@ -39,31 +40,54 @@ const fadeUp = {
 
 export default function TracksSpotlightSection() {
   const imageUrl = "/tracks1.jpg"; // replace with your real image path
+  const [loading, setLoading] = useState(null);
 
+  if (loading) {
+    return (
+      <section className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+          <div className="text-center mb-16">
+            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
+            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
+          </div>
+          <div className="grid gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
+              >
+                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
+                <div className="space-y-2">
+                  <div className="h-4 w-full bg-white/10 rounded" />
+                  <div className="h-4 w-5/6 bg-white/10 rounded" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
   return (
-    <section className="w-full bg-beige ">
-      <div className="w-full mx-auto px-4 lg:px-0 ">
-        <div className="grid gap-0 md:grid-cols-2 overflow-hidden  shadow-xl bg-white">
-          {/* LEFT: Content block (green) */}
+    <section className="w-full ">
+      <div className="max-w-7xl mx-auto px-4 py-3.5 sm:px-6 lg:px-8  ">
+        <div className="grid md:grid-cols-2 gap-4 overflow-hidden">
+          {/* LEFT: Content block */}
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            className="bg-beige text-white px-6 sm:px-8 md:px-10 py-8 md:py-10 flex flex-col justify-between"
+            className=" px-4 sm:px-4 lg:px-4 md:py-4 flex flex-col justify-between"
           >
-            <div className="pl-40 py-10">
-              {/* <p className="text-[11px] uppercase tracking-[0.2em] text-emerald-200 mb-4">
-                TRACK SPOTLIGHT
-              </p> */}
-
-              <h2 className=" text-[30px] sm:text-[36px] md:text-[44px] leading-tight font-extrabold mb-4 text-black ">
+            <div>
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
                 Advanced Robotics
                 <br />
                 Specialization Tracks
               </h2>
-             
-              <p className="text-sm sm:text-[15px] text-black text-justify max-w-md mb-6">
+
+              <p className="text-sm sm:text-[15px] text-white text-justify max-w-xl mb-6">
                 Choose from focused, industry-aligned tracks that take you deep
                 into the systems that power real-world robots – from factory
                 floors and homes to hospitals and AI labs.
@@ -72,10 +96,10 @@ export default function TracksSpotlightSection() {
               <div className="space-y-4 mt-4">
                 {tracks.map((track) => (
                   <div key={track.label} className="group">
-                    <p className="text-s font-bold tracking-wide text-green mb-1">
+                    <p className="text-m font-bold tracking-wide text-primary-soft mb-1">
                       {track.label}
                     </p>
-                    <p className="text-[15px] leading-relaxed text-black group-hover:text-white/90 transition-colors">
+                    <p className="text-[15px] leading-relaxed text-white ">
                       {track.description}
                     </p>
                   </div>
@@ -84,23 +108,21 @@ export default function TracksSpotlightSection() {
             </div>
 
             {/* CTA button */}
-            <div className="mt-8 px-40">
-              <button className="inline-flex items-center px-5 gap-4 border-2 border-green py-2 rounded-full bg-white text-green text-sm font-semibold hover:bg-green/200 transition">
-                Explore this model <MoveRight strokeWidth={1} />
+            <div className="mt-8">
+              <button className="inline-flex items-center gap-3 px-5 py-2 rounded-full btn-primary text-black btn-primary:hover text-sm font-semibold  hover:text-white transition">
+                Explore this model <MoveRight strokeWidth={1.3} size={18} />
               </button>
             </div>
           </motion.div>
 
           {/* RIGHT: Image block */}
-          <div className="relative min-h-[260px] md:min-h-[360px]">
+          <div className="relative min-h-[260px] md:min-h-[360px] lg:min-h-[420px]  mb-4">
             <Image
               src={imageUrl}
               alt="Robotics tracks showcase"
               fill
               className="object-cover"
             />
-            {/* Optional overlay gradient at bottom for text if needed later */}
-            {/* <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/60 to-transparent" /> */}
           </div>
         </div>
       </div>

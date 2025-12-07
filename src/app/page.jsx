@@ -57,7 +57,7 @@ function HomeContent() {
   }, []);
 
   return (
-    <section className="mb-10 md:mb-20 items-center flex flex-col gap-8 md:gap-8 h-max p-4 md:p-4 lg:p-4 xl:p-0">
+    <section className="mb-10 md:mb-20 items-center flex flex-col gap-8 md:gap-8 h-max lg:p-4 xl:p-0">
       <HeroBanner />
       <MottoPage />
       <Objectives />
@@ -79,8 +79,8 @@ export default function Home() {
       fallback={
         <div className="flex flex-col items-center justify-center h-screen">
           <Image
-            src="/brandlogo.png"
-            alt="TechPaaila Logo"
+            src="/logo.png"
+            alt="Robotica Logo"
             width={120}
             height={120}
             className="animate-bounce"

@@ -8,14 +8,8 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 976px;
   --breakpoint-xl: 1440px;
-  /* --color-primary: #282D8D; */
-  /* --background-light: #F9FAFB;
-  --background-dark: #161962; */
   --color-navy: #101840;
   --color-beige: #eef2e6;
-    /* --color-beige: #e7deaf; */
-  /* --color-green: #007e6e; */
-
   --color-green: #1a6863;
 }
 
@@ -91,4 +85,113 @@ h6 {
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+:root {
+  /* PRIMARY BRAND COLORS */
+  --primary: #8c18c1;
+  --primary-hover: #7515a6;
+  --primary-dark: #5a0c84;
+  --primary-light: #c97bea;
+  --primary-soft: #f3e4ff;
+
+  /* ACCENTS */
+  --accent-cyan: #00e5ff;
+  --accent-mint: #41ffc5;
+  --accent-pink: #f72585;
+  --accent-blue: #4c6fff;
+
+  /* BACKGROUNDS */
+  --bg-dark: #12001a;
+  --bg-deep: #1f002d;
+  --bg-soft: #2d0142;
+  --bg-light: #f8f7fa;
+
+  /* TEXT */
+  --text-dark: #1a1a1a;
+  --text-light: #f3f0f7;
+  --text-muted: #a6a6a6;
+
+  /* BORDERS */
+  --border: #e4e4e7;
+}
+
+.bg-primary {
+  background: var(--primary);
+}
+
+.bg-primary-dark {
+  background: var(--primary-dark);
+}
+
+.bg-primary-light {
+  background: var(--primary-light);
+}
+
+.bg-primary-soft {
+  background: var(--primary-soft);
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-primary-dark {
+  color: var(--primary-dark);
+}
+
+.text-primary-light {
+  color: var(--primary-light);
+}
+
+.link-hover:hover {
+  color: var(--primary-light);
+  transition: color 0.2s ease;
+}
+
+.text-primary-soft {
+  color: var(--primary-soft);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--text-light);
+  padding: 12px 24px;
+  border-radius: 50px;
+  transition: 0.2s ease;
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+}
+
+.section-hero {
+  background: var(--bg-deep);
+  color: var(--text-light);
+}
+
+.card {
+  background: var(--primary-soft);
+  border: 1px solid var(--border);
+}
+
+.icon {
+  background: var(--primary);
+  border: 2px solid var(--border);
+}
+
+.hero-bg {
+  background: radial-gradient(
+    ellipse at center,
+    #6b2d7a 0%,
+    #4a1f5c 30%,
+    #2d1537 60%,
+    #1a0a1f 80%,
+    #000000 100%
+  );
+  background-attachment: fixed;
+}
+
+.hero-card {
+  color: #c69adb;
 }

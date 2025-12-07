@@ -4,13 +4,6 @@ import React, { useEffect, useState } from "react";
 import { getAllObjectivesApi } from "../../axios/api";
 import { motion } from "framer-motion";
 
-const SkeletonObjectives = () => (
-  <div className="space-y-6 animate-pulse max-w-4xl mx-auto">
-    {[...Array(4)].map((_, i) => (
-      <div key={i} className="h-40 bg-gray-100 rounded-xl shadow-md" />
-    ))}
-  </div>
-);
 
 export default function Objectives() {
   const [objectives, setObjectives] = useState([]);
@@ -52,8 +45,32 @@ export default function Objectives() {
     },
   };
 
-  if (loading) return <SkeletonObjectives />;
-  if (!objectives.length) return null;
+  if (loading) {
+    return (
+      <section className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+          <div className="text-center mb-16">
+            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
+            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
+          </div>
+          <div className="grid gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
+              >
+                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
+                <div className="space-y-2">
+                  <div className="h-4 w-full bg-white/10 rounded" />
+                  <div className="h-4 w-5/6 bg-white/10 rounded" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }  if (!objectives.length) return null;
 
   return (
     <section className="max-w-7xl mx-auto ">
@@ -65,7 +82,7 @@ export default function Objectives() {
         className="px-6 mb-2 flex justify-center"
       >
         <div className="text-center">
-          <h1 className="text-[28px] sm:text-[32px] md:text-[40px] font-extrabold">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
             Strategic Objectives
           </h1>
           <span className="block h-1 w-1/2 mx-auto my-3 bg-linear-to-r from-[#11b658] to-[#186f3e] rounded"></span>

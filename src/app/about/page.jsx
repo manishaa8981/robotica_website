@@ -97,8 +97,6 @@ function AboutUs() {
           <div className="lg:sticky lg:top-28">
             <div className="flex flex-col gap-4 sm:gap-6">
               {/* First image */}
-              <div className="relative w-40 sm:w-56 h-64 sm:h-80 rounded-3xl overflow-hidden shadow-lg">
-                <img
               <div className="relative w-full h-56 sm:h-72 md:h-80 rounded-3xl overflow-hidden shadow-lg">
                 <Image
                   src={
@@ -107,14 +105,12 @@ function AboutUs() {
                       : "/about-1.png"
                   }
                   alt="About Robotica image 1"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
-
               </div>
 
               {/* Second image */}
-              <div className="relative w-40 sm:w-56 h-64 sm:h-80 rounded-3xl overflow-hidden shadow-lg mt-8">
-                <img
               <div className="relative w-full h-56 sm:h-72 md:h-80 rounded-3xl overflow-hidden shadow-lg">
                 <Image
                   src={
@@ -123,7 +119,8 @@ function AboutUs() {
                       : "/about-2.png"
                   }
                   alt="About Robotica image 2"
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>

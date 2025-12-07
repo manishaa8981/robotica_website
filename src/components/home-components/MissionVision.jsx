@@ -1,10 +1,10 @@
 "use client";
 
-import { getMottoContentApi } from "../../axios/api";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { LuEye, LuTarget } from "react-icons/lu";
+import { getMottoContentApi } from "../../axios/api";
 
 export default function MottoPage() {
   const [mottoData, setMottoData] = useState(null);
@@ -27,37 +27,32 @@ export default function MottoPage() {
     fetchMotto();
   }, []);
 
-  // Skeleton Loader
   if (loading) {
     return (
-      <section className="w-full py-20 px-4 bg-linear-to-br from-slate-50 via-white to-teal-50/30">
-        <div className="max-w-7xl mx-auto animate-pulse">
+      <section className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
           <div className="text-center mb-16">
-            <div className="h-8 w-48 bg-gray-200 rounded-lg mb-4 mx-auto" />
-            <div className="h-12 w-96 bg-gray-200 rounded-lg mx-auto" />
+            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
+            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
           </div>
-          <div className="grid lg:grid-cols-2 gap-16">
-            <div className="space-y-8">
-              {[1, 2].map((i) => (
-                <div key={i} className="bg-white p-8 rounded-3xl shadow-sm">
-                  <div className="flex items-start gap-6">
-                    <div className="w-16 h-16 bg-gray-200 rounded-2xl" />
-                    <div className="flex-1 space-y-3">
-                      <div className="h-6 w-32 bg-gray-200 rounded" />
-                      <div className="h-4 w-full bg-gray-200 rounded" />
-                      <div className="h-4 w-5/6 bg-gray-200 rounded" />
-                    </div>
-                  </div>
+          <div className="grid gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
+              >
+                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
+                <div className="space-y-2">
+                  <div className="h-4 w-full bg-white/10 rounded" />
+                  <div className="h-4 w-5/6 bg-white/10 rounded" />
                 </div>
-              ))}
-            </div>
-            <div className="h-96 bg-gray-200 rounded-3xl" />
+              </div>
+            ))}
           </div>
         </div>
       </section>
     );
   }
-
   if (!mottoData) return null;
 
   const heading = mottoData.motoTitle || "Our Mission & Vision";
@@ -68,7 +63,7 @@ export default function MottoPage() {
     mottoData?.vision?.text ||
     "To be a global leader in delivering transformative solutions that create lasting value.";
 
-  const imageSrc = "/missionvision.jpg";
+  const imageSrc = "/cc.jpg";
 
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
@@ -100,11 +95,13 @@ export default function MottoPage() {
   };
 
   return (
-    <section className="w-full py-10 lg:py-10 px-4  relative overflow-hidden">
+    <section className="w-full pt-10 lg:pt-10 relative overflow-hidden ">
+      {/* <section className="w-full py-10 lg:py-10 relative overflow-hidden bg-linear-to-br from-slate-50 via-white to-teal-50/30"> */}
+
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <motion.div
           initial="hidden"
@@ -126,28 +123,94 @@ export default function MottoPage() {
             </span>
           </motion.div> */}
 
-          <h1 className="text-center text-[30px] sm:text-[36px] md:text-[44px] font-extrabold text-gray-900 mb-4">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
             {heading}
           </h1>
-
-          <div className="flex justify-center gap-2 mt-6">
-            <span className="w-2 h-2 rounded-full bg-green" />
-            <span className="w-8 h-2 rounded-full bg-green" />
-            <span className="w-2 h-2 rounded-full bg-green" />
-          </div>
         </motion.div>
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Left Column - Mission & Vision Cards */}
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            className="space-y-6 lg:space-y-8 order-2 lg:order-1"
+          >
+            {/* Vision Card */}
+            <motion.div
+              variants={scaleIn}
+              className="card group rounded-3xl p-8 shadow-lg shadow-beige-50 hover:shadow-sm transition-all duration-300"
+            >
+              <div className="flex items-start gap-6">
+                <div className="shrink-0">
+                  <div className="  icon w-16 h-16 rounded-full flex items-center justify-center shadow-sm shadow-green-100/50 group-hover:scale-110 transition-transform duration-300">
+                    <LuEye className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-black mb-3">
+                    Our Vision
+                  </h3>
+                  <p className="text-black leading-relaxed">{visionText}</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Mission Card */}
+            <motion.div
+              variants={scaleIn}
+              className="card group  rounded-3xl p-8 shadow-lg shadow-beige-50 hover:shadow-sm transition-all duration-300"
+            >
+              <div className="flex items-start gap-6">
+                <div className="shrink-0">
+                  <div className=" icon  w-16 h-16 rounded-full  flex items-center justify-center shadow-sm shadow-green-100/50 group-hover:scale-110 transition-transform duration-300">
+                    <LuTarget className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-black mb-3">
+                    Our Mission
+                  </h3>
+                  <p className="text-black leading-relaxed">{missionText}</p>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Stats or Additional Info */}
+            {/* <motion.div
+              variants={scaleIn}
+              className="grid grid-cols-3 gap-4 pt-4"
+            >
+              <div className="text-center p-4 bg-white/80 backdrop-blur rounded-2xl border border-gray-100">
+                <div className="text-2xl font-bold text-teal-600 mb-1">10+</div>
+                <div className="text-xs text-gray-600">Years Experience</div>
+              </div>
+              <div className="text-center p-4 bg-white/80 backdrop-blur rounded-2xl border border-gray-100">
+                <div className="text-2xl font-bold text-blue-600 mb-1">
+                  500+
+                </div>
+                <div className="text-xs text-gray-600">Projects Done</div>
+              </div>
+              <div className="text-center p-4 bg-white/80 backdrop-blur rounded-2xl border border-gray-100">
+                <div className="text-2xl font-bold text-purple-600 mb-1">
+                  98%
+                </div>
+                <div className="text-xs text-gray-600">Client Satisfaction</div>
+              </div>
+            </motion.div> */}
+          </motion.div>
+
           {/* Right Column - Image Showcase */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative"
+            className="relative order-1 lg:order-2"
           >
-            <div className="relative w-full h-[500px] lg:h-[500px]">
+            <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[460px]">
               {/* Main large image */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -202,78 +265,6 @@ export default function MottoPage() {
                 </div>
               </motion.div> */}
             </div>
-          </motion.div>
-
-          {/* Left Column - Mission & Vision Cards */}
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            className="space-y-6 lg:space-y-8"
-          >
-            {/* Vision Card */}
-            <motion.div
-              variants={scaleIn}
-              className="group bg-beige rounded-3xl p-8 shadow-lg shadow-beige-50  hover:shadow-sm transition-all duration-300"
-            >
-              <div className="flex items-start gap-6">
-                <div className="shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-green flex items-center justify-center shadow-sm shadow-green-100/50 group-hover:scale-110 transition-transform duration-300">
-                    <LuEye className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-black mb-3">
-                    Our Vision
-                  </h3>
-                  <p className="text-balck leading-relaxed">{visionText}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Mission Card */}
-            <motion.div
-              variants={scaleIn}
-              className="group bg-beige rounded-3xl p-8 shadow-lg shadow-beige-50  hover:shadow-sm transition-all duration-300"
-            >
-              <div className="flex items-start gap-6">
-                <div className="shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-green flex items-center justify-center shadow-sm shadow-green-100/50 group-hover:scale-110 transition-transform duration-300">
-                    <LuTarget className="w-8 h-8 text-white" />
-                  </div>
-                </div>
-                <div className="flex-1">
-                  <h3 className="text-2xl font-bold text-black mb-3">
-                    Our Mission
-                  </h3>
-                  <p className="text-balck leading-relaxed">{missionText}</p>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Stats or Additional Info */}
-            {/* <motion.div
-              variants={scaleIn}
-              className="grid grid-cols-3 gap-4 pt-4"
-            >
-              <div className="text-center p-4 bg-white/80 backdrop-blur rounded-2xl border border-gray-100">
-                <div className="text-2xl font-bold text-teal-600 mb-1">10+</div>
-                <div className="text-xs text-gray-600">Years Experience</div>
-              </div>
-              <div className="text-center p-4 bg-white/80 backdrop-blur rounded-2xl border border-gray-100">
-                <div className="text-2xl font-bold text-blue-600 mb-1">
-                  500+
-                </div>
-                <div className="text-xs text-gray-600">Projects Done</div>
-              </div>
-              <div className="text-center p-4 bg-white/80 backdrop-blur rounded-2xl border border-gray-100">
-                <div className="text-2xl font-bold text-purple-600 mb-1">
-                  98%
-                </div>
-                <div className="text-xs text-gray-600">Client Satisfaction</div>
-              </div>
-            </motion.div> */}
           </motion.div>
         </div>
       </div>

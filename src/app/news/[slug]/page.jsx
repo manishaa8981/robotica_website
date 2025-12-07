@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
       title: news.title,
       description,
       url,
-      siteName: "TechPaaila",
+      siteName: "Robotica",
       images: [{ url: image, width: 1200, height: 630, alt: news.title }],
       type: "article",
     },

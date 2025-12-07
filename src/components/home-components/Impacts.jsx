@@ -57,7 +57,7 @@ export default function Impacts() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full flex flex-col items-center mt-10"
         >
-          <h1 className="text-[28px] sm:text-[32px] md:text-[40px] font-extrabold text-center mb-6">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
             {section.mainTitle}
           </h1>
         </motion.div>

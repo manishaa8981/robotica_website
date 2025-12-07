@@ -42,7 +42,7 @@ export default function RoadMap() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <h1 className="text-[28px] sm:text-[32px] md:text-[40px] font-extrabold text-center mb-4">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
           24 Month Roadmap
         </h1>
         <p className="text-base sm:text-lg lg:text-xl mb-16 leading-relaxed text-center text-[#151515]">

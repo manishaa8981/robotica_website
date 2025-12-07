@@ -154,7 +154,7 @@ export default function GalleryView() {
   }, [selectedIndex, filteredGallery.length]);
 
   return (
-    <main className=" bg-white mx-auto">
+    <main className=" mx-auto">
       <div className="pb-20 px-4 md:px-[6vw] xl:px-[8vw]">
         {loading ? (
           <SkeletonGallery />
@@ -166,14 +166,14 @@ export default function GalleryView() {
               autoplay
               className="w-64"
             />
-            <p className="mt-4 text-xl text-gray-500 font-medium text-center">
+            <p className="mt-4 text-xl text-white font-medium text-center">
               No content available yet. Stay tuned!
             </p>
           </div>
         ) : (
           <div className="flex flex-col">
             <div className="text-center mb-8 mt-10">
-              <h1 className="text-center text-[30px] sm:text-[36px] md:text-[44px] font-extrabold">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
                 Capstone Gallery
               </h1>
             </div>
@@ -182,7 +182,7 @@ export default function GalleryView() {
               <div className="relative" ref={dropdownRef}>
                 <button
                   onClick={() => setDropdownOpen(!dropdownOpen)}
-                  className="text-sm lg:text-base px-4 py-2 border rounded-lg bg-white flex justify-between items-center gap-2 text-[#186f3e] hover:bg-gray-100"
+                  className="text-sm lg:text-base px-4 py-2 border rounded-lg bg-white flex justify-between items-center gap-2 text-black hover:bg-gray-100"
                 >
                   Filters <ChevronDown size={16} />
                 </button>
@@ -191,7 +191,7 @@ export default function GalleryView() {
                     {categories.map((cat) => (
                       <label
                         key={cat.title}
-                        className="text-sm lg:text-lg flex items-center gap-2 text-[#186f3e]"
+                        className="text-sm lg:text-lg flex items-center gap-2 text-black"
                       >
                         <input
                           type="checkbox"
@@ -205,7 +205,7 @@ export default function GalleryView() {
                     {selectedCategories.length > 0 && (
                       <button
                         onClick={clearAll}
-                        className="text-xs lg:text-sm mt-2 px-2 py-1 text-white bg-[#186f3e] rounded hover:bg-[#0ab855] cursor-pointer"
+                        className="text-xs lg:text-sm mt-2 px-2 py-1 text-white btn-primary btn-primary:hover cursor-pointer"
                       >
                         Clear All
                       </button>
@@ -219,7 +219,7 @@ export default function GalleryView() {
                 {selectedCategories.map((cat) => (
                   <span
                     key={cat}
-                    className="text-xs lg:text-sm flex items-center gap-1 bg-[#e1fbec] text-[#186f3e] px-3 py-1 rounded-full"
+                    className="text-xs lg:text-sm flex items-center gap-1 bg-primary-soft text-black px-3 py-1 rounded-full"
                   >
                     {cat}
                     <button onClick={() => toggleCategory(cat)}>
@@ -234,7 +234,7 @@ export default function GalleryView() {
             <div className="my-5 w-max relative flex gap-4 border-b border-gray-300 text-sm lg:text-base">
               <button
                 className={`px-4 py-2 ${
-                  !showAlbums ? "text-[#186f3e] font-bold" : "text-gray-600"
+                  !showAlbums ? "text-primary-light font-bold" : "text-white"
                 }`}
                 onClick={() => setShowAlbums(false)}
               >
@@ -242,14 +242,14 @@ export default function GalleryView() {
               </button>
               <button
                 className={`px-4 py-2 ${
-                  showAlbums ? "text-[#186f3e] font-bold" : "text-gray-600"
+                  showAlbums ? "text-primary-light font-bold" : "text-white"
                 }`}
                 onClick={() => setShowAlbums(true)}
               >
                 Albums
               </button>
               <span
-                className="absolute bottom-0 h-1 bg-[#186f3e] rounded-full transition-all duration-300"
+                className="absolute bottom-0 h-1 bg-primary-light rounded-full transition-all duration-300"
                 style={{ width: "50%", left: showAlbums ? "50%" : "0%" }}
               />
             </div>
@@ -267,7 +267,7 @@ export default function GalleryView() {
                       autoplay
                       className="w-64"
                     />
-                    <p className="mt-4 text-xl text-gray-500 font-medium text-center">
+                    <p className="mt-4 text-xl text-white font-medium text-center">
                       {galleryList.length === 0
                         ? "No content available yet. Stay tuned!"
                         : "No items match your selected filters."}

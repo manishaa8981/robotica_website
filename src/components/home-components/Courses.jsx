@@ -1,17 +1,15 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
-import { getCoursesApi, getCourseBySlugApi } from "../../axios/api";
-import HorizontalDivider from "../../components/HorizontalDivider";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import React, { useEffect, useState } from "react";
+import { getCoursesApi } from "../../axios/api";
 
 export default function PopularCourse() {
   const [courses, setCourses] = useState(null);
-  const containerRef = useRef(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +18,8 @@ export default function PopularCourse() {
         setCourses(res.data?.result || null);
       } catch (error) {
         console.error(error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchData();
@@ -46,11 +46,37 @@ export default function PopularCourse() {
     },
   };
 
+  if (loading) {
+    return (
+      <section className="w-full py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+          <div className="text-center mb-16">
+            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
+            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
+          </div>
+          <div className="grid gap-8">
+            {[1, 2, 3, 4].map((i) => (
+              <div
+                key={i}
+                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
+              >
+                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
+                <div className="space-y-2">
+                  <div className="h-4 w-full bg-white/10 rounded" />
+                  <div className="h-4 w-5/6 bg-white/10 rounded" />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
   if (!courses) return null;
 
   return (
-    <>
-      <div className="max-w-7xl mx-auto " id="courses">
+    <section className="w-full py-10" id="courses">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -59,10 +85,10 @@ export default function PopularCourse() {
           viewport={{ once: true }}
           className="text-center mb-8 lg:mb-10"
         >
-          <h2 className="relative text-[28px] sm:text-[32px] md:text-[40px] font-extrabold mb-0 md:mb-3 lg:mb-5">
+          <h2 className="relative text-[28px] sm:text-[32px] md:text-[40px] font-extrabold mb-3 lg:mb-5">
             Explore Our Courses
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl mb-16 leading-relaxed text-center text-[#151515]">
+          <p className="text-base sm:text-lg lg:text-xl leading-relaxed text-[#151515] max-w-2xl mx-auto">
             Our programs provide structured learning for academic and
             professional development.
           </p>
@@ -80,7 +106,7 @@ export default function PopularCourse() {
             <motion.div
               key={item._id}
               variants={cardVariants}
-              className="rounded-lg overflow-hidden shadow-md  bg-white group flex flex-col h-full"
+              className="rounded-lg overflow-hidden shadow-md bg-white group flex flex-col h-full"
             >
               {/* Image */}
               <div className="relative w-full h-[220px] overflow-hidden">
@@ -88,7 +114,7 @@ export default function PopularCourse() {
                   src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${item.image}`}
                   alt={item.title}
                   fill
-                  className="object-cover"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                   priority={false}
                 />
               </div>
@@ -99,8 +125,9 @@ export default function PopularCourse() {
                   {item.title.length > 50
                     ? item.title.slice(0, 50) + "..."
                     : item.title}
-                </h1>{" "}
-                {/* Button pushed to bottom */}
+                </h1>
+
+                {/* Button at bottom */}
                 <div className="mt-auto">
                   <Link
                     href={`/course/${item.slug}`}
@@ -114,6 +141,6 @@ export default function PopularCourse() {
           ))}
         </motion.div>
       </div>
-    </>
+    </section>
   );
 }

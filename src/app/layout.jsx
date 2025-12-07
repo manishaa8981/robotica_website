@@ -1,8 +1,8 @@
 // app/layout.jsx
+import { Merriweather, Open_Sans } from "next/font/google";
 import { Footer } from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
-import { Merriweather, Open_Sans } from "next/font/google";
 import "./globals.css";
 
 // Fonts
@@ -22,8 +22,8 @@ export const metadata = {
   title: "Robotica Institute",
   description: "Robotica Institute",
   icons: {
-    icon: "/brandlogo.png",
-    apple: "/brandlogo.png",
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
@@ -31,7 +31,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${merriweather.variable} antialiased bg-white min-h-screen flex flex-col`}
+        className={`${openSans.variable} ${merriweather.variable} antialiased min-h-screen flex flex-col`}
+        style={{
+          background:
+            "radial-gradient(ellipse at center, #6b2d7a 0%, #4a1f5c 30%, #2d1537 60%, #1a0a1f 80%, #000000 100%)",
+          backgroundAttachment: "fixed",
+        }}
       >
         <Navbar />
         <ScrollToTop />

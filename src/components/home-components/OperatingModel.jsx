@@ -236,7 +236,7 @@ export default function OperatingModel() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full flex flex-col items-center mb-10"
         >
-          <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold text-center text-[#111827]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
             {section.mainTitle}
           </h1>
           <div className="flex justify-center gap-2 mt-6">
