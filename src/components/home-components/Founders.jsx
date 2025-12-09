@@ -56,7 +56,7 @@ export default function Founders() {
   };
 
   return (
-    <section className="w-full">
+    <section className="w-full mt-10 mb-10 bg-white">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -64,15 +64,15 @@ export default function Founders() {
         viewport={{ once: true }}
         className="px-6 mb-10 flex justify-center"
       >
-        <div className="text-center">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
+        <div className="text-center ">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
             Founders
           </h1>
         </div>
       </motion.div>
 
       <motion.div
-        className="px-6 gap-6 flex flex-col md:flex-row md:flex-wrap md:justify-center"
+        className="px-6 gap-6 flex flex-col md:flex-row md:flex-wrap mb-10 md:justify-center"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -95,7 +95,7 @@ export default function Founders() {
             </div>
 
             {/* Divider — responsive */}
-            <div className="sm:block hidden w-1 h-28 bg-primary mx-5 rounded-full"></div>
+            <div className="sm:block hidden w-1 h-28 bg-primary-dark mx-5 rounded-full"></div>
             <div className="sm:hidden block w-1/2 h-1 bg-primary my-4 rounded-full"></div>
 
             {/* Info */}
@@ -106,7 +106,7 @@ export default function Founders() {
                 {member.role}
               </p>
 
-              <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-primary text-lg">
+              <div className="flex flex-wrap justify-center sm:justify-start gap-4 text-primary-dark text-lg">
                 {member.facebook && (
                   <a
                     className="hover:scale-110  transition"

@@ -69,10 +69,12 @@ export default function AdmissionsPage() {
   }
 
   return (
-    <main className="w-full text--primary-soft mt-10 ">
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-8 text-center leading-tight">
-        {data.mainTitle}
-      </h1>
+    <main className="w-full text--primary-soft bg-white  ">
+     <div className="pt-10 bg-white">
+  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-8 text-center leading-tight">
+    {data.mainTitle}
+  </h1>
+</div>
       <section className="relative mb-10 overflow-hidden">
         {/* Background image */}
         <div
