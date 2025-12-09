@@ -26,7 +26,7 @@ export default function CorePrograms() {
   if (loading) {
     return (
       <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
             <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
@@ -55,12 +55,12 @@ export default function CorePrograms() {
   const getSemesterIcon = (index) => {
     const icons = [BookOpen, Target, Zap, BookOpen];
     const Icon = icons[index % icons.length];
-    return <Icon className="w-10 h-10 text-white" />;
+    return <Icon className="w-8 h-8 text-white" />;
   };
 
   return (
-    <section className="w-full py-10 lg:py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="w-full pb-10 lg:pb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
         {/* HEADER */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,7 +69,7 @@ export default function CorePrograms() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-10  leading-tight">
             {program.mainTitle ||
               "Programs built with industry outcomes in mind"}
           </h1>
@@ -144,7 +144,7 @@ export default function CorePrograms() {
                 className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-purple-400/30 transition-all duration-300 hover:shadow-[0_0_10px_rgba(168,85,247,0.3)]"
               >
                 {/* Semester number badge */}
-                <div className="bg-primary absolute -top-3 -left-3 w-16 h-16 rounded-full flex items-center justify-center shadow-lg  ">
+                <div className="bg-primary-dark absolute -top-3 -left-3 w-16 h-16 rounded-full flex items-center justify-center shadow-lg  ">
                   {getSemesterIcon(index)}
                 </div>
 

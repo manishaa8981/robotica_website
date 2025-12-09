@@ -42,7 +42,7 @@ function AboutUs() {
   if (loading) {
     return (
       <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
             <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
@@ -83,7 +83,7 @@ function AboutUs() {
 
   return (
     <section className="flex flex-col w-full">
-      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 w-full">
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0 py-10 w-full">
         {/* --- TITLE AT TOP --- */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">

@@ -7,16 +7,27 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useRef, useState } from "react";
 
-// Simple NavLink (used inside the center pill)
+// Simple NavLink (used in center pill + mobile)
 const NavLink = ({ href, label, pathname, onClick }) => {
   const isActive = pathname === href;
 
   return (
     <Link href={href} onClick={onClick} className="relative">
       <span
-        className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 inline-block ${
-          isActive ? "bg-white/20 text-white" : "text-white/80 hover:text-white"
-        }`}
+        className={`
+          px-5 py-2 rounded-full text-m font-semibold transition-all duration-200 inline-block
+          ${
+            isActive
+              ? // Active:
+                // Desktop: soft primary pill + primary-dark text
+                // Mobile: white text
+                "bg-primary-soft text-primary-dark hover:text-black "
+              : // Inactive:
+                // Desktop: primary-dark
+                // Mobile: white/80
+                "lg:text-[var(--primary-dark)] lg:hover:text-black text-white/80 hover:text-white"
+          }
+        `}
       >
         {label}
       </span>
@@ -48,11 +59,15 @@ const Dropdown = ({ label, children, setOpenDropdown, openDropdown }) => {
     >
       <button
         type="button"
-        className={`flex items-center gap-1 px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
-          isOpenDrop
-            ? "bg-white/20 text-white"
-            : "text-white/70 hover:text-white"
-        }`}
+        className={`
+          flex items-center gap-1 px-5 py-2 rounded-full text-m font-semibold
+          transition-all duration-200
+          ${
+            isOpenDrop
+              ? "bg-primary-soft text-primary-dark"
+              : "text-primary-dark hover:text-primary-dark/80"
+          }
+        `}
       >
         {label}
         <ChevronDown
@@ -64,7 +79,7 @@ const Dropdown = ({ label, children, setOpenDropdown, openDropdown }) => {
       </button>
 
       {isOpenDrop && (
-        <div className="absolute left-0 top-full mt-2 bg-[#1f152f]/95 backdrop-blur-xl shadow-2xl rounded-xl border border-white/10 whitespace-nowrap z-50 py-1 min-w-[180px]">
+        <div className="absolute left-0 top-full mt-2 bg-[#1f152f]/95 font-semibold backdrop-blur-xl shadow-2xl rounded-xl border border-white/10 whitespace-nowrap z-50 py-1 min-w-[180px]">
           {children}
         </div>
       )}
@@ -84,29 +99,29 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 px-4 lg:px-8">
-      {/* This wrapper gives MOBILE a pill background, desktop stays transparent */}
+    <nav className="fixed top-0 left-0 bg-white right-0 z-50 px-4 lg:px-0">
+      {/* MAIN WRAPPER */}
       <div
         className="
-  max-w-6xl mx-auto flex items-center justify-between
-  rounded-full bg-black/25 backdrop-blur-md px-3 py-1.5
-  lg:bg-transparent lg:backdrop-blur-none lg:rounded-none lg:px-0 lg:py-4
-"
+          max-w-7xl mx-auto flex items-center justify-between
+          rounded-full backdrop-blur-md px-3 py-1.5
+          lg:bg-transparent lg:backdrop-blur-none lg:rounded-none lg:px-0 lg:py-4
+        "
       >
         {/* LOGO */}
         <div className="flex items-center flex-shrink-0">
           <Image
-            src="/logo.png"
+            src="/logo[1].png"
             alt="Robotica Institute of Technology"
-            width={180}
+            width={190}
             height={180}
-            className="h-10 w-auto object-contain"
+            className="w-auto object-contain"
           />
         </div>
 
         {/* CENTER PILL NAV – Desktop */}
         <div className="hidden lg:flex flex-1 justify-center">
-<div className="bg-[#2b0b4a]/90 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 flex items-center gap-1 shadow-lg">
+          <div className="backdrop-blur-md border text-primary-dark border-white/10 rounded-full px-4 py-2 flex items-center gap-1">
             <NavLink href="/" label="Home" pathname={pathname} />
 
             <Dropdown
@@ -116,19 +131,19 @@ export default function Navbar() {
             >
               <Link
                 href="/about"
-                className="block px-4 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 About Us
               </Link>
               <Link
                 href="/faq"
-                className="block px-4 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 FAQ
               </Link>
               <Link
                 href="/contact"
-                className="block px-4 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Contact Us
               </Link>
@@ -141,19 +156,19 @@ export default function Navbar() {
             >
               <Link
                 href="/program"
-                className="block px-4 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Programs
               </Link>
               <Link
                 href="/courses"
-                className="block px-4 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Courses
               </Link>
               <Link
                 href="/tracks"
-                className="block px-4 py-2 text-sm text-white/90 hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Tracks
               </Link>
@@ -186,14 +201,14 @@ export default function Navbar() {
         <div className="lg:hidden">
           <button
             onClick={() => setIsOpen(true)}
-            className="text-white/90 hover:text-white focus:outline-none p-2"
+            className="text-black hover:text-black focus:outline-none p-2"
           >
             <Menu size={26} />
           </button>
         </div>
       </div>
 
-      {/* MOBILE & TABLET SIDEBAR (unchanged) */}
+      {/* MOBILE & TABLET SIDEBAR */}
       <AnimatePresence>
         {isOpen && (
           <>
@@ -213,17 +228,17 @@ export default function Navbar() {
               exit="exit"
               transition={{ duration: 0.25 }}
             >
-              <div className="flex items-center justify-between p-5 border-b border-white/10">
-                <Image src="/logo.png" alt="Logo" width={90} height={20} />
+              <div className="flex items-center justify-between bg-white p-5 border-b border-white/10">
+                <Image src="/logo.png" alt="Logo" width={90} height={10} />
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="text-white/90 hover:text-white p-1"
+                  className="text-black hover:text-black p-1"
                 >
-                  <X size={24} />
+                  <X size={24} className="font-black" />
                 </button>
               </div>
 
-              <div className="flex flex-col space-y-2 p-5 font-medium text-sm overflow-y-auto">
+              <div className="flex flex-col space-y-2 p-5 font-medium text-m overflow-y-auto">
                 <NavLink
                   href="/"
                   label="Home"
@@ -287,7 +302,7 @@ export default function Navbar() {
 
                 <div className="pt-4">
                   <Link href="/contact" onClick={() => setIsOpen(false)}>
-                    <button className="w-full px-6 py-2.5 rounded-full bg-gradient-to-r from-[#9333ea] to-[#a855f7] text-white text-sm font-semibold hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300">
+                    <button className="w-full px-6 py-2.5 rounded-full bg-primary-dark text-white text-m font-semibold hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300">
                       Apply Now
                     </button>
                   </Link>

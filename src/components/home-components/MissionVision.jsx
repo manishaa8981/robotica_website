@@ -29,8 +29,8 @@ export default function MottoPage() {
 
   if (loading) {
     return (
-      <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+      <section className="w-full  py-16 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
             <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
@@ -95,13 +95,13 @@ export default function MottoPage() {
   };
 
   return (
-    <section className="w-full pt-10 lg:pt-10 relative overflow-hidden ">
+    <section className="w-full bg-white pt-10 px-4 lg:pt-10 mb-10 relative overflow-hidden ">
       {/* <section className="w-full py-10 lg:py-10 relative overflow-hidden bg-linear-to-br from-slate-50 via-white to-teal-50/30"> */}
 
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto mb-20 relative z-10  sm:px-6 lg:px-0">
         {/* Header Section */}
         <motion.div
           initial="hidden"
@@ -123,7 +123,7 @@ export default function MottoPage() {
             </span>
           </motion.div> */}
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
             {heading}
           </h1>
         </motion.div>

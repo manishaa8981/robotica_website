@@ -34,7 +34,7 @@ export default function AdmissionsPage() {
   if (loading) {
     return (
       <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
             <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
@@ -100,7 +100,7 @@ export default function AdmissionsPage() {
 
       {/* ---------------------- CONTENT CARDS ---------------------- */}
       <section className="pb-10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -113,7 +113,7 @@ export default function AdmissionsPage() {
               variants={fadeUp}
               className="rounded-2xl bg-primary-soft p-6 md:p-7 shadow-sm"
             >
-              <p className="font-bold uppercase  text-primary mb-2">
+              <p className="font-bold uppercase  text-primary-dark mb-2">
                 Prerequisites
               </p>
 
@@ -129,7 +129,7 @@ export default function AdmissionsPage() {
               <ul className="space-y-3 text-m text-black">
                 {data.prerequisites?.map((p, i) => (
                   <li key={i} className="flex gap-2 items-start">
-                    <span className="mt-[6px] inline-block h-2 w-2 rounded-full bg-primary" />
+                    <span className="mt-[6px] inline-block h-2 w-2 rounded-full bg-primary-dark" />
                     {p}
                   </li>
                 ))}
@@ -141,7 +141,7 @@ export default function AdmissionsPage() {
               variants={fadeUp}
               className="rounded-2xl bg-primary-soft p-6 md:p-7 shadow-sm"
             >
-              <p className="font-bold uppercase text-primary  mb-2">
+              <p className="font-bold uppercase text-primary-dark  mb-2">
                 Grading & Assessment
               </p>
 
@@ -170,7 +170,7 @@ export default function AdmissionsPage() {
               className="rounded-2xl bg-primary-soft p-6 md:p-7 flex flex-col justify-between shadow-sm"
             >
               <div>
-                <p className="font-bold uppercase text-primary  mb-2">
+                <p className="font-bold uppercase text-primary-dark  mb-2">
                   Badges & Credentials
                 </p>
 
@@ -187,7 +187,7 @@ export default function AdmissionsPage() {
                   {data.badges?.map((b, i) => (
                     <span
                       key={i}
-                      className="text-sm px-5 py-2 rounded-full text-white bg-primary border border-white/20"
+                      className="text-sm px-5 py-2 rounded-full text-white bg-primary-dark border border-white/20"
                     >
                       {b}
                     </span>

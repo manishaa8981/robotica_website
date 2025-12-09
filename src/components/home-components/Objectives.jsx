@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { getAllObjectivesApi } from "../../axios/api";
 import { motion } from "framer-motion";
-
+import { useEffect, useState } from "react";
+import { getAllObjectivesApi } from "../../axios/api";
 
 export default function Objectives() {
   const [objectives, setObjectives] = useState([]);
@@ -48,7 +47,7 @@ export default function Objectives() {
   if (loading) {
     return (
       <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
             <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
@@ -70,7 +69,8 @@ export default function Objectives() {
         </div>
       </section>
     );
-  }  if (!objectives.length) return null;
+  }
+  if (!objectives.length) return null;
 
   return (
     <section className="max-w-7xl mx-auto ">

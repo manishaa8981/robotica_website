@@ -35,7 +35,7 @@ export const HeroBanner = () => {
   if (loading) {
     return (
       <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
             <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
@@ -61,11 +61,11 @@ export const HeroBanner = () => {
   if (!banners || banners.length === 0) return null;
 
   return (
-    <section className=" relative w-full h-fit py-10 md:py-24 lg:py-10  flex items-center justify-center overflow-hidden">
+    <section className=" relative w-full h-fit py-10 md:py-24 lg:py-10 mt-5 flex items-center justify-center overflow-hidden">
       {banners.map((banner) => (
         <div
           key={banner._id}
-          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-12"
+          className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 flex flex-col lg:flex-row items-center justify-between gap-12"
         >
           {/* Left Column */}
           <motion.div

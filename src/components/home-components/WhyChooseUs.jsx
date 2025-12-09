@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Award, GraduationCap, Timer } from "lucide-react";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getWhyChooseUsApi } from "../../axios/api";
 
@@ -50,7 +49,7 @@ export default function WhyChooseUs() {
   if (loading) {
     return (
       <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
             <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
@@ -79,8 +78,8 @@ export default function WhyChooseUs() {
   const heroImage = section.heroImage || section.items?.[0]?.image || null;
 
   return (
-    <section className="w-full pb-10">
-      <div className="mx-auto max-w-7xl w-full px-4 sm:px-6 lg:px-8">
+    <section className="w-full bg-white py-10">
+      <div className="mx-auto max-w-7xl w-full px-4  sm:px-6 lg:px-0">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -89,7 +88,7 @@ export default function WhyChooseUs() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="w-full flex flex-col items-center mb-10"
         >
-          <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
+          <h1 className="text-4xl text-center sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
             {section.mainTitle}
           </h1>
         </motion.div>

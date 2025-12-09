@@ -45,7 +45,7 @@ export default function TracksSpotlightSection() {
   if (loading) {
     return (
       <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-pulse">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
             <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
@@ -70,7 +70,7 @@ export default function TracksSpotlightSection() {
   }
   return (
     <section className="w-full ">
-      <div className="max-w-7xl mx-auto px-4 py-3.5 sm:px-6 lg:px-8  ">
+      <div className="max-w-7xl mx-auto px-4 py-3.5 sm:px-6 lg:px-0  ">
         <div className="grid md:grid-cols-2 gap-4 overflow-hidden">
           {/* LEFT: Content block */}
           <motion.div
