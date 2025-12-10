@@ -92,7 +92,7 @@ export default function OperatingModel() {
             <motion.div
               key={idx}
               variants={mdLgItemVariants}
-              className="flex flex-col gap-3  p-6 rounded-lg border bg-primary-soft border-gray-200 shadow-md transition-colors duration-300 hover:bg-green-50"
+              className="flex flex-col gap-3  p-6 rounded-3xl border bg-primary-soft border-gray-200 shadow-md transition-colors duration-300 hover:bg-green-50"
             >
               <h1 className="font-bold text-xl md:text-2xl mb-2">
                 {item.title}
@@ -118,7 +118,7 @@ export default function OperatingModel() {
         </motion.div>
 
         {/* Mobile screens */}
-        <div className="md:hidden bg-primary-soft grid grid-cols-1 gap-1 mx-4 my-4 rounded-2xl p-4">
+        <div className="md:hidden bg-primary-soft grid grid-cols-1 gap-1 mx-4 my-4 rounded-lg p-4">
           {section.items.map((item, idx) => (
             <motion.div
               key={idx}
@@ -126,7 +126,7 @@ export default function OperatingModel() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
               variants={mobileItemVariants}
-              className="flex flex-col gap-3 rounded-lg px-4 py-4 transition-colors duration-300 hover:bg-gray-50"
+              className="flex flex-col gap-3 rounded-3xl px-4 py-4 transition-colors duration-300 hover:bg-gray-50"
             >
               <div className="flex gap-4">
                 {/* <img
