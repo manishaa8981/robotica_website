@@ -69,19 +69,18 @@ export default function AdmissionsPage() {
   }
 
   return (
-    <main className="w-full text--primary-soft bg-white  ">
-     <div className="pt-10 bg-white">
-  <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-8 text-center leading-tight">
-    {data.mainTitle}
-  </h1>
-</div>
+    <main className="w-full text--primary-soft bg-white">
+      <div className="pt-10 sm:pt-0 bg-white">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-8 text-center leading-tight">
+          {data.mainTitle}
+        </h1>
+      </div>
       <section className="relative mb-10 overflow-hidden">
         {/* Background image */}
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: "url('/bg-texture-lab.jpg')" }}
         />
-
         {/* Overlay */}
         <div className="relative h-60 md:h-64 lg:h-72 flex items-center justify-center backdrop-blur-md bg-[rgba(101,100,99,0.1)]">
           <motion.div
