@@ -8,6 +8,7 @@ import CorePrograms from "../components/home-components/CorePrograms";
 import { HeroBanner } from "../components/home-components/Hero";
 import MottoPage from "../components/home-components/MissionVision";
 import Objectives from "../components/home-components/Objectives";
+import OperatingModel from "../components/home-components/OperatingModel";
 import WhyChooseUs from "../components/home-components/WhyChooseUs";
 
 function HomeContent() {
@@ -63,6 +64,7 @@ function HomeContent() {
       <Objectives />
       <CorePrograms />
       <WhyChooseUs />
+      <OperatingModel />
       {/* <PopularCourse /> */}
       {/* {!loading && recentNews.length > 0 && (
         <div className="max-w-7xl mx-auto">
