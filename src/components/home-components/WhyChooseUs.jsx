@@ -212,7 +212,7 @@ export default function WhyChooseUs() {
         </motion.div>
 
         {/* Big image block – full space, no padding inside */}
-        {heroImage && (
+        {/* {heroImage && (
           <motion.div
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -228,7 +228,25 @@ export default function WhyChooseUs() {
               className="w-full h-80 md:h-[400px] lg:h-[600px] object-cover"
             />
           </motion.div>
-        )}
+        )} */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          className="w-full rounded-3xl overflow-hidden"
+        >
+          <video
+            src="/video1.mp4"
+            poster="/poster/why-choose-us.jpg"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-80 md:h-[400px] lg:h-[600px] object-cover"
+          />
+        </motion.div>
       </div>
     </section>
   );

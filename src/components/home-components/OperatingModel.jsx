@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getOperatingModelApi } from "../../axios/api";
 import ImageCarousel from "../ImageCarousel";
-import { Fullscreen } from "lucide-react";
 
 export default function OperatingModel() {
   const [section, setSection] = useState(null);
@@ -110,17 +109,16 @@ export default function OperatingModel() {
                   height={400}
                   className="object-fill mb-2"
                 />
-                 <p className="text-black text-m text-justify">
-                {item.description}
-              </p>
+                <p className="text-black text-m text-justify">
+                  {item.description}
+                </p>
               </div>
-             
             </motion.div>
           ))}
         </motion.div>
 
         {/* Mobile screens */}
-        <div className="md:hidden grid grid-cols-1 gap-1 w-full">
+        <div className="md:hidden bg-primary-soft grid grid-cols-1 gap-1 mx-4 my-4 rounded-2xl p-4">
           {section.items.map((item, idx) => (
             <motion.div
               key={idx}
@@ -128,7 +126,7 @@ export default function OperatingModel() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.5 }}
               variants={mobileItemVariants}
-              className="flex flex-col gap-3 rounded-lg transition-colors duration-300 hover:bg-gray-50"
+              className="flex flex-col gap-3 rounded-lg px-4 py-4 transition-colors duration-300 hover:bg-gray-50"
             >
               <div className="flex gap-4">
                 {/* <img
