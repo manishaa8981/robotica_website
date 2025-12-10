@@ -136,7 +136,7 @@ export default function MottoPage() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
-            className="space-y-6 lg:space-y-8 order-2 lg:order-1"
+            className="space-y-6 lg:space-y-8 order-2 lg:order-2"
           >
             {/* Vision Card */}
             <motion.div
@@ -208,7 +208,7 @@ export default function MottoPage() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="relative order-1 lg:order-2"
+            className="relative order-1 lg:order-1"
           >
             <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[460px]">
               {/* Main large image */}
