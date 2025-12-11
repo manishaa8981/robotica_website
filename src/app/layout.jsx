@@ -4,6 +4,7 @@ import { Footer } from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 // Fonts
 const merriweather = Merriweather({

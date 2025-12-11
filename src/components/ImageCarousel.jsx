@@ -30,10 +30,10 @@ export default function ImageCarousel({ slides = [] }) {
   }, [emblaApi]);
 
   return (
-    <div className="relative w-full py-6">
+    <div className="relative w-full py-0 mb-10">
       {/* gradient fade on edges */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[#020726] to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[#020726] to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#020726] to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-[#020726] to-transparent z-10" />
 
       {/* Embla viewport */}
       <div className="overflow-hidden" ref={emblaRef}>

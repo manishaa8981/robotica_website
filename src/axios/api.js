@@ -81,3 +81,10 @@ export const manageAdmissionsApi = (data) => Api.post("/api/admissions", data);
 
 //FAQ
 export const getFaqsApi = () => Api.get("/api/faqs");
+
+//IndustryPartner
+export const getIndustryPartnersPublicApi = () =>
+  Api.get("/api/industry-partners");
+
+//Application
+export const submitApplicationApi = (data) => Api.post("api/applications", data);

@@ -64,7 +64,7 @@ export default function OperatingModel() {
     },
   ];
   return (
-    <>
+    <main className=" w-full">
       <div className="mx-auto max-w-7xl flex flex-col items-start lg:items-center w-full">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ export default function OperatingModel() {
               variants={mdLgItemVariants}
               className="flex flex-col gap-3  p-6 rounded-3xl border bg-primary-soft border-gray-200 shadow-md transition-colors duration-300 hover:bg-green-50"
             >
-              <h1 className="font-bold text-xl md:text-2xl mb-2">
+              <h1 className="font-bold text-primary-dark text-xl md:text-2xl mb-2">
                 {item.title}
               </h1>
               <div className="flex justify-center gap-6 items-center">
@@ -137,7 +137,7 @@ export default function OperatingModel() {
                 <h2 className="font-bold text-xl md:text-2xl">{item.title}</h2>
               </div>
 
-              <p className="text-[15px] text-[#151515] text-justify">
+              <p className="text-[15px] text-black text-justify">
                 {item.description}
               </p>
 
@@ -149,6 +149,6 @@ export default function OperatingModel() {
           ))}
         </div>
       </div>
-    </>
+    </main>
   );
 }

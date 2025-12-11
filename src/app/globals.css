@@ -106,6 +106,27 @@ h6 {
   scrollbar-width: none;
 }
 
+/* ===== Industry partners auto-scroll ===== */
+
+.partner-marquee {
+  animation: partner-scroll 25s linear infinite;
+  will-change: transform;
+}
+
+.partner-marquee:hover {
+  animation-play-state: paused; /* pause on hover */
+}
+
+@keyframes partner-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* since we duplicated the list, -50% gives a seamless loop */
+    transform: translateX(-50%);
+  }
+}
+
 :root {
   /* PRIMARY BRAND COLORS */
   --primary: #8c18c1;

@@ -63,6 +63,7 @@ function HomeContent() {
       <MottoPage />
       <Objectives />
       <CorePrograms />
+
       <WhyChooseUs />
       <OperatingModel />
       {/* <PopularCourse /> */}

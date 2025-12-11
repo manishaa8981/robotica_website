@@ -100,14 +100,8 @@ export const HeroBanner = () => {
               custom={3}
               className="flex flex-col sm:flex-row items-center gap-4"
             >
-              {/* <a
-                href="/admission"
-                className="bg-green-700 hover:bg-green-800 text-white font-semibold px-6 py-3 rounded-lg transition"
-              >
-                Apply Now
-              </a> */}
               <a
-                href="/contact"
+                href="/application-form"
                 className="btn-primary btn-primary:hover text-white px-8 py-3 shadow-sm rounded-full font-semibold transition-all duration-300 hover:shadow-xl"
               >
                 Apply Now

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { LuEye, LuTarget } from "react-icons/lu";
 import { getMottoContentApi } from "../../axios/api";
+import IndustryPartnersCarousel from "./IndustryPartnersCarousel";
 
 export default function MottoPage() {
   const [mottoData, setMottoData] = useState(null);
@@ -268,6 +269,7 @@ export default function MottoPage() {
           </motion.div>
         </div>
       </div>
+      <IndustryPartnersCarousel />
     </section>
   );
 }
