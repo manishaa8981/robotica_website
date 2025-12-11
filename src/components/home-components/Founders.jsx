@@ -72,7 +72,7 @@ export default function Founders() {
       </motion.div>
 
       <motion.div
-        className="px-6 gap-6 flex flex-col md:flex-row md:flex-wrap mb-10 md:justify-center"
+        className="px-4 gap-6 flex flex-col md:flex-row md:flex-wrap mb-10  max-w-7xl mx-auto md:justify-center"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
