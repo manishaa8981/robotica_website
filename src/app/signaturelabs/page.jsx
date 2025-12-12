@@ -101,7 +101,7 @@ export default function SignatureLabs() {
   };
 
   return (
-    <section className="relative w-full backdrop-blur-md py-10 overflow-hidden">
+    <section className="hero-bg relative w-full backdrop-blur-md py-10 overflow-hidden">
       <div className="absolute inset-0 bg-gray/100 backdrop-blur-sm"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 lg:px-0">

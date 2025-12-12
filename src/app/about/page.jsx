@@ -41,7 +41,7 @@ function AboutUs() {
   }, [searchParams]);
   if (loading) {
     return (
-      <section className="w-full py-16 lg:py-24">
+      <section className=" w-full py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
@@ -82,11 +82,11 @@ function AboutUs() {
   }
 
   return (
-    <section className="flex flex-col w-full">
+    <section className="bg-soft flex flex-col w-full">
       <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0 py-10 w-full">
         {/* --- TITLE AT TOP --- */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
             {data.title}
           </h1>
         </div>
@@ -129,7 +129,7 @@ function AboutUs() {
           {/* RIGHT TEXT – scrolls while images stay on desktop */}
           <div className="text-left text-base leading-relaxed text-justify text-white space-y-4 mt-4 lg:mt-0">
             <div
-              className="prose max-w-none text-white"
+              className="prose max-w-none text-black"
               dangerouslySetInnerHTML={{ __html: data.description }}
             />
           </div>

@@ -40,9 +40,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.variable} font-sans antialiased min-h-screen flex flex-col`}
         style={{
-          background:
-            "radial-gradient(ellipse at center, #6b2d7a 0%, #4a1f5c 30%, #2d1537 60%, #1a0a1f 80%, #000000 100%)",
-          backgroundAttachment: "fixed",
+          background: "#ffffff"
+          // background:
+          //   "radial-gradient(ellipse at center, #6b2d7a 0%, #4a1f5c 30%, #2d1537 60%, #1a0a1f 80%, #000000 100%)",
+          // backgroundAttachment: "fixed",
         }}
       >
         <Navbar />

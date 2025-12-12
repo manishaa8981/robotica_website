@@ -154,7 +154,7 @@ export default function GalleryView() {
   }, [selectedIndex, filteredGallery.length]);
 
   return (
-    <main className=" mx-auto">
+    <main className="mx-auto">
       <div className="pb-20 px-4 md:px-[6vw] xl:px-[8vw]">
         {loading ? (
           <SkeletonGallery />
@@ -166,14 +166,14 @@ export default function GalleryView() {
               autoplay
               className="w-64"
             />
-            <p className="mt-4 text-xl text-white font-medium text-center">
+            <p className="mt-4 text-xl text-black font-medium text-center">
               No content available yet. Stay tuned!
             </p>
           </div>
         ) : (
           <div className="flex flex-col">
             <div className="text-center mb-8 mt-10">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
                 Capstone Gallery
               </h1>
             </div>
@@ -234,7 +234,7 @@ export default function GalleryView() {
             <div className="my-5 w-max relative flex gap-4 border-b border-gray-300 text-sm lg:text-base">
               <button
                 className={`px-4 py-2 ${
-                  !showAlbums ? "text-primary-light font-bold" : "text-white"
+                  !showAlbums ? "text-primary-dark font-bold" : "text-black"
                 }`}
                 onClick={() => setShowAlbums(false)}
               >
@@ -242,14 +242,14 @@ export default function GalleryView() {
               </button>
               <button
                 className={`px-4 py-2 ${
-                  showAlbums ? "text-primary-light font-bold" : "text-white"
+                  showAlbums ? "text-primary-dark font-bold" : "text-black"
                 }`}
                 onClick={() => setShowAlbums(true)}
               >
                 Albums
               </button>
               <span
-                className="absolute bottom-0 h-1 bg-primary-light rounded-full transition-all duration-300"
+                className="absolute bottom-0 h-1 bg-primary-dark rounded-full transition-all duration-300"
                 style={{ width: "50%", left: showAlbums ? "50%" : "0%" }}
               />
             </div>

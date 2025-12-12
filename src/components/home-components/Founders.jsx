@@ -65,7 +65,7 @@ export default function Founders() {
         className="px-6 mb-10 flex justify-center"
       >
         <div className="text-center ">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight mt-10">
             Founders
           </h1>
         </div>
@@ -82,7 +82,7 @@ export default function Founders() {
           <motion.div
             key={member._id}
             variants={cardVariants}
-            className="flex flex-col sm:flex-row items-center bg-primary-soft rounded-2xl p-6 shadow-md border border-gray-200 w-full md:w-[48%] min-h-[220px]"
+            className="flex flex-col sm:flex-row items-center card  p-6  w-full md:w-[48%] min-h-[220px]"
           >
             {/* Image */}
             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-xl shadow-md overflow-hidden">

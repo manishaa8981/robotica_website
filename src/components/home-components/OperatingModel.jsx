@@ -64,52 +64,76 @@ export default function OperatingModel() {
     },
   ];
   return (
-    <main className=" w-full">
-      <div className="mx-auto max-w-7xl flex flex-col items-start lg:items-center w-full">
+    <section
+      id="internship-opportunities"
+      className="
+        w-full bg-soft scroll-mt-32
+    mt-10 sm:mt-14 lg:mt-16
+    py-10 sm:py-14 lg:py-20
+    "
+    >
+      {/* CONTAINER */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* TITLE */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="w-full flex flex-col mt-10"
+          className="text-center"
         >
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-10 text-center leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-dark leading-tight">
             {section.mainTitle}
           </h1>
         </motion.div>
-        <div className="max-w-7xl mb-6 mx-auto">
-          <ImageCarousel slides={slides} />
+
+        {/* CAROUSEL */}
+        <div className="max-w-7xl mb-6 mt-6 sm:mt-6 lg:mt-8 mx-auto">
+          {" "}
+          <ImageCarousel slides={slides} />{" "}
         </div>
-        {/* md & lg screens */}
+
+        {/* DESKTOP & TABLET */}
         <motion.div
-          className="hidden md:grid grid-cols-1 gap-2 lg:gap-8 w-full"
+          className="hidden md:grid mt-10 sm:mt-12 lg:mt-16 grid-cols-1 gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ once: true, amount: 0.3 }}
         >
           {section.items.map((item, idx) => (
             <motion.div
               key={idx}
               variants={mdLgItemVariants}
-              className="flex flex-col gap-3  p-6 rounded-3xl border bg-primary-soft border-gray-200 shadow-md transition-colors duration-300 hover:bg-green-50"
+              className="
+              rounded-3xl bg-white
+              border border-[#E6D9F2]
+              p-5 sm:p-6 lg:p-8
+              shadow-[0_10px_26px_rgba(76,18,132,0.10)]
+              hover:shadow-[0_16px_34px_rgba(76,18,132,0.14)]
+              transition-shadow duration-300
+            "
             >
-              <h1 className="font-bold text-primary-dark text-xl md:text-2xl mb-2">
+              <h2 className="font-bold text-primary-dark text-lg sm:text-xl lg:text-2xl">
                 {item.title}
-              </h1>
-              <div className="flex justify-center gap-6 items-center">
-                <Image
-                  src={
-                    item?.image
-                      ? `${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${item.image}`
-                      : "/placeholder.png"
-                  }
-                  alt={item.title}
-                  width={400}
-                  height={400}
-                  className="object-fill mb-2"
-                />
-                <p className="text-black text-m text-justify">
+              </h2>
+
+              <div className="mt-4 grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-5 lg:gap-8 items-center">
+                <div className="rounded-2xl overflow-hidden bg-[#F3E8FF]">
+                  <Image
+                    src={
+                      item?.image
+                        ? `${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${item.image}`
+                        : "/placeholder.png"
+                    }
+                    alt={item.title}
+                    width={900}
+                    height={600}
+                    className="w-full h-[220px] sm:h-[240px] lg:h-[260px] object-cover"
+                  />
+                </div>
+
+                <p className="text-sm sm:text-base text-[#4B3B57] leading-relaxed text-justify">
                   {item.description}
                 </p>
               </div>
@@ -117,38 +141,34 @@ export default function OperatingModel() {
           ))}
         </motion.div>
 
-        {/* Mobile screens */}
-        <div className="md:hidden bg-primary-soft grid grid-cols-1 gap-1 mx-4 my-4 rounded-lg p-4">
-          {section.items.map((item, idx) => (
-            <motion.div
-              key={idx}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={mobileItemVariants}
-              className="flex flex-col gap-3 rounded-3xl px-4 py-4 transition-colors duration-300 hover:bg-gray-50"
-            >
-              <div className="flex gap-4">
-                {/* <img
-                  src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${item.image}`}
-                  alt={item.title}
-                  className="w-6 h-6 object-contain mb-2"
-                /> */}
-                <h2 className="font-bold text-xl md:text-2xl">{item.title}</h2>
-              </div>
+        {/* MOBILE */}
+        <div className="md:hidden mt-8">
+          <div className="rounded-2xl bg-white border border-[#E6D9F2] p-4 shadow-[0_10px_26px_rgba(76,18,132,0.10)]">
+            {section.items.map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={mobileItemVariants}
+                className="py-4"
+              >
+                <h3 className="font-bold text-primary-dark text-lg">
+                  {item.title}
+                </h3>
 
-              <p className="text-[15px] text-black text-justify">
-                {item.description}
-              </p>
+                <p className="mt-2 text-[15px] leading-relaxed text-[#4B3B57] text-justify">
+                  {item.description}
+                </p>
 
-              {/* Divider line visible only on mobile except after last item */}
-              {idx !== section.items.length - 1 && (
-                <div className="border-b border-gray-300 my-4" />
-              )}
-            </motion.div>
-          ))}
+                {idx !== section.items.length - 1 && (
+                  <div className="border-b border-[#E6D9F2] mt-5" />
+                )}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
-    </main>
+    </section>
   );
 }

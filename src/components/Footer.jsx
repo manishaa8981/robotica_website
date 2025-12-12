@@ -317,7 +317,7 @@ export const Footer = () => {
             <ul className="space-y-4 text-base text-white/90">
               {data?.location && (
                 <li className="flex items-start gap-3">
-                  <MapPin size={18} className="mt-1 text-green" />
+                  <MapPin size={18} className="mt-1 text-primary-light" />
                   <span>{data.location}</span>
                 </li>
               )}

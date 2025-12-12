@@ -15,19 +15,15 @@ const NavLink = ({ href, label, pathname, onClick }) => {
     <Link href={href} onClick={onClick} className="relative">
       <span
         className={`
-          px-5 py-2 rounded-full text-m font-semibold transition-all duration-200 inline-block
-          ${
-            isActive
-              ? // Active:
-                // Desktop: soft primary pill + primary-dark text
-                // Mobile: white text
-                "bg-primary-soft text-primary-dark hover:text-black "
-              : // Inactive:
-                // Desktop: primary-dark
-                // Mobile: white/80
-                "lg:text-[var(--primary-dark)] lg:hover:text-black text-white/80 hover:text-white"
-          }
-        `}
+    px-4 py-2 rounded-full text-sm lg:text-base font-semibold
+    transition-all duration-200 inline-flex items-center
+    whitespace-nowrap leading-none
+    ${
+      isActive
+        ? "bg-primary-soft text-primary-dark hover:text-black "
+        : "lg:text-[var(--primary-dark)] lg:hover:text-black text-white/80 hover:text-white"
+    }
+  `}
       >
         {label}
       </span>
@@ -134,6 +130,12 @@ export default function Navbar() {
                 className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 About Us
+              </Link>
+              <Link
+                href="/?scroll=internship-opportunities"
+                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+              >
+                Internship Opportunities
               </Link>
               <Link
                 href="/faq"
@@ -248,6 +250,12 @@ export default function Navbar() {
                 <NavLink
                   href="/about"
                   label="About Us"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
+                  href="/?scroll=internship-opportunities"
+                  label="Intersnhip Opportunities"
                   pathname={pathname}
                   onClick={() => setIsOpen(false)}
                 />

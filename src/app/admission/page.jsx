@@ -71,7 +71,7 @@ export default function AdmissionsPage() {
   return (
     <main className="w-full text--primary-soft bg-white">
       <div className="pt-10 sm:pt-0 bg-white">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-8 text-center leading-tight">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-8 text-center leading-tight mt-10">
           {data.mainTitle}
         </h1>
       </div>

@@ -61,7 +61,7 @@ export const HeroBanner = () => {
   if (!banners || banners.length === 0) return null;
 
   return (
-    <section className=" relative w-full h-fit py-10 md:py-24 lg:py-10 mt-5 flex items-center justify-center overflow-hidden">
+    <section className=" hero-bg relative w-full h-fit py-10 md:py-24 lg:py-10 mt-5 flex items-center justify-center overflow-hidden">
       {banners.map((banner) => (
         <div
           key={banner._id}

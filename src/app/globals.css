@@ -97,10 +97,23 @@ h6 {
   text-align: justify;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* Hide scrollbar entirely */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -144,7 +157,7 @@ h6 {
   /* BACKGROUNDS */
   --bg-dark: #12001a;
   --bg-deep: #1f002d;
-  --bg-soft: #2d0142;
+  --bg-soft: #faf7fd;
   --bg-light: #f8f7fa;
 
   /* TEXT */
@@ -154,6 +167,9 @@ h6 {
 
   /* BORDERS */
   --border: #e4e4e7;
+}
+.bg-soft {
+  background: var(--bg-soft);
 }
 
 .bg-primary {
@@ -212,8 +228,9 @@ h6 {
 }
 
 .card {
-  background: var(--primary-soft);
-  border: 1px solid var(--border);
+  background: #ffffff;
+  border: 1px solid #e6d9f2;
+  border-radius: 16px;
 }
 
 .icon {

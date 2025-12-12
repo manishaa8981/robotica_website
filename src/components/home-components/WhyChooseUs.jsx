@@ -180,7 +180,7 @@ export default function WhyChooseUs() {
                 </div>
 
                 {/* SECOND ROW – dark highlight card, full width */}
-                <div className="card text-black rounded-2xl p-7 md:p-8 flex flex-col justify-between">
+                {/* <div className="card text-black rounded-2xl p-7 md:p-8 flex flex-col justify-between">
                   <div>
                     <h3 className="text-2xl font-bold leading-snug mb-3">
                       {item.title}
@@ -199,13 +199,7 @@ export default function WhyChooseUs() {
                       </p>
                     )}
                   </div>
-
-                  {/* <div className="mt-6">
-                    <button className="inline-flex items-center px-5 gap-4 py-2 rounded-full border-green bg-white text-black text-sm font-semibold hover:bg-[#d7c097]/80 transition">
-                      Explore this model <MoveRight strokeWidth={1} />
-                    </button>
-                  </div> */}
-                </div>
+                </div> */}
               </div>
             </motion.div>
           ))}

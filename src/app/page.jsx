@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { getRecentNewsApi } from "../axios/api";
 import CorePrograms from "../components/home-components/CorePrograms";
 import { HeroBanner } from "../components/home-components/Hero";
+import IndustryPartnersCarousel from "../components/home-components/IndustryPartnersCarousel";
 import MottoPage from "../components/home-components/MissionVision";
 import Objectives from "../components/home-components/Objectives";
 import OperatingModel from "../components/home-components/OperatingModel";
@@ -58,21 +59,36 @@ function HomeContent() {
   }, []);
 
   return (
-    <section className="mb-10 md:mb-20 items-center flex flex-col gap-8 md:gap-8 h-max lg:p-4 xl:p-0">
+    // <section className="mb-10 md:mb-20 items-center flex flex-col gap-8 md:gap-8 h-max lg:p-4 xl:p-0">
+    //   <HeroBanner />
+    //   <MottoPage />
+    //   <Objectives />
+    //   <CorePrograms />
+
+    //   <WhyChooseUs />
+    //   <OperatingModel />
+    //   {/* <PopularCourse /> */}
+    //   {/* {!loading && recentNews.length > 0 && (
+    //     <div className="max-w-7xl mx-auto">
+    //       <OurArticleComponent news={recentNews} />
+    //     </div>
+    //   )} */}
+    // </section>
+    <main className="w-full overflow-x-hidden">
       <HeroBanner />
+
       <MottoPage />
+
+      <IndustryPartnersCarousel />
+
       <Objectives />
+
       <CorePrograms />
 
       <WhyChooseUs />
+
       <OperatingModel />
-      {/* <PopularCourse /> */}
-      {/* {!loading && recentNews.length > 0 && (
-        <div className="max-w-7xl mx-auto">
-          <OurArticleComponent news={recentNews} />
-        </div>
-      )} */}
-    </section>
+    </main>
   );
 }
 

@@ -48,7 +48,7 @@ export default function FaqPage() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-4 leading-tight"
+          className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight"
         >
           Frequently Asked Questions
         </motion.h1>
@@ -57,7 +57,7 @@ export default function FaqPage() {
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="text-primary-soft mt-3 max-w-xl mx-auto"
+          className="text-black mt-3 max-w-xl mx-auto"
         >
           Answers to the most common questions from our students and parents.
         </motion.p>
@@ -76,7 +76,7 @@ export default function FaqPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="bg-primary-soft rounded-xl shadow border "
+                className="card rounded-xl shadow border "
               >
                 {/* Question */}
                 <button
@@ -84,7 +84,7 @@ export default function FaqPage() {
                   className="w-full flex items-center justify-between text-left px-5 py-4"
                 >
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-green-700">
+                    <span className="text-xs uppercase tracking-wider text-primary-dark">
                       {faq.category || "General"}
                     </span>
 

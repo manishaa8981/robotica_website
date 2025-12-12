@@ -30,7 +30,7 @@ export default function MottoPage() {
 
   if (loading) {
     return (
-      <section className="w-full  py-16 lg:py-24">
+      <section className=" w-full  py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
           <div className="text-center mb-16">
             <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
@@ -96,7 +96,7 @@ export default function MottoPage() {
   };
 
   return (
-    <section className="w-full bg-white pt-10 px-4 lg:pt-10 mb-10 relative overflow-hidden ">
+    <section className="w-full bg-soft pt-10 px-4 lg:pt-10 mb-10 relative overflow-hidden ">
       {/* <section className="w-full py-10 lg:py-10 relative overflow-hidden bg-linear-to-br from-slate-50 via-white to-teal-50/30"> */}
 
       {/* Background decoration */}
@@ -166,7 +166,10 @@ export default function MottoPage() {
             >
               <div className="flex items-start gap-6">
                 <div className="shrink-0">
-                  <div className=" icon  w-16 h-16 rounded-full  flex items-center justify-center shadow-sm shadow-green-100/50 group-hover:scale-110 transition-transform duration-300">
+                  <div
+                    className=" icon  w-16 h-16 rounded-full  flex items-center justify-center shadow-[0_20px_40px_rgba(76,18,132,0.15)]
+ group-hover:scale-110 transition-transform duration-300"
+                  >
                     <LuTarget className="w-8 h-8 text-white" />
                   </div>
                 </div>
@@ -218,7 +221,7 @@ export default function MottoPage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="absolute inset-0 rounded-[3rem] overflow-hidden shadow-xl"
+                className="absolute inset-0 rounded-[3rem] overflow-hidden  shadow-[0_20px_40px_rgba(76,18,132,0.15)]"
               >
                 <Image
                   src={imageSrc}
@@ -269,7 +272,6 @@ export default function MottoPage() {
           </motion.div>
         </div>
       </div>
-      <IndustryPartnersCarousel />
     </section>
   );
 }
