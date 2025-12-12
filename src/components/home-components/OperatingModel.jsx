@@ -68,8 +68,8 @@ export default function OperatingModel() {
       id="internship-opportunities"
       className="
         w-full bg-soft scroll-mt-32
-    mt-10 sm:mt-14 lg:mt-16
-    py-10 sm:py-14 lg:py-20
+    mt-10 sm:mt-14 lg:mt-10
+    py-10 sm:py-14 
     "
     >
       {/* CONTAINER */}
@@ -82,7 +82,7 @@ export default function OperatingModel() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center"
         >
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-primary-dark leading-tight">
+          <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold text-primary-dark leading-tight">
             {section.mainTitle}
           </h1>
         </motion.div>
