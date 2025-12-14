@@ -59,7 +59,7 @@ export default function CorePrograms() {
   };
 
   return (
-    <section className="w-full pb-10 lg:pb-10">
+    <section className="bg-soft w-full py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0">
         {/* HEADER */}
         <motion.div
@@ -67,9 +67,9 @@ export default function CorePrograms() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-8"
+          className="text-center"
         >
-          <h1 className=" hero-bg text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-soft mb-10  leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight ">
             {program.mainTitle ||
               "Programs built with industry outcomes in mind"}
           </h1>
@@ -106,7 +106,7 @@ export default function CorePrograms() {
                 className="space-y-6 max-w-3xl mx-auto"
               >
                 <div className="space-y-3">
-                  <h2 className="text-4xl sm:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg">
+                  <h2 className="text-4xl sm:text-4xl lg:text-6xl font-bold text-white drop-shadow-lg">
                     {program.title}
                   </h2>
                   <p className="text-xl sm:text-2xl text-yellow-500  font-semibold">
@@ -128,7 +128,7 @@ export default function CorePrograms() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-white mb-8"
+            className="text-3xl font-bold text-black mb-8"
           >
             Curriculum Overview
           </motion.h2>
@@ -141,7 +141,7 @@ export default function CorePrograms() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-purple-400/30 transition-all duration-300 hover:shadow-[0_0_10px_rgba(168,85,247,0.3)]"
+                className="card group relativ backdrop-blur-md  p-8 hover:bg-white/10 hover:border-purple-400/30 transition-all duration-300 hover:shadow-[0_0_10px_rgba(168,85,247,0.3)]"
               >
                 {/* Semester number badge */}
                 <div className="bg-primary-dark absolute -top-3 -left-3 w-16 h-16 rounded-full flex items-center justify-center shadow-lg  ">
@@ -149,23 +149,23 @@ export default function CorePrograms() {
                 </div>
 
                 <div className="space-y-6 pl-6">
-                  <h3 className="font-bold text-2xl text-white group-hover:primary-soft transition-colors">
+                  <h3 className="font-bold text-2xl text-primary-dark group-hover:primary-soft transition-colors">
                     {sem.title}
                   </h3>
 
                   {sem.units?.length > 0 && (
                     <div>
-                      <h4 className="text-m font-bold text-primary-light uppercase tracking-wider mb-3 flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary-light"></div>
+                      <h4 className="text-m font-bold text-primary-dark uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-dark"></div>
                         Core Units
                       </h4>
                       <ul className="space-y-2.5">
                         {sem.units.map((u) => (
                           <li
                             key={u._id || u.description}
-                            className="flex items-start gap-3 text-white text-m leading-relaxed"
+                            className="flex items-start gap-3 text-black text-m leading-relaxed"
                           >
-                            <span className="text-primary-soft  mt-0">▸</span>
+                            <span className="text-primary-dark  mt-0">▸</span>
                             <span>{u.description}</span>
                           </li>
                         ))}
@@ -175,11 +175,11 @@ export default function CorePrograms() {
 
                   {sem.project && (
                     <div className="pt-4 border-t border-white/10">
-                      <h4 className="text-m font-bold text-primary-light uppercase tracking-wider mb-3 flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary-light"></div>
+                      <h4 className="text-m font-bold text-primary-dark uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-dark"></div>
                         Project
                       </h4>
-                      <p className="text-white text-m leading-relaxed bg-white/5 rounded-lg p-3 border border-white/10">
+                      <p className="text-black text-m leading-relaxed bg-white/5 rounded-lg p-3 border border-white/10">
                         {sem.project}
                       </p>
                     </div>
@@ -187,15 +187,15 @@ export default function CorePrograms() {
 
                   {sem.tracks?.length > 0 && (
                     <div className="pt-4 border-t border-white/10">
-                      <h4 className="text-sm font-bold text-primary-light uppercase tracking-wider mb-3 flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 rounded-full bg-purple-400"></div>
+                      <h4 className="text-sm font-bold text-primary-dark uppercase tracking-wider mb-3 flex items-center gap-2">
+                        <div className="w-1.5 h-1.5 rounded-full bg-primary-dark"></div>
                         Tracks
                       </h4>
                       <div className="flex flex-wrap gap-2">
                         {sem.tracks.map((t) => (
                           <span
                             key={t._id || t.description}
-                            className="px-3 py-1.5 bg-purple-500/20 text-purple-200 text-s rounded-full border border-purple-400/30 hover:bg-purple-500/30 transition-colors"
+                            className="px-3 py-1.5 bg-purple-500/20 text-black text-s rounded-full border border-purple-400/30 hover:bg-purple-500/30 transition-colors"
                           >
                             {t.description}
                           </span>
