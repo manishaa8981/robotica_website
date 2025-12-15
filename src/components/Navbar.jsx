@@ -163,7 +163,7 @@ export default function Navbar() {
                 Programs
               </Link>
               <Link
-                href="/courses"
+                href="/course"
                 className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Courses
@@ -278,7 +278,7 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 />
                 <NavLink
-                  href="/courses"
+                  href="/course"
                   label="Courses"
                   pathname={pathname}
                   onClick={() => setIsOpen(false)}

@@ -1,275 +1,81 @@
-// "use client";
-
-// import { useEffect, useState } from "react";
-// import { useRouter } from "next/navigation";
-// import Lottie from "lottie-react";
-// import animationData from "../../../public/empty.json";
-// import { getCoursesApi } from "../../axios/api";
-// import Image from "next/image";
-
-// const SkeletonCard = () => (
-//   <div className="bg-white rounded-2xl shadow-md border border-gray-200 animate-pulse">
-//     <div className="h-[220px] w-full bg-gray-200 rounded-t-2xl" />
-//     <div className="p-6 space-y-3">
-//       <div className="h-5 w-3/4 bg-gray-200 rounded" />
-//       <div className="h-10 w-1/2 bg-gray-200 rounded-lg mt-4" />
-//     </div>
-//   </div>
-// );
-
-// const SkeletonHeading = () => (
-//   <div className="mb-10 max-w-6xl space-y-3 animate-pulse">
-//     <div className="h-12 w-2/3 bg-gray-200 rounded" />
-//     <div className="h-4 w-1/2 bg-gray-200 rounded" />
-//   </div>
-// );
-
-// export default function ExploreCoursePage() {
-//   const [courses, setCourses] = useState([]);
-//   const [loading, setLoading] = useState(true);
-//   const [error, setError] = useState(null);
-//   const router = useRouter();
-
-//   useEffect(() => {
-//     const fetchCourses = async () => {
-//       try {
-//         const response = await getCoursesApi();
-//         if (response.data.success) {
-//           setCourses(response.data.result);
-//         } else {
-//           setError("Failed to fetch courses.");
-//         }
-//       } catch (err) {
-//         console.error("Error fetching courses", err);
-//         setError("Error loading courses.");
-//       } finally {
-//         setLoading(false);
-//       }
-//     };
-
-//     fetchCourses();
-//   }, []);
-
-//   if (loading)
-//     return (
-//       <section className="w-full pt-32 pb-20 px-6 md:px-[6vw] xl:px-[8vw]">
-//         <SkeletonHeading />
-//         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl">
-//           {Array.from({ length: 2 }).map((_, idx) => (
-//             <SkeletonCard key={idx} />
-//           ))}
-//         </div>
-//       </section>
-//     );
-
-//   if (error)
-//     return (
-//       <p className="text-center text-red-600 text-lg font-semibold">{error}</p>
-//     );
-
-//   return (
-//     <section className="w-full pt-32 pb-20 px-6 md:px-[6vw] xl:px-[8vw]">
-//       {courses.length > 0 ? (
-//         <div className="max-w-7xl mx-auto">
-//           <div className="mb-8 lg:mb-10 max-w-7xl">
-//             <h1 className="text-4xl mb-0 md:mb-4 font-bold">
-//               {" "}
-//               Explore Our Courses
-//             </h1>
-//             <p className="text-gray-600 text-base max-w-xl">
-//               Gain practical skills and knowledge through expertly crafted
-//               courses.
-//             </p>
-//           </div>
-//           <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl">
-//             {courses.map((course) => (
-//               <div
-//                 key={course.slug}
-//                 className="bg-white rounded-2xl shadow-md border border-gray-200 transition duration-300 flex flex-col overflow-hidden"
-//               >
-//                 {/* Image */}
-//                 <div className="relative w-full h-[220px]">
-//                   <Image
-//                     src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${course.image}`}
-//                     alt={course.title}
-//                     fill
-//                     className="w-full h-[220px] object-cover object-center transition-transform duration-300 group-hover:scale-[1.02]"
-//                   />
-//                 </div>
-
-//                 {/* Content */}
-//                 <div className="p-6 flex flex-col gap-3 grow">
-//                   <h2 className="text-lg lg:text-xl font-bold text-[#186f3e]">
-//                     {course.title.length > 50
-//                       ? course.title.slice(0, 50) + "…"
-//                       : course.title}
-//                   </h2>
-
-//                   <div className="mt-auto">
-//                     <button
-//                       onClick={() => router.push(`/course/${course.slug}`)}
-//                       className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#186f3e] hover:bg-[#1ea056] transition px-4 py-2 rounded-lg"
-//                     >
-//                       View Details →
-//                     </button>
-//                   </div>
-//                 </div>
-//               </div>
-//             ))}
-//           </div>
-//         </div>
-//       ) : (
-//         <div className="flex flex-col items-center justify-center w-full">
-//           <Lottie
-//             animationData={animationData}
-//             loop
-//             autoplay
-//             className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto"
-//           />
-//           <p className="text-gray-500 text-xl font-semibold text-center mt-10 col-span-full">
-//             No courses available yet.
-//           </p>
-//         </div>
-//       )}
-//     </section>
-//   );
-// }
-
 "use client";
 
-import Lottie from "lottie-react";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useEffect, useState } from "react";
-import animationData from "../../../public/empty.json";
 import { getCoursesApi } from "../../axios/api";
 
-const SkeletonCard = () => (
-  <div className="bg-white rounded-2xl shadow-md border border-gray-200 animate-pulse">
-    <div className="h-[220px] w-full bg-gray-200 rounded-t-2xl" />
-    <div className="p-6 space-y-3">
-      <div className="h-5 w-3/4 bg-gray-200 rounded" />
-      <div className="h-10 w-1/2 bg-gray-200 rounded-lg mt-4" />
-    </div>
-  </div>
-);
-
-const SkeletonHeading = () => (
-  <div className="mb-10 max-w-6xl space-y-3 animate-pulse">
-    <div className="h-12 w-2/3 bg-gray-200 rounded" />
-    <div className="h-4 w-1/2 bg-gray-200 rounded" />
-  </div>
-);
-
-export default function ExploreCoursePage() {
+export default function CoursesPage() {
   const [courses, setCourses] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const router = useRouter();
 
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await getCoursesApi();
-        console.log("COURSES RES:", response?.status, response?.data);
-
-        if (response?.data?.success) {
-          setCourses(response.data.result || []);
-        } else {
-          setError(response?.data?.message || "Failed to fetch courses.");
+        const res = await getCoursesApi();
+        if (res?.data?.success) {
+          setCourses(res.data.result);
         }
       } catch (err) {
-        console.log(
-          "FETCH ERROR:",
-          err?.response?.status,
-          err?.response?.data,
-          err?.message
-        );
-        setError(err?.response?.data?.message || "Error loading courses.");
+        console.error(err);
       } finally {
         setLoading(false);
       }
     };
-
     fetchCourses();
   }, []);
 
-  if (loading)
-    return (
-      <section className="w-full pt-32 pb-20 px-6 md:px-[6vw] xl:px-[8vw]">
-        <SkeletonHeading />
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl">
-          {Array.from({ length: 2 }).map((_, idx) => (
-            <SkeletonCard key={idx} />
-          ))}
-        </div>
-      </section>
-    );
-
-  if (error)
-    return (
-      <p className="text-center text-red-600 text-lg font-semibold">{error}</p>
-    );
+  if (loading) {
+    return <div className="p-10 text-center">Loading courses...</div>;
+  }
 
   return (
-    <section className="w-full pt-32 pb-20 px-6 md:px-[6vw] xl:px-[8vw]">
-      {courses.length > 0 ? (
-        <div className="max-w-7xl mx-auto">
-          <div className="mb-8 lg:mb-10 max-w-7xl">
-            <h1 className="text-4xl mb-0 md:mb-4 font-bold">
-              {" "}
-              Explore Our Courses
-            </h1>
-            <p className="text-gray-600 text-base max-w-xl">
-              Gain practical skills and knowledge through expertly crafted
-              courses.
-            </p>
-          </div>
-          <div className="grid gap-4 grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl">
-            {courses.map((course) => (
-              <div key={course._id} className="bg-white rounded-2xl ...">
-                <div className="relative w-full h-[220px]">
-                  <Image
-                    src={`${API_URL}/uploads/${course.image}`}
-                    alt={course.title}
-                    fill
-                    className="w-full h-[220px] object-cover object-center"
-                  />
-                </div>
+    <main className="max-w-7xl mx-auto px-4 py-10">
+      <h1 className="text-3xl font-bold mb-8">Our Courses</h1>
 
-                <div className="p-6 flex flex-col gap-3 grow">
-                  <h2 className="text-lg lg:text-xl font-bold text-[#186f3e]">
-                    {course.title?.length > 50
-                      ? course.title.slice(0, 50) + "…"
-                      : course.title}
-                  </h2>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {courses.map((course) => (
+          <Link
+            key={course._id}
+            href={`/course/${course.slug}`}
+            className="group rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-md transition overflow-hidden"
+          >
+            <div className="relative h-48 bg-gray-100">
+              <img
+                src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${course.image}`}
+                alt={course.title}
+                className="h-full w-full object-cover group-hover:scale-[1.03] transition"
+              />
+            </div>
 
-                  <div className="mt-auto">
-                    <button
-                      onClick={() => router.push(`/course/${course.slug}`)}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-white bg-[#186f3e] hover:bg-[#1ea056] transition px-4 py-2 rounded-lg"
-                    >
-                      View Details →
-                    </button>
-                  </div>
-                </div>
+            <div className="p-5">
+              <h2 className="text-lg font-semibold">{course.title}</h2>
+
+              <p className="text-sm text-gray-600 mt-1 line-clamp-2">
+                {course.description?.replace(/<[^>]*>/g, "")}
+              </p>
+
+              <div className="mt-3 flex flex-wrap gap-2">
+                {(course.level || []).map((lvl) => (
+                  <span
+                    key={lvl}
+                    className="text-xs px-2 py-1 rounded-full bg-gray-100"
+                  >
+                    {lvl}
+                  </span>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      ) : (
-        <div className="flex flex-col items-center justify-center w-full">
-          <Lottie
-            animationData={animationData}
-            loop
-            autoplay
-            className="w-full max-w-sm md:max-w-md lg:max-w-lg h-auto"
-          />
-          <p className="text-gray-500 text-xl font-semibold text-center mt-10 col-span-full">
-            No courses available yet.
-          </p>
-        </div>
+
+              <div className="mt-4 text-sm font-semibold text-[#186f3e]">
+                View details →
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {courses.length === 0 && (
+        <p className="text-center text-gray-500 mt-10">No courses available.</p>
       )}
-    </section>
+    </main>
   );
 }

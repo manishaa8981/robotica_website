@@ -88,3 +88,5 @@ export const getIndustryPartnersPublicApi = () =>
 
 //Application
 export const submitApplicationApi = (data) => Api.post("api/applications", data);
+
+

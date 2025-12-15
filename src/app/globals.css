@@ -101,6 +101,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.prose {
+  font-family: inherit;
+}
+
 /* Hide scrollbar entirely */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
