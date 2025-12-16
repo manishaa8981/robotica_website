@@ -5,10 +5,7 @@ import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 
 import { getAboutUsApi } from "../../axios/api";
-import CorePrograms from "../../components/home-components/CorePrograms";
 import Founders from "../../components/home-components/Founders";
-import RoadMap from "../../components/home-components/RoadMap";
-import WhyChooseUs from "../../components/home-components/WhyChooseUs";
 
 function AboutUs() {
   const searchParams = useSearchParams();
@@ -74,9 +71,9 @@ function AboutUs() {
         </div>
 
         <Founders />
-        <CorePrograms />
+        {/* <CorePrograms />
         <RoadMap />
-        <WhyChooseUs />
+        <WhyChooseUs /> */}
       </section>
     );
   }
@@ -163,9 +160,9 @@ function AboutUs() {
 
       {/* Other sections below About */}
       <Founders />
-      <CorePrograms />
+      {/* <CorePrograms />
       <RoadMap />
-      <WhyChooseUs />
+      <WhyChooseUs /> */}
     </section>
   );
 }

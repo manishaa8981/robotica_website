@@ -43,7 +43,7 @@ export default function FaqPage() {
   return (
     <main className="w-full text-primary-soft pb-20">
       {/* HERO */}
-      <section className="text-center pt-20 pb-12">
+      <section className="text-center pt-10 pb-10 sm:pt-0 ">
         <motion.h1
           variants={fadeUp}
           initial="hidden"

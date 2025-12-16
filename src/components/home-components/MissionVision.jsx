@@ -5,7 +5,6 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { LuEye, LuTarget } from "react-icons/lu";
 import { getMottoContentApi } from "../../axios/api";
-import IndustryPartnersCarousel from "./IndustryPartnersCarousel";
 
 export default function MottoPage() {
   const [mottoData, setMottoData] = useState(null);
@@ -96,14 +95,9 @@ export default function MottoPage() {
   };
 
   return (
-    <section className="w-full bg-soft pt-10 px-4 lg:pt-10 mb-10 relative overflow-hidden ">
-      {/* <section className="w-full py-10 lg:py-10 relative overflow-hidden bg-linear-to-br from-slate-50 via-white to-teal-50/30"> */}
-
-      {/* Background decoration */}
+    <section className="w-full bg-soft pt-10 px-4 lg:pt-10 relative overflow-hidden ">
       <div className="absolute inset-0 overflow-hidden pointer-events-none"></div>
-
       <div className="max-w-7xl mx-auto mb-20 relative z-10  sm:px-6 lg:px-0">
-        {/* Header Section */}
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -111,19 +105,6 @@ export default function MottoPage() {
           variants={fadeInUp}
           className="text-center mb-10 lg:mb-10"
         >
-          {/* <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-teal-50 border border-teal-100 rounded-full mb-6"
-          >
-            <LuSparkles className="w-4 h-4 text-teal-600" />
-            <span className="text-sm font-medium text-teal-700">
-              Who We Are
-            </span>
-          </motion.div> */}
-
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
             {heading}
           </h1>

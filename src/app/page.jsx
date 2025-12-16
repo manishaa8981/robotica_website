@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter, useSearchParams } from "next/navigation";
 import { getRecentNewsApi } from "../axios/api";
 import CorePrograms from "../components/home-components/CorePrograms";
+import CoursesPage from "../components/home-components/Courses";
 import { HeroBanner } from "../components/home-components/Hero";
 import IndustryPartnersCarousel from "../components/home-components/IndustryPartnersCarousel";
 import MottoPage from "../components/home-components/MissionVision";
@@ -79,15 +80,17 @@ function HomeContent() {
 
       <MottoPage />
 
-      <IndustryPartnersCarousel />
-
       <Objectives />
+
+      <CoursesPage />
 
       <CorePrograms />
 
-      <WhyChooseUs />
+      <IndustryPartnersCarousel />
 
       <OperatingModel />
+
+      <WhyChooseUs />
     </main>
   );
 }

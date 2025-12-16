@@ -167,14 +167,14 @@ export default function SignatureLabs() {
                     )}
 
                     {equipmentList.length > 0 && (
-                      <div className="bg-primary-soft rounded-2xl px-4 py-4 md:px-5 md:py-5 shadow shadow-slate-950/50">
-                        <p className="text-m md:text-s font-bold  uppercase text-primary mb-2">
+                      <div className="card rounded-2xl px-4 py-4 md:px-5 md:py-5 shadow shadow-slate-950/50">
+                        <p className="text-m md:text-s font-bold  uppercase text-primary-dark mb-2">
                           Key Equipment
                         </p>
                         <ul className="space-y-1.5 text-[13px] md:text-sm text-black">
                           {equipmentList.slice(0, 6).map((item, i) => (
                             <li key={i} className="flex gap-2">
-                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
+                              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary-dark shrink-0" />
                               <span>{item}</span>
                             </li>
                           ))}

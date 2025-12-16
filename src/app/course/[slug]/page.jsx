@@ -87,12 +87,10 @@ export default function CourseDetailsPage() {
           <div className="lg:col-span-8">
             <div className="lg:h-[calc(100vh-120px)] overflow-y-auto no-scrollbar pr-4">
               {/* Description */}
-              <div className="font-montserrat">
                 <div
-                  className="prose max-w-none"
+                  className="prose max-w-none text-justify"
                   dangerouslySetInnerHTML={{ __html: course.description }}
                 />
-              </div>
 
               {/* Modules detail */}
               <h2 className="text-xl font-semibold mt-10 mb-4">Modules</h2>

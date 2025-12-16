@@ -107,11 +107,16 @@ export default function Navbar() {
         {/* LOGO */}
         <div className="flex items-center flex-shrink-0">
           <Image
-            src="/logo[1].png"
+            src="/logo.jpg"
             alt="Robotica Institute of Technology"
-            width={190}
-            height={180}
-            className="w-auto object-contain"
+            width={220}
+            height={50}
+            priority
+            className="
+      h-8 sm:h-10 lg:h-12
+      w-auto
+      object-contain
+    "
           />
         </div>
 

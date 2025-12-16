@@ -251,7 +251,15 @@ html {
     #1a0a1f 80%,
     #000000 100%
   );
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Enable fixed background ONLY on large screens */
+@media (min-width: 1024px) {
+  .hero-bg {
+    background-attachment: fixed;
+  }
 }
 
 .hero-card {

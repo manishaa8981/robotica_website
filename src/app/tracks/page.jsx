@@ -92,8 +92,7 @@ export default function TracksSpotlightSection() {
                 ))}
               </div>
             </div>
-
-            {/* CTA */}
+{/* 
             <div className="mt-7 sm:mt-9">
               <button
                 className="
@@ -107,7 +106,7 @@ export default function TracksSpotlightSection() {
               >
                 Explore this model <MoveRight strokeWidth={1.5} size={18} />
               </button>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* RIGHT: Image */}

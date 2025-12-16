@@ -33,7 +33,7 @@ export default function IndustryPartnersCarousel() {
   };
 
   return (
-    <section className="w-full pb-15 bg-white">
+    <section className="w-full p-10 bg-white">
       <div className="max-w-7xl mx-auto ">
         {/* Optional heading */}
         <h3 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-center text-primary-dark mb-8 leading-tight">
