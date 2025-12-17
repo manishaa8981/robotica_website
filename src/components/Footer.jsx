@@ -30,7 +30,7 @@
 //         {/* Logo */}
 //         <div className=" rounded-xl items-center h-fit  shadow-[0_10px_10px_beige/40] bg-white backdrop-blur-sm w-fit">
 //           <Image
-//             src="/logo.png"
+//             src="/logo.jpg"
 //             alt="logo"
 //             width={120}
 //             height={60}
@@ -229,7 +229,7 @@ export const Footer = () => {
           <div className="space-y-5">
             <div className="bg-white backdrop-blur-xl rounded-2xl p-4 shadow-xl w-fit">
               <Image
-                src="/logo.png"
+                src="/logo.jpg"
                 alt="logo"
                 width={140}
                 height={60}

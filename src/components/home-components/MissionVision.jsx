@@ -29,30 +29,61 @@ export default function MottoPage() {
 
   if (loading) {
     return (
-      <section className=" w-full  py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
-          <div className="text-center mb-16">
-            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
-            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
+      <section className="w-full bg-soft pt-10 px-4 lg:pt-10 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto mb-20 relative z-10 sm:px-6 lg:px-0 animate-pulse">
+          {/* Title */}
+          <div className="text-center mb-10 lg:mb-10">
+            <div className="h-12 sm:h-14 lg:h-16 w-3/4 sm:w-2/3 mx-auto bg-black/10 rounded-2xl mb-4" />
+            <div className="h-4 w-44 mx-auto bg-black/10 rounded-lg" />
           </div>
-          <div className="grid gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
-              >
-                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
-                <div className="space-y-2">
-                  <div className="h-4 w-full bg-white/10 rounded" />
-                  <div className="h-4 w-5/6 bg-white/10 rounded" />
+
+          {/* Main grid */}
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: Vision + Mission cards skeleton */}
+            <div className="space-y-6 lg:space-y-8 order-2 lg:order-2">
+              {/* Card 1 */}
+              <div className="rounded-3xl p-8 bg-white/70 shadow-lg border border-black/5">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 rounded-full bg-black/10 shrink-0" />
+                  <div className="flex-1">
+                    <div className="h-7 w-44 bg-black/10 rounded-lg mb-4" />
+                    <div className="space-y-3">
+                      <div className="h-4 w-full bg-black/10 rounded" />
+                      <div className="h-4 w-11/12 bg-black/10 rounded" />
+                      <div className="h-4 w-9/12 bg-black/10 rounded" />
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
+
+              {/* Card 2 */}
+              <div className="rounded-3xl p-8 bg-white/70 shadow-lg border border-black/5">
+                <div className="flex items-start gap-6">
+                  <div className="w-16 h-16 rounded-full bg-black/10 shrink-0" />
+                  <div className="flex-1">
+                    <div className="h-7 w-44 bg-black/10 rounded-lg mb-4" />
+                    <div className="space-y-3">
+                      <div className="h-4 w-full bg-black/10 rounded" />
+                      <div className="h-4 w-11/12 bg-black/10 rounded" />
+                      <div className="h-4 w-9/12 bg-black/10 rounded" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right: Image skeleton */}
+            <div className="relative order-1 lg:order-1">
+              <div className="relative w-full h-[320px] sm:h-[380px] lg:h-[460px]">
+                <div className="absolute inset-0 rounded-[3rem] overflow-hidden bg-black/10 shadow-[0_20px_40px_rgba(76,18,132,0.15)]" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
     );
   }
+
   if (!mottoData) return null;
 
   const heading = mottoData.motoTitle || "Our Mission & Vision";

@@ -236,7 +236,7 @@ export default function Navbar() {
               transition={{ duration: 0.25 }}
             >
               <div className="flex items-center justify-between bg-white p-5 border-b border-white/10">
-                <Image src="/logo.png" alt="Logo" width={90} height={10} />
+                <Image src="/logo.jpg" alt="Logo" width={90} height={10} />
                 <button
                   onClick={() => setIsOpen(false)}
                   className="text-black hover:text-black p-1"

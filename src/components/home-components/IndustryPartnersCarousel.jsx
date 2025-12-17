@@ -41,23 +41,25 @@ export default function IndustryPartnersCarousel() {
         </h3>
 
         <div className="relative overflow-hidden">
-          <div className="flex items-center gap-16 partner-marquee">
-            {scrollingPartners.map((partner, idx) => (
-              <button
-                key={`${partner._id}-${idx}`}
-                type="button"
-                onClick={() => handleLogoClick(partner)}
-                className="focus:outline-none group"
-              >
-                <div className="h-12 flex items-center">
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${partner.logo}`}
-                    alt={partner.name}
-                    className="h-12 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-200"
-                  />
-                </div>
-              </button>
-            ))}
+          <div className="partner-marquee-track">
+            <div className="partner-marquee">
+              {scrollingPartners.map((partner, idx) => (
+                <button
+                  key={`${partner._id}-${idx}`}
+                  type="button"
+                  onClick={() => handleLogoClick(partner)}
+                  className="focus:outline-none group"
+                >
+                  <div className="h-12 flex items-center">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${partner.logo}`}
+                      alt={partner.name}
+                      className="h-12 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-200"
+                    />
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
         </div>
       </div>

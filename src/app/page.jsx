@@ -101,7 +101,7 @@ export default function Home() {
       fallback={
         <div className="flex flex-col items-center justify-center h-screen">
           <Image
-            src="/logo.png"
+            src="/logo.jpg"
             alt="Robotica Logo"
             width={120}
             height={120}

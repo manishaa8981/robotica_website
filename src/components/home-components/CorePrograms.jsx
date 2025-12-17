@@ -114,7 +114,7 @@ export default function CorePrograms() {
                   </p>
                 </div>
 
-                <p className="text-base sm:text-lg text-white/90 italic font-medium max-w-2xl mx-auto">
+                <p className="text-base sm:text-[15px] text-white/90 italic font-medium max-w-2xl mx-auto">
                   {program.internationalInternshipAccess}
                 </p>
               </motion.div>
@@ -155,7 +155,7 @@ export default function CorePrograms() {
 
                   {sem.units?.length > 0 && (
                     <div>
-                      <h4 className="text-m font-bold text-primary-dark uppercase tracking-wider mb-3 flex items-center gap-2">
+                      <h4 className="text-m font-bold text-primary-dark uppercase tracking-wider mb-3 flex items-center gap-2 ">
                         <div className="w-1.5 h-1.5 rounded-full bg-primary-dark"></div>
                         Core Units
                       </h4>
@@ -163,9 +163,11 @@ export default function CorePrograms() {
                         {sem.units.map((u) => (
                           <li
                             key={u._id || u.description}
-                            className="flex items-start gap-3 text-black text-m leading-relaxed"
+                            className="flex items-start gap-3 text-black text-m sm:text-[15px] leading-relaxed"
                           >
-                            <span className="text-primary-dark  mt-0">▸</span>
+                            <span className="text-primary-dark sm:text-[15px] mt-0">
+                              ▸
+                            </span>
                             <span>{u.description}</span>
                           </li>
                         ))}
@@ -179,7 +181,7 @@ export default function CorePrograms() {
                         <div className="w-1.5 h-1.5 rounded-full bg-primary-dark"></div>
                         Project
                       </h4>
-                      <p className="text-black text-m leading-relaxed bg-white/5 rounded-lg p-3 border border-white/10">
+                      <p className="text-black text-m  sm:text-[15px] leading-relaxed bg-white/5 rounded-lg p-3 border border-white/10">
                         {sem.project}
                       </p>
                     </div>

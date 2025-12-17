@@ -33,30 +33,71 @@ export default function AdmissionsPage() {
 
   if (loading) {
     return (
-      <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
-          <div className="text-center mb-16">
-            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
-            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
-          </div>
-          <div className="grid gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
-              >
-                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
-                <div className="space-y-2">
-                  <div className="h-4 w-full bg-white/10 rounded" />
-                  <div className="h-4 w-5/6 bg-white/10 rounded" />
-                </div>
-              </div>
-            ))}
+      <main className="w-full bg-white">
+        {/* Title Skeleton */}
+        <div className="pt-10 sm:pt-0 bg-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-0 animate-pulse">
+            <div className="h-12 sm:h-14 lg:h-16 w-3/4 sm:w-2/3 mx-auto bg-black/10 rounded-2xl mt-10 mb-4" />
+            <div className="h-4 w-48 mx-auto bg-black/10 rounded-lg mb-10" />
           </div>
         </div>
-      </section>
+
+        {/* Hero Banner Skeleton (background + pill) */}
+        <section className="relative mb-10 overflow-hidden">
+          <div className="absolute inset-0 bg-black/5" />
+          <div className="relative h-60 md:h-64 lg:h-72 flex items-center justify-center">
+            <div className="animate-pulse">
+              <div className="h-12 w-[320px] sm:w-[420px] bg-black/10 rounded-full border border-black/10" />
+            </div>
+          </div>
+        </section>
+
+        {/* Cards Skeleton */}
+        <section className="pb-10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
+            <div className="grid gap-6 md:grid-cols-3">
+              {[1, 2, 3].map((i) => (
+                <div
+                  key={i}
+                  className="rounded-2xl bg-primary-soft p-6 md:p-7 shadow-sm"
+                >
+                  {/* Top label */}
+                  <div className="h-4 w-32 bg-black/10 rounded mb-3" />
+                  {/* Heading */}
+                  <div className="h-6 w-2/3 bg-black/10 rounded mb-4" />
+                  {/* Paragraph */}
+                  <div className="space-y-2 mb-5">
+                    <div className="h-4 w-full bg-black/10 rounded" />
+                    <div className="h-4 w-5/6 bg-black/10 rounded" />
+                    <div className="h-4 w-4/6 bg-black/10 rounded" />
+                  </div>
+
+                  {/* Bullets */}
+                  <div className="space-y-3">
+                    {[1, 2, 3, 4].map((b) => (
+                      <div key={b} className="flex items-start gap-2">
+                        <div className="mt-[6px] h-2 w-2 rounded-full bg-black/10" />
+                        <div className="h-4 w-full bg-black/10 rounded" />
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* CTA skeleton only for card 3 */}
+                  {i === 3 && (
+                    <div className="mt-6 pt-4 border-t border-black/10">
+                      <div className="h-4 w-5/6 bg-black/10 rounded mb-3" />
+                      <div className="h-10 w-56 bg-black/10 rounded-full" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
     );
   }
+
   if (!data) {
     return (
       <main className="min-h-[60vh] bg-[#020726] text-white flex items-center justify-center px-4">

@@ -29,8 +29,8 @@ export const metadata = {
   title: "Robotica Institute",
   description: "Robotica Institute",
   icons: {
-    icon: "/logo.png",
-    apple: "/logo.png",
+    icon: "/logo.jpg",
+    apple: "/logo.jpg",
   },
 };
 

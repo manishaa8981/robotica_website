@@ -125,21 +125,26 @@ html {
 
 /* ===== Industry partners auto-scroll ===== */
 
+.partner-marquee-track {
+  overflow: hidden;
+  width: 100%;
+}
+
 .partner-marquee {
-  animation: partner-scroll 25s linear infinite;
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* same as gap-16 */
+  width: max-content; /* IMPORTANT: content defines width */
   will-change: transform;
+  animation: partnerScroll 25s linear infinite;
+  transform: translateX(0); /* IMPORTANT: start from left */
 }
 
-.partner-marquee:hover {
-  animation-play-state: paused; /* pause on hover */
-}
-
-@keyframes partner-scroll {
-  0% {
+@keyframes partnerScroll {
+  from {
     transform: translateX(0);
   }
-  100% {
-    /* since we duplicated the list, -50% gives a seamless loop */
+  to {
     transform: translateX(-50%);
   }
 }

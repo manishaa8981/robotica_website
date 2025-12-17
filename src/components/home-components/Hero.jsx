@@ -34,30 +34,58 @@ export const HeroBanner = () => {
 
   if (loading) {
     return (
-      <section className="w-full py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 animate-pulse">
-          <div className="text-center mb-16">
-            <div className="h-10 w-64 bg-white/10 rounded-lg mb-4 mx-auto" />
-            <div className="h-6 w-96 bg-white/10 rounded-lg mx-auto" />
+      <section className="hero-bg relative w-full min-h-[85vh] sm:min-h-[70vh] flex items-center overflow-hidden py-10 sm:py-14 lg:py-10">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 flex flex-col lg:flex-row items-center justify-between gap-12 w-full animate-pulse">
+          {/* LEFT: Text skeleton */}
+          <div className="flex-1 text-center lg:text-left">
+            <div className="h-5 w-40 mx-auto lg:mx-0 bg-white/15 rounded-lg mb-3" />
+
+            <div className="space-y-3 mb-6">
+              <div className="h-12 sm:h-14 lg:h-16 w-11/12 mx-auto lg:mx-0 bg-white/15 rounded-2xl" />
+              <div className="h-12 sm:h-14 lg:h-16 w-9/12 mx-auto lg:mx-0 bg-white/15 rounded-2xl" />
+            </div>
+
+            <div className="space-y-3 mb-8">
+              <div className="h-4 w-full bg-white/10 rounded" />
+              <div className="h-4 w-11/12 bg-white/10 rounded" />
+              <div className="h-4 w-10/12 bg-white/10 rounded" />
+              <div className="h-4 w-9/12 bg-white/10 rounded" />
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+              <div className="h-12 w-44 bg-white/15 rounded-full" />
+              <div className="h-12 w-44 bg-white/10 rounded-full border border-white/10" />
+            </div>
           </div>
-          <div className="grid gap-8">
-            {[1, 2, 3, 4].map((i) => (
-              <div
-                key={i}
-                className="bg-white/5 backdrop-blur-sm p-8 rounded-3xl border border-white/10"
-              >
-                <div className="h-6 w-32 bg-white/10 rounded mb-4" />
-                <div className="space-y-2">
-                  <div className="h-4 w-full bg-white/10 rounded" />
-                  <div className="h-4 w-5/6 bg-white/10 rounded" />
-                </div>
+
+          {/* RIGHT: Big circle image skeleton + floating cards */}
+          <div className="flex-1 relative w-full lg:w-auto">
+            <div className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[600px] lg:h-[600px] mx-auto">
+              {/* Main circular image */}
+              <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl bg-white/10" />
+
+              {/* Floating cards */}
+              <div className="absolute -top-1 left-4 bg-white/15 rounded-2xl p-4 shadow-xl border border-white/10 w-40">
+                <div className="h-3 w-16 bg-white/20 rounded mb-2" />
+                <div className="h-4 w-24 bg-white/20 rounded" />
               </div>
-            ))}
+
+              <div className="absolute -bottom-3 right-4 bg-white/15 rounded-2xl p-4 shadow-xl border border-white/10 w-44">
+                <div className="h-3 w-20 bg-white/20 rounded mb-2" />
+                <div className="h-4 w-28 bg-white/20 rounded" />
+              </div>
+
+              <div className="absolute top-1/2 -translate-y-1/2 -right-18 bg-white/15 rounded-2xl p-4 shadow-xl border border-white/10 w-44">
+                <div className="h-3 w-16 bg-white/20 rounded mb-2" />
+                <div className="h-4 w-32 bg-white/20 rounded" />
+              </div>
+            </div>
           </div>
         </div>
       </section>
     );
   }
+
   if (!banners || banners.length === 0) return null;
 
   return (
