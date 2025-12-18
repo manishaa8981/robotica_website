@@ -166,7 +166,7 @@ export default function MottoPage() {
                   <h3 className="text-2xl font-bold text-black mb-3">
                     Our Vision
                   </h3>
-                  <p className="text-black leading-relaxed">{visionText}</p>
+                  <p className="text-black leading-relaxed sm:text-[15px]">{visionText}</p>
                 </div>
               </div>
             </motion.div>

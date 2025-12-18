@@ -173,11 +173,11 @@ export const HeroBanner = () => {
                 <div className="flex items-center gap-3">
                   <div>
                     <div className="text-[10px] sm:text-xs text-gray-800">
-                      Duration
+                      Career
                     </div>
 
                     <div className="font-bold text-gray-900 text-xs sm:text-sm md:text-base leading-tight">
-                      2 Years Course
+                      Industry Ready Program
                     </div>
                   </div>
                 </div>
