@@ -121,8 +121,8 @@ export default function SignatureLabs() {
           </h2>
 
           <p className="mt-4 max-w-2xl mx-auto text-sm md:text-base text-primary-soft">
-            Purpose-built robotics, AI, and automation labs where students ship
-            real systems – not just simulations.
+            Our signature labs are based in the United States and support
+            learning through international collaboration and exposure.
           </p>
         </motion.div>
 
