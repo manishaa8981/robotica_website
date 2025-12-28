@@ -157,16 +157,16 @@ export default function Navbar() {
             </Dropdown>
 
             <Dropdown
-              label="Programs"
+              label="Courses"
               setOpenDropdown={setOpenDropdown}
               openDropdown={openDropdown}
             >
-              <Link
+              {/* <Link
                 href="/program"
                 className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Programs
-              </Link>
+              </Link> */}
               <Link
                 href="/course"
                 className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
@@ -197,7 +197,7 @@ export default function Navbar() {
 
         {/* RIGHT APPLY – Desktop */}
         <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
-          <Link href="/contact">
+          <Link href="/application-form">
             <button className="px-6 py-2.5 rounded-full btn-primary text-black btn-primary:hover hover:scale-[1.02] transition-all duration-300 font-semibold">
               Apply Now
             </button>
@@ -276,12 +276,12 @@ export default function Navbar() {
                   pathname={pathname}
                   onClick={() => setIsOpen(false)}
                 />
-                <NavLink
+                {/* <NavLink
                   href="/program"
                   label="Programs"
                   pathname={pathname}
                   onClick={() => setIsOpen(false)}
-                />
+                /> */}
                 <NavLink
                   href="/course"
                   label="Courses"
@@ -314,7 +314,7 @@ export default function Navbar() {
                 />
 
                 <div className="pt-4">
-                  <Link href="/contact" onClick={() => setIsOpen(false)}>
+                  <Link href="/application-form" onClick={() => setIsOpen(false)}>
                     <button className="w-full px-6 py-2.5 rounded-full bg-primary-dark text-white text-m font-semibold hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300">
                       Apply Now
                     </button>

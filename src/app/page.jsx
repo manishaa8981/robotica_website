@@ -84,7 +84,7 @@ function HomeContent() {
 
       <CoursesPage />
 
-      <CorePrograms />
+      {/* <CorePrograms /> */}
 
       <IndustryPartnersCarousel />
 
