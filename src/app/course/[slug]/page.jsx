@@ -33,6 +33,10 @@ export default function CourseDetailsPage() {
       0
     );
   }, [course]);
+  const isDiploma = useMemo(() => {
+    const levels = course?.level || [];
+    return levels.some((lvl) => String(lvl).toLowerCase().includes("diploma"));
+  }, [course]);
 
   if (loading) {
     return (
@@ -192,25 +196,30 @@ export default function CourseDetailsPage() {
               />
 
               {/* Modules detail */}
-              <h2 className="text-xl font-semibold mt-10 mb-4">Modules</h2>
+              <h2 className="text-xl font-semibold mt-10 mb-4">
+                {isDiploma ? "Semesters" : "Modules"}
+              </h2>
 
               <div className="space-y-4 pb-10">
                 {course.modules?.map((m, idx) => (
                   <div
                     key={idx}
-                    id={`module-${idx + 1}`}
+                    id={`${isDiploma ? "semester" : "module"}-${idx + 1}`}
                     className="rounded-2xl border border-gray-200 p-5 bg-white"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <h3 className="font-semibold text-lg">
                         {idx + 1}. {m.title}
                       </h3>
-                      <span className="text-sm font-semibold text-gray-700 whitespace-nowrap">
-                        {m.durationHours} hrs
-                      </span>
+
+                      {!isDiploma && (
+                        <span className="text-sm font-semibold text-gray-700 whitespace-nowrap">
+                          {m.durationHours} hrs
+                        </span>
+                      )}
                     </div>
 
-                    <p className="text-sm text-gray-600 mt-2">
+                    <p className="text-sm text-gray-600 mt-2 text-justify">
                       {m.description}
                     </p>
                   </div>
@@ -224,9 +233,11 @@ export default function CourseDetailsPage() {
             <div className="lg:sticky lg:top-6">
               <div className="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
                 <div className="p-4 border-b border-gray-200">
-                  <h3 className="font-semibold text-lg">Modules Summary</h3>
+                  <h3 className="font-semibold text-lg">
+                    {isDiploma ? "Semesters Summary" : "Modules Summary"}
+                  </h3>
                   <p className="text-sm text-gray-600 mt-1">
-                    Click a module to jump
+                    Click a {isDiploma ? "semester" : "module"} to jump
                   </p>
                 </div>
 
@@ -238,7 +249,7 @@ export default function CourseDetailsPage() {
                           #
                         </th>
                         <th className="text-left p-3 font-semibold text-gray-700">
-                          Module
+                          {isDiploma ? "Semester" : "Module"}
                         </th>
                       </tr>
                     </thead>
@@ -249,7 +260,11 @@ export default function CourseDetailsPage() {
                           className="hover:bg-gray-50 cursor-pointer"
                           onClick={() => {
                             document
-                              .getElementById(`module-${idx + 1}`)
+                              .getElementById(
+                                `${isDiploma ? "semester" : "module"}-${
+                                  idx + 1
+                                }`
+                              )
                               ?.scrollIntoView({
                                 behavior: "smooth",
                                 block: "start",
@@ -263,9 +278,11 @@ export default function CourseDetailsPage() {
                             <div className="font-medium line-clamp-2">
                               {m.title}
                             </div>
-                            <div className="text-xs text-gray-500 mt-1">
-                              {m.durationHours} hrs
-                            </div>
+                            {!isDiploma && m.durationHours != null && (
+                              <span className="text-sm font-semibold text-gray-700 whitespace-nowrap">
+                                {m.durationHours} hrs
+                              </span>
+                            )}
                           </td>
                         </tr>
                       ))}

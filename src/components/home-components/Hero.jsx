@@ -138,7 +138,7 @@ export const HeroBanner = () => {
                 href="/signaturelabs"
                 className="bg-primary-soft border   btn-primary:hover shadow-sm font-semibold px-6 py-3 rounded-full transition text-black"
               >
-                Book a Lab Tour
+              Lab Tour
               </a>
             </motion.div>
           </motion.div>

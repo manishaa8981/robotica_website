@@ -44,7 +44,7 @@ export default function CoursesPage() {
   }, []);
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-0">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-0 mb-10">
       {/* Header (mobile spacing fixed) */}
       <div className="mb-6 sm:mb-10">
         <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-dark text-center leading-tight">
