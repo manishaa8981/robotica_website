@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Award, GraduationCap, Timer } from "lucide-react";
+import { Award, Globe, GraduationCap } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getWhyChooseUsApi } from "../../axios/api";
 
@@ -78,8 +78,8 @@ export default function WhyChooseUs() {
   const heroImage = section.heroImage || section.items?.[0]?.image || null;
 
   return (
-    <section className="w-full bg-white py-10">
-      <div className="mx-auto max-w-7xl w-full px-4  sm:px-6 lg:px-0">
+    <section className="w-full p-10 bg-white">
+      <div className="max-w-7xl mx-auto ">
         {/* Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -113,12 +113,12 @@ export default function WhyChooseUs() {
                       <div className="flex flex-col items-center justify-center gap-4">
                         <div className="shrink-0">
                           <div className="icon w-16 h-16 rounded-full flex items-center justify-center shadow-sm shadow-green-100/50">
-                            <Timer className="w-8 h-8 text-white" />
+                            <Globe className="w-8 h-8 text-white" />
                           </div>
                         </div>
                         <div className="flex-1">
                           <h3 className="text-lg   text-center  font-bold text-black mb-2">
-                            Programme Duration
+                            Global Industry Alignment
                           </h3>
                           <p className="text-[15px] text-black leading-relaxed">
                             {item.duration}
@@ -139,7 +139,7 @@ export default function WhyChooseUs() {
                         </div>
                         <div className="flex-1">
                           <h3 className="text-lg  text-center font-bold text-black mb-2">
-                            Industry Exposure
+                            Internship Opportunitites
                           </h3>
                           <p className="text-[15px] text-justify text-black leading-relaxed">
                             {item.internship}

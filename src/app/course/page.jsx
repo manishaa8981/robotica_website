@@ -46,14 +46,10 @@ export default function CoursesPage() {
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-0 mb-10">
       {/* Header (mobile spacing fixed) */}
-      <div className="mb-6 sm:mb-10">
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-dark text-center leading-tight">
+      <div className="mb-6 sm:mb-10 text-center">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
           Our Courses
         </h1>
-        {/* <p className="mt-3 text-sm sm:text-base text-gray-600 text-center max-w-2xl mx-auto">
-          Explore hands-on robotics programs designed for students, graduates,
-          and future professionals.
-        </p> */}
       </div>
 
       {/* Grid (better mobile sizing) */}

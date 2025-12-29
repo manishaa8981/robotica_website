@@ -15,7 +15,7 @@ const NavLink = ({ href, label, pathname, onClick }) => {
     <Link href={href} onClick={onClick} className="relative">
       <span
         className={`
-    px-4 py-2 rounded-full text-sm lg:text-base font-semibold
+  px-4 py-2 rounded-full text-sm font-semibold
     transition-all duration-200 inline-flex items-center
     whitespace-nowrap leading-none
     ${
@@ -56,7 +56,7 @@ const Dropdown = ({ label, children, setOpenDropdown, openDropdown }) => {
       <button
         type="button"
         className={`
-          flex items-center gap-1 px-5 py-2 rounded-full text-m font-semibold
+          flex items-center gap-1 px-5 py-2 rounded-full text-sm font-semibold
           transition-all duration-200
           ${
             isOpenDrop
@@ -121,8 +121,8 @@ export default function Navbar() {
         </div>
 
         {/* CENTER PILL NAV – Desktop */}
-        <div className="hidden lg:flex flex-1 justify-center">
-          <div className="backdrop-blur-md border text-primary-dark border-white/10 rounded-full px-4 py-2 flex items-center gap-1">
+        <div className="hidden lg:flex flex-1 text-sm justify-center">
+          <div className="backdrop-blur-md border text-primary-dark  border-white/10 rounded-full px-4 py-2 flex items-center gap-1">
             <NavLink href="/" label="Home" pathname={pathname} />
 
             <Dropdown
@@ -132,25 +132,25 @@ export default function Navbar() {
             >
               <Link
                 href="/about"
-                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 About Us
               </Link>
               <Link
                 href="/?scroll=internship-opportunities"
-                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Internship Opportunities
               </Link>
               <Link
                 href="/faq"
-                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 FAQ
               </Link>
               <Link
                 href="/contact"
-                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Contact Us
               </Link>
@@ -163,19 +163,19 @@ export default function Navbar() {
             >
               {/* <Link
                 href="/program"
-                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Programs
               </Link> */}
               <Link
                 href="/course"
-                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Courses
               </Link>
               <Link
                 href="/tracks"
-                className="block px-4 py-2 text-m text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+                className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
                 Tracks
               </Link>
@@ -198,7 +198,7 @@ export default function Navbar() {
         {/* RIGHT APPLY – Desktop */}
         <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
           <Link href="/application-form">
-            <button className="px-6 py-2.5 rounded-full btn-primary text-black btn-primary:hover hover:scale-[1.02] transition-all duration-300 font-semibold">
+            <button className="px-6 py-2.5 rounded-full btn-primary ext-sm text-black btn-primary:hover hover:scale-[1.02] transition-all duration-300 font-semibold">
               Apply Now
             </button>
           </Link>
@@ -245,7 +245,7 @@ export default function Navbar() {
                 </button>
               </div>
 
-              <div className="flex flex-col space-y-2 p-5 font-medium text-m overflow-y-auto">
+              <div className="flex flex-col space-y-2 p-5 font-medium text-sm overflow-y-auto">
                 <NavLink
                   href="/"
                   label="Home"
@@ -315,7 +315,7 @@ export default function Navbar() {
 
                 <div className="pt-4">
                   <Link href="/application-form" onClick={() => setIsOpen(false)}>
-                    <button className="w-full px-6 py-2.5 rounded-full bg-primary-dark text-white text-m font-semibold hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300">
+                    <button className="w-full px-6 py-2.5 rounded-full bg-primary-dark text-sm text-white font-semibold hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300">
                       Apply Now
                     </button>
                   </Link>

@@ -193,8 +193,8 @@ export default function CoursesPage() {
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-0">
       {/* Header (mobile spacing fixed) */}
-      <div className="mb-6 sm:mb-10 m-10">
-        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-primary-dark text-center leading-tight">
+      <div className="mb-6 sm:mb-10  text-center m-10">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-dark mb-4 leading-tight">
           Our Courses
         </h1>
         {/* <p className="mt-3 text-sm sm:text-base text-gray-600 text-center max-w-2xl mx-auto">
@@ -219,13 +219,13 @@ export default function CoursesPage() {
                     src={
                       course?.image
                         ? `${process.env.NEXT_PUBLIC_APP_API_URL}/uploads/${course.image}`
-                        : "/placeholder.jpg"
+                        : "/placeholder.png"
                     }
                     alt={course?.title || "Course"}
                     loading="lazy"
                     className="h-full w-full object-cover group-hover:scale-[1.03] transition duration-300"
                     onError={(e) => {
-                      e.currentTarget.src = "/placeholder.jpg";
+                      e.currentTarget.src = "/placeholder.png";
                     }}
                   />
                 </div>
