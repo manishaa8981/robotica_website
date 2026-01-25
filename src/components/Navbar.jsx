@@ -149,6 +149,12 @@ export default function Navbar() {
                 FAQ
               </Link>
               <Link
+                href="/signaturelabs"
+                className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
+              >
+                Labs and Facilities
+              </Link>
+              <Link
                 href="/contact"
                 className="block px-4 py-2 text-sm text-white hover:bg-white/10 hover:text-white transition rounded-lg mx-1.5 my-0.5"
               >
@@ -181,11 +187,13 @@ export default function Navbar() {
               </Link>
             </Dropdown>
 
-            <NavLink
+            {/* <NavLink
               href="/signaturelabs"
               label="Labs and Facilities"
               pathname={pathname}
-            />
+            /> */}
+
+            <NavLink href="/career" label="Career" pathname={pathname} />
             <NavLink href="/admission" label="Admission" pathname={pathname} />
             <NavLink
               href="/gallery"
@@ -307,6 +315,12 @@ export default function Navbar() {
                   onClick={() => setIsOpen(false)}
                 />
                 <NavLink
+                  href="/career"
+                  label="Career"
+                  pathname={pathname}
+                  onClick={() => setIsOpen(false)}
+                />
+                <NavLink
                   href="/gallery"
                   label="Capstone Gallery"
                   pathname={pathname}
@@ -314,7 +328,10 @@ export default function Navbar() {
                 />
 
                 <div className="pt-4">
-                  <Link href="/application-form" onClick={() => setIsOpen(false)}>
+                  <Link
+                    href="/application-form"
+                    onClick={() => setIsOpen(false)}
+                  >
                     <button className="w-full px-6 py-2.5 rounded-full bg-primary-dark text-sm text-white font-semibold hover:shadow-[0_0_20px_rgba(147,51,234,0.5)] transition-all duration-300">
                       Apply Now
                     </button>

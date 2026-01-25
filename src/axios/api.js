@@ -87,6 +87,18 @@ export const getIndustryPartnersPublicApi = () =>
   Api.get("/api/industry-partners");
 
 //Application
-export const submitApplicationApi = (data) => Api.post("api/applications", data);
+export const submitApplicationApi = (data) =>
+  Api.post("api/applications", data);
 
+// VACANCIES
+export const getVacanciesApi = () => Api.get("/api/vacancy");
+export const getVacancyBySlugApi = (slug) =>
+  Api.get(`/api/vacancy/slug/${slug}`);
 
+// JOB APPLICATIONS
+export const applyJobApi = (vacancyId, data) =>
+  Api.post(`/api/jobApplications/vacancies/${vacancyId}/apply`, data, {
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  });
