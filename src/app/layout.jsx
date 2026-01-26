@@ -4,7 +4,6 @@ import { Footer } from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ScrollToTop from "../components/ScrollToTop";
 import "./globals.css";
-import { Toaster } from "react-hot-toast";
 
 // Fonts
 const merriweather = Merriweather({
@@ -29,8 +28,8 @@ export const metadata = {
   title: "Robotica Institute",
   description: "Robotica Institute",
   icons: {
-    icon: "/logo.jpg",
-    apple: "/logo.jpg",
+    icon: "/image.png",
+    apple: "/image.png",
   },
 };
 
@@ -40,7 +39,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${montserrat.variable} font-sans antialiased min-h-screen flex flex-col`}
         style={{
-          background: "#ffffff"
+          background: "#ffffff",
           // background:
           //   "radial-gradient(ellipse at center, #6b2d7a 0%, #4a1f5c 30%, #2d1537 60%, #1a0a1f 80%, #000000 100%)",
           // backgroundAttachment: "fixed",

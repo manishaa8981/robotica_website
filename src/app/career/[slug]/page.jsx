@@ -106,11 +106,11 @@ export default function VacancyDetailsPage() {
         </div>
       )}
 
-      {job.technicalQualifications?.length > 0 && (
+      {job.qualifications?.length > 0 && (
         <div>
           <h2 className="text-xl font-semibold mb-2">Requirements</h2>
           <ul className="list-disc list-inside space-y-1">
-            {job.technicalQualifications.map((item, i) => (
+            {job.qualifications.map((item, i) => (
               <li key={i}>{item}</li>
             ))}
           </ul>

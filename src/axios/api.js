@@ -90,12 +90,12 @@ export const getIndustryPartnersPublicApi = () =>
 export const submitApplicationApi = (data) =>
   Api.post("api/applications", data);
 
-// VACANCIES
+// Vacancies
 export const getVacanciesApi = () => Api.get("/api/vacancy");
 export const getVacancyBySlugApi = (slug) =>
   Api.get(`/api/vacancy/slug/${slug}`);
 
-// JOB APPLICATIONS
+// Job Application
 export const applyJobApi = (vacancyId, data) =>
   Api.post(`/api/jobApplications/vacancies/${vacancyId}/apply`, data, {
     headers: {
